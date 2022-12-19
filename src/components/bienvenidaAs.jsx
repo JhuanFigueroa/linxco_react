@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/bienvenidaAs.css'
+import '../styles/bienvenidaAs.scss'
 // import {useNavigate} from "react-router-dom";
 const bienvenidaAs=()=>{
     // const navigate=useNavigate();
