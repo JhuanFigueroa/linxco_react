@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/bienvenidaAs.scss'
+import '../styles/bienvenidaAs.css'
 // import {useNavigate} from "react-router-dom";
 const bienvenidaAs=()=>{
     // const navigate=useNavigate();
@@ -9,52 +9,51 @@ const bienvenidaAs=()=>{
     // }
 
     return(
-        <section className="contentReins">
-           	
-	<div class="capa"></div>
-
-
-<div class="forbienvenida ">
-	<div class="row justify-content-center ">
-		<div class="formulario">
-			<div class="mensaje text-center" style="color: white;">
-				
-			</div>
-			<form action="">
+        <div>
+		<div className="capa"></div>
+		<div className="forbienvenida ">
+			<div className="row justify-content-center ">
+				<div className="formulario">
+					<div className="mensaje text-center" style={{color: "white"}}>
+						
+					</div>
+					<form action="">
+							
+					<div className="form-group">
+						<input type="text"  className="form-control"  placeholder="Nombre(s)"style={{width: "500px", color:"white"}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text"  className="form-control" placeholder="CURP"style={{width: "500px", color:"white"}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text" className="form-control" placeholder="Calificación"style={{width: "500px",color:"white"}}/>
+					</div>
+					<div className="documentos">
+						<div className="container-main" style={{color: "white"}}>
+							<h3>Acta de Nacimiento</h3>
+						</div>
+						<div className="examinar ">
+							<input type="file" className="btn btn-block ingresar" style={{width: "500px", color:"white"}}/>
+						</div>
+						<div className="container-main" style={{color: "white"}}>
+							<h3>CURP</h3>
+						</div>
+						<div className="examinar ">
+							<input type="file" className="btn btn-block ingresar" style={{width: "500px", color:"white"}}   />
+						</div>
+					</div>
+					</form>
 					
-			<div class="form-group">
-				<input type="text"  class="form-control"  placeholder="Nombre(s)"style="width: 500px; color:white;"/>
 			</div>
-			<div class="form-group ">
-				<input type="text"  class="form-control" placeholder="CURP"style="width: 500px; color:white;"/>
 			</div>
-			<div class="form-group ">
-				<input type="text" class="form-control" placeholder="Calificación"style="width: 500px;color:white;"/>
+			<div className="btnsig text-center pt-2">
+			<button type="button" onclick="location.href='aspirantes.html'" className="btn btn-outline-primary">Finalizar</button>
 			</div>
-			{/* <div class="documentos"> */}
-				<div class="container-main" style="color: white;">
-					<h3>Acta de Nacimiento</h3>
-				</div>
-				<div class="examinar ">
-					<input type="file" class="btn btn-block ingresar" style="width: 500px; color:white;"   />
-				</div>
-				<div class="container-main" style="color: white;">
-					<h3>CURP</h3>
-				</div>
-				<div class="examinar ">
-					<input type="file" class="btn btn-block ingresar" style="width: 500px; color:white;"   />
-				</div>
-			</form>
-			
-	   </div>
-	</div>
 
-</div>
+		</div>
 
-<div class="btnsig text-center pt-2">
-    <button type="button" onclick="location.href='aspirantes.html'" class="btn btn-outline-primary">Finalizar</button>
-</div>
-        </section>
+		
+       </div>
 );
 }
 
