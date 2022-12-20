@@ -1,10 +1,8 @@
-import "../styles/materias.css"
-import React from "react";
 
+import React from "react";
+import '../styles/Materia.scss'
 const Materias = () => {
 	return (
-		<div>
-			<div className="capa"></div>
 
 			<section className="contMaterias">
 				<div className="calificaciones pt-1 ">
@@ -23,7 +21,7 @@ const Materias = () => {
 						<option>Octavo Semestre</option>
 					</select>
 
-					<table className="tableR table-bordered" style={{width: "730px", height: "50px", marginTop: "50px" }}>
+					<table className="tableR table-bordered" style={{width: "600px", height: "50px", marginTop: "50px" }}>
 						<thead>
 							<tr>
 								<th scope="col">MATERIA</th>
@@ -59,7 +57,7 @@ const Materias = () => {
 					<button className="btncal btn-outline-primary">Continuar</button>
 				</div>
 			</section>
-		</div>
+
 	);
 }
 

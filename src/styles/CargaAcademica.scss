@@ -1,6 +1,6 @@
 
-.contentReins{
-  height: 620px;
+.contentReins-carga{
+  height: auto;
   width: 850px;
   background: rgba(255, 255, 255, 0.1);
   margin-top: 10px;
@@ -44,20 +44,22 @@
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
 }
-.btnContReins2{
-  margin-left: 630px;
-  margin-top: 10px;
-  width: 170px;
-  border-radius: 0.4rem;
-  margin-left: 100px;
+.btnContReins2-ca{
+    margin-left: 200px;
+    margin-top: 20px;
+  margin-bottom: 20px;
+    width: 170px;
+    border-radius: 0.4rem;
 }
 
 
 .btnContReins3{
-  margin-top: 10px;
-  width: 170px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  width: 150px;
   border-radius: 0.4rem;
-  margin-left: 300px;
+
 }
 
 .form-control{
@@ -77,4 +79,13 @@
   width: 100px;
   height: 30px;
   margin-left: 680px;
+}
+
+.row-btn{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }

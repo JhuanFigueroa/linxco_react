@@ -1,21 +1,18 @@
 import React from "react";
 import '../styles/aspirantes.scss'
-// import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 const aspirantes=()=>{
-    // const navigate=useNavigate();
-    // const hadleClick=(e)=>{
-    //     e.preventDefault();
-    //     navigate('/reinscripcion/factura')
-    // }
+     const navigate=useNavigate();
+     const handleClick=(e)=>{
+         e.preventDefault();
+         navigate('/aspirante/examen')
+     }
 
     return(
-        <div>
-
-		<div className="capa"></div>
 
 		<div className="containerAs ">
 			<div className="row justify-content-center ">
-				<div className="col-md-6 col-sm-8 col-xl-4 col-lg-5 formulario">
+				<div className="col-md-6 col-sm-8 col-xl-4 col-lg-5 formulario-as">
 					<form action="">
 					<div className="form-group text-center " >
 						<h2 className="text-light">DATOS DEL ASPIRANTE: </h2>
@@ -118,7 +115,7 @@ const aspirantes=()=>{
 					</div>
 					<div className="button row justify-content-center pt-3" >
 						<div className="text-center">
-							<button type="button" className="btn btn-outline-primary" onclick="location.href='examen.html'" style={{color:"white", width: "250px"}}>Guardar</button>
+							<button type="button" className="btn btn-outline-primary" onClick={handleClick} style={{color:"white", width: "250px"}}>Guardar</button>
 						</div>
 					
 					</div>
@@ -129,7 +126,6 @@ const aspirantes=()=>{
 			</div>
 			
 		</div>
-</div>
 );
 }
 

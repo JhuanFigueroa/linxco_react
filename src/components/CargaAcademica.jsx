@@ -15,7 +15,7 @@ const CargaAcademica=()=>{
     }
 
     return(
-        <section className="contentReins">
+        <section className="contentReins-carga">
             <h2 className="titleCarga">Carga Academica</h2><br/>
             <section className="FormReins row">
                 <section className="checksR">
@@ -116,8 +116,8 @@ const CargaAcademica=()=>{
                         </tbody>
                     </table>
                 {user.rol==3 ?(
-                        <section className="row">
-                            <button className="btnContReins2 btn-outline-primary"
+                        <section className="row-btn">
+                            <button className="btnContReins2-ca btn-outline-primary"
                                     onClick="location.href='facturaReinscripcionControl.html'">Incompleto
                             </button>
                             <button className="btnContReins3 btn-outline-primary"

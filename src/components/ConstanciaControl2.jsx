@@ -1,47 +1,13 @@
 import React from 'react'
 import '../styles/ConstanciaControl2.scss'
+import {useNavigate} from "react-router-dom";
 const ConstanciaControl2 = () =>{
+    const navigate=useNavigate()
+    const handleClick=(e)=>{
+        e.preventDefault();
+        navigate('/control/constancias/datos')
+    }
     return(
-        <><header className="header">
-            <div className="container">
-                <div className="btn-menu">
-                    <label for="btn-menu">☰</label>
-                </div>
-
-                <div className="logo">
-                    <img src="images/logoTESJI.png" />
-                    <div className="text-center">
-                    </div>
-                </div>
-                <div className="container-main">
-                    <div className="text-center">
-                        <h1>CONSTANCIA CONTROL</h1>
-                    </div>
-                    <nav className="menu">
-                        <a href="inicio.html"><h3>Inicio</h3></a>
-                        <a href="#" type="submit"><h3>Cerrar Sesion</h3></a>
-
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <div className="capa"></div>
-        <input type="checkbox" id="btn-menu" /><div className="container-menu">
-                <div className="cont-menu">
-                    <h1 className="textMenu">Menu de Opciones</h1>
-                    <nav>
-                        <a href="inscripcion.html">Inscripcion</a>
-                        <a href="reinscripciones.html">Reinscripcion</a>
-                        <a href="index.html">Bajas</a>
-                        <a href="tramites.html">Tramites</a>
-                        <a href="credencializacion.html">Credencializacion</a>
-                        <a href="aspirantes.html">Aspirantes</a>
-                        <a href="horarios.html">Horarios</a>
-                        <a href="maestros.html">Maestros</a>
-                    </nav>
-                    <label for="btn-menu">✖️</label>
-                </div>
-            </div>
             <section className="contentFactReins">
                 <h2 className="titleCarga">DATOS</h2><br></br>
                 <form className="form-inline">
@@ -63,13 +29,13 @@ const ConstanciaControl2 = () =>{
                             <td>BASE DE DATOS</td>
                             <td>ALAN BECERRIL</td>
                             <td>
-                                <button onclick="location.href='constanciasDatos.html'">VER</button>
+                                <button onClick={handleClick}>VER</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <br></br>
-            </section></> 
+            </section>
     )
 }
 export default ConstanciaControl2

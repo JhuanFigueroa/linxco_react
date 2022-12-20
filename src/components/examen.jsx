@@ -10,16 +10,13 @@ const examen=()=>{
 
     return(
     <div>
-            
-	
-	<div class="capa"></div>
+
             <div class="forbienvenida">
                 <div class="mensaje text-center" style={{color: "white"}}>
                     
                 </div>
                 <div class="row justify-content-center ">
-                    <div class="formulario">
-                        <form action="">
+
                         
                             <div class="documentos">
                                 <div class="container-main" style={{color: "rgb(255, 255, 255)"}}>
@@ -40,10 +37,8 @@ const examen=()=>{
                             <div class="btnsig text-center pt-5">
                                 <button type="button" class="btn btn-outline-primary">Finalizar</button>
                             </div>
-                        </form>
                     
-                    
-                </div>
+
 
             </div>
 	

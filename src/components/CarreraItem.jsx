@@ -20,6 +20,13 @@ const CarreraItem = ({carrera}) => {
         if (operacion==='bajas'){
             navigate('/control/bajas/estudiante');
         }
+        if (operacion==='constancia'){
+            navigate('/control/constancias/tabla')
+        }
+
+        if (operacion==='maestro'){
+            navigate('/maestros/materias')
+        }
     }
     return (
         <figure>

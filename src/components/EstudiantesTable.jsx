@@ -12,7 +12,7 @@ const EstudiantesTable = () => {
             navigate('/reinscripcion/carga')
         }
         if (operacion==='bajas'){
-            navigate('/reinscripcion/carga')
+            navigate('/control/bajas/form')
         }
     }
     return (

@@ -21,36 +21,106 @@ const Menu = () => {
             navigate('/control/bajas')
         }
 
+        if (operacion==='constancia'){
+            navigate('/control/constancias')
+        }
+
+        if (operacion==='credencial'){
+            navigate('/control/credencializacion')
+        }
+
+        if (operacion==='maestro'){
+            navigate('/maestros')
+        }
 
     }
 
     return (
-        <div>
-            <input type="checkbox" id="btn-menu"/>
-            <div className="container-menu">
-                <h1>Menu de Opciones</h1>
-                <div className="cont-menu">
-                    <nav>
-                        <button onClick={()=>handleClickInsvripcion('inscripcion')}>Inscripcion</button>
-                        <button onClick={()=>handleClickInsvripcion('reinscripcion')}>Reinscripcion</button>
-                        <Link to="/reinscripcion/control">Reinscripcion control</Link>
-                        <Link to="/bajas">Bajas</Link>
-                        <button onClick={()=>handleClickInsvripcion('bajas')}>Bajas</button>
-                        <Link to="/constancias">Constancias</Link>
-                        <Link to="/factura">Factura</Link>
+       <div>
+           <input type="checkbox" id="btn-menu"/>
+           <div className="container-menu">
+               <div className="cont-menu">
+                   <nav>
+                       <section>
+                           <h3 style={{color: "white", textAlign: "center"}}>Menu</h3>
+                           <h5 style={{color: "white",textAlign: "center",marginBottom: "19px"}}>de Opciones</h5>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='InscripcionCarreras.html'">Inscripcion
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='reinscripciones.html'">Reinscripcion
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='carrerasReinscripcionControl.html'">Reinscripcion Control
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='carrerasBajas.html'">Bajas
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='constancias.html'">Constancias
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='carreraConstanciaControl.html'">Constancias Control
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='credencializacion.html'">Credencializacion
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='bienvenidaAs.html'">Aspirantes
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='carreraConstanciaControl'">Aspirantes Control
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='horarios.html'">Horarios Jefes
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='horariosControlCarreras.html'">Horarios Control
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='horarioAlumnos.html'">Horarios Alumnos
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='carrerasMaestros.html'">Maestros
+                           </button>
+                       </section>
+                       <section className="btnMenu">
+                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   onClick="location.href='carrerasMaestrosControl.html'">Maestros Control
+                           </button>
+                       </section>
+                   </nav>
 
-
-                        <a href="tramites.html">Tramites</a>
-                        <a href="credencializacion.html">Credencializacion</a>
-                        <a href="aspirantes.html">Aspirantes</a>
-                        <Link to="/horarios">Horarios</Link>
-                        <a href="maestros.html">Maestros</a>
-                    </nav>
-
-                    <label htmlFor="btn-menu">✖️</label>
-                </div>
-            </div>
-        </div>
+                   <label htmlFor="btn-menu">✖️</label>
+               </div>
+           </div>
+       </div>
     );
 }
 

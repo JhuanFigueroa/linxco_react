@@ -3,8 +3,8 @@ import '../styles/ConstanciaDatos.scss'
 
 const ConstanciaDatos =()=>{
     return(
-        <><div className="capa"></div>
-        <section className="contentReins">
+
+        <section className="contentReins-ConstanciaDatos">
             <h2 className="titleCarga" style={{color: "white", marginLeft: "20px"}}>DATOS FACTURA</h2>
             <div className="form-group row">
                 <h5 for="inputText" className="textNC" style={{color: "white", marginLeft: "20px"}}>No.Comprobante :</h5>
@@ -69,7 +69,7 @@ const ConstanciaDatos =()=>{
                 </div>
 
                 <button className="btnContReins2 btn-outline-primary" onclick="location.href='constanciaControl2.html'">GUARDAR</button>
-        </section></>
+        </section>
     )
 }
 export default ConstanciaDatos

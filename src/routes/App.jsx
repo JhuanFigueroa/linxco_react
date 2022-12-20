@@ -22,6 +22,14 @@ import Constancias from "@containers/Constancias";
 import Factura from "@components/Factura";
 import useOperacion from "../hooks/useOperacion";
 import AppContext from "../context/AppContext";
+import BajasForm from "@components/BajasForm";
+import ConstanciaControl2 from "@components/ConstanciaControl2";
+import ConstanciaDatos from "@components/ConstanciaDatos";
+import Credencializacion from "@components/Credencializacion";
+import Aspirantes from "@components/aspirantes";
+import BienvenidaAs from "@components/bienvenidaAs";
+import Examen from "@components/examen";
+import Materias from "@components/materias-container";
 
 const App=()=>{
     const operacion=useOperacion()
@@ -40,6 +48,9 @@ const App=()=>{
                             </AuthRoute>
                         } />
                         <Route exact path="/" element={<Login/> } />
+                        <Route exact path="/aspirante" element={<BienvenidaAs/> } />
+                        <Route exact path="/aspirante/form" element={<Aspirantes/> } />
+                        <Route exact path="/aspirante/examen" element={<Examen/> } />
                         <Route exact path="/tramites" element={
                             <AuthRoute>
                                 <Tramites/>
@@ -57,9 +68,20 @@ const App=()=>{
                         {/*BAJAS*/}
                         <Route exact path="/control/bajas" element={<AuthRoute><Carreras/></AuthRoute>}/>
                         <Route exact path="/control/bajas/estudiante" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
-
+                        <Route exact path="/control/bajas/form" element={<AuthRoute><BajasForm/></AuthRoute>}/>
+                        {/*Constancias*/}
                         <Route exact path="/constancias" element={<AuthRoute><Constancias/></AuthRoute>}/>
+                        <Route exact path="/control/constancias" element={<AuthRoute><Carreras/></AuthRoute>}/>
+                        <Route exact path="/control/constancias/tabla" element={<AuthRoute><ConstanciaControl2/></AuthRoute>}/>
+                        <Route exact path="/control/constancias/datos" element={<AuthRoute><ConstanciaDatos/></AuthRoute>}/>
+                        <Route exact path="/control/bajas" element={<AuthRoute><Carreras/></AuthRoute>}/>
+
                         <Route exact path="/factura" element={<AuthRoute><Factura/></AuthRoute>}/>
+
+                        <Route exact path="/control/credencializacion" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
+
+                        <Route exact path="/maestros" element={<AuthRoute><Carreras/></AuthRoute>}/>
+                        <Route exact path="/maestros/materias" element={<AuthRoute><Materias/></AuthRoute>}/>
 
                     </Routes>
 

@@ -1,19 +1,17 @@
 import React from "react";
 import '../styles/bienvenidaAs.scss'
-// import {useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 const bienvenidaAs=()=>{
-    // const navigate=useNavigate();
-    // const hadleClick=(e)=>{
-    //     e.preventDefault();
-    //     navigate('/reinscripcion/factura')
-    // }
+     const navigate=useNavigate();
+     const hadleClick=(e)=>{
+         e.preventDefault();
+       navigate('/aspirante/form')
+     }
 
     return(
-        <div>
-		<div className="capa"></div>
+
 		<div className="forbienvenida ">
 			<div className="row justify-content-center ">
-				<div className="formulario">
 					<div className="mensaje text-center" style={{color: "white"}}>
 						
 					</div>
@@ -43,17 +41,14 @@ const bienvenidaAs=()=>{
 						</div>
 					</div>
 					</form>
-					
-			</div>
 			</div>
 			<div className="btnsig text-center pt-2">
-			<button type="button" onclick="location.href='aspirantes.html'" className="btn btn-outline-primary">Finalizar</button>
+				<button type="button" onClick={hadleClick}
+						className="btn btn-outline-primary">Finalizar
+				</button>
 			</div>
-
 		</div>
 
-		
-       </div>
 );
 }
 
