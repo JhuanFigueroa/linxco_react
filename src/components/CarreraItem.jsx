@@ -1,11 +1,25 @@
-import React from "react";
+import React, {useContext, useState} from "react";
 import '../styles/Carreras.scss'
 import {useNavigate} from "react-router-dom";
+import {useAuth} from "../hooks/useAuth";
+import AppContext from "../context/AppContext";
 const CarreraItem = ({carrera}) => {
+    const {state}=useContext(AppContext)
+    const operacion=state.operacion
+
         const navigate=useNavigate()
     const handleSubmit=(e)=>{
             e.preventDefault()
+        console.log(operacion)
+        if (operacion==='inscripcion'){
             navigate('/inscripcion/carreras');
+        }
+        if (operacion==='reinscripcion'){
+            navigate('/reinscripcion/control/estudiantes');
+        }
+        if (operacion==='bajas'){
+            navigate('/control/bajas/estudiante');
+        }
     }
     return (
         <figure>

@@ -3,6 +3,7 @@ import '../styles/Carreras.scss'
 import CarreraItem from "@components/CarreraItem";
 import axios from "axios";
 import Cookie from "js-cookie";
+import {useAuth} from "../hooks/useAuth";
 const api="http://localhost:3000/api/v1/carreras"
 const Carreras=()=>{
     const [carreras,setCarreras]=React.useState([]);

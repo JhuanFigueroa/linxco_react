@@ -1,0 +1,28 @@
+.factura{
+  height: 500px;
+  width: 700px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+}
+.factura{
+  margin-top: 100px;
+}
+.mensajefac{
+  margin-top: 40px;
+  background: rgba(0, 0, 0, 0.4);
+  width: 500px;
+  /*height: 200px;*/
+}
+.form-group{
+  margin-top: 10px;
+  margin-right: 10px;
+}
+.form-control{
+  width: 300px;
+  background: rgba(0, 0, 0, 0.3);
+  color:white;
+  margin-left: 5px;
+}

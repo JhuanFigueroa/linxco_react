@@ -1,32 +1,9 @@
 
-.formulario{
-  height: 550px;
-  width: 900px;
-  background: rgba(255, 255, 255, 0.1);
-  margin-top: 70px;
-  border-radius: 5px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(3px);
-}
-.titleCarga{
-  color: #fff;
-  text-align: center;
-}
-.checksR{
-  margin-left: 140px;
-  margin-bottom: 30px;
-  color: darkgrey;
-}
-.btnComboCar{
-  border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.1);
-}
 .contentReins{
-  margin-left: 20rem;
-  height: 550px;
-  width: 800px;
+  height: 620px;
+  width: 850px;
   background: rgba(255, 255, 255, 0.1);
-  margin-top: 100px;
+  margin-top: 10px;
   border-radius: 5px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(3px);
@@ -36,90 +13,53 @@
   border-radius: 0.4rem;
   background-color: rgba(0, 0, 0, 0.4)
 }
-.btnContReins2{
-  margin-left: 630px;
-  margin-top: 20px;
-  width: 170px;
-  border-radius: 0.4rem;
+.titleCarga{
+  color: rgb(255, 255, 255);
+  text-align: center;
 }
-.btnContReins{
-  width: 130px;
-  border-radius: 0.4rem;
-}
-.contentFactReins{
-  margin-left: 280px;
-  height: 500px;
-  width: 900px;
-  background: rgba(255, 255, 255, 0.1);
-  margin-top: 100px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(3px);
-}
-.contentFactReins .titleCarga{
-  margin-top: 10px;
-}
-.format-control{
-  background-color: rgba(255, 255, 255, 0.1);
-  width: 350px;
-  height: 40px;
-  border-radius: 0.5rem;
-}
-.textNC{
-  margin-top: 1px;
+.checksR{
+  margin-left: 140px;
+  margin-bottom: 30px;
+  color: darkgrey;
 }
 .form-group{
   margin-left: 30px;
 }
-
-.btnDelete{
-  background-color: transparent;
-  border-radius: 0.4rem;
-  border: 1px solid rgb(255, 0, 0);
-  width: 50px;
-  height: 50px;
-  background-image: url('../assets/imgs/eliminar.png');
-  background-repeat: no-repeat;
+.btnComboCar{
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
 }
-.btnAdd{
-  background-color: transparent;
-  border-radius: 0.4rem;
+.tableR{
   color: #fff;
-  border: 3px solid rgb(0, 162, 255);
-  align-items: flex-end;
-  width: 100px;
-  height: 40px;
-  margin-left: 695px;
-}
-.btnFactsA{
   border-radius: 0.5rem;
-  height: 40px;
-  width: 150px;
-  margin-left: 150px;
+  margin-top: 7px;
+  margin-left: 50px;
+  margin-bottom: auto;
+  table-layout: auto;
+  text-align: center;
 }
-.btnFactsAB{
-  border-radius: 0.5rem;
-  height: 40px;
-  width: 150px;
-  margin-left: 250px;
+.textTR{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
+.btnContReins2{
+  margin-left: 630px;
+  margin-top: 10px;
+  width: 170px;
+  border-radius: 0.4rem;
+  margin-left: 100px;
 }
 
-.ContentHorariosJefes{
-  margin-left: 290px;
-  height: 500px;
-  width: 700px;
-  background: rgba(255, 255, 255, 0.1);
-  margin-top: 100px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(3px);
+
+.btnContReins3{
+  margin-top: 10px;
+  width: 170px;
+  border-radius: 0.4rem;
+  margin-left: 300px;
 }
-.textHJ{
-  color: #fff;
-  margin-left: 80px;
-}
+
 .form-control{
   border-radius: 0.3rem;
   background-color: rgba(0, 0, 0, 0.3);
@@ -128,16 +68,13 @@
   margin-top: 10px;
   color: #fff;
 }
-.borderh{
-  height: 300px;
-  width: 300px;
-}
-.descargaHA{
-  margin-left: 150px;
-  width: 350px;
-  height: 200px;
-}
-.btnHA{
-  margin-top: 50px;
-  margin-left: 70px;
+.btnAdd{
+  background-color: transparent;
+  border-radius: 0.4rem;
+  color: #fff;
+  border: 3px solid rgb(0, 162, 255);
+  align-items: flex-end;
+  width: 100px;
+  height: 30px;
+  margin-left: 680px;
 }

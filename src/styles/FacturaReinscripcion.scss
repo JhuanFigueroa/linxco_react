@@ -1,0 +1,71 @@
+.contentFactReins{
+
+  height: 500px;
+  width: 900px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 70px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+}
+.contentFactReins .titleCarga{
+  margin-top: 10px;
+}
+.form-group{
+  margin-left: 30px;
+}
+.textNC{
+  margin-top: 1px;
+  color: white;
+}
+.format-control{
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 350px;
+  height: 40px;
+  border-radius: 0.5rem;
+}
+.btnComboCar{
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.btnAdd{
+  background-color: transparent;
+  border-radius: 0.4rem;
+  color: #fff;
+  border: 3px solid rgb(0, 162, 255);
+  align-items: flex-end;
+  width: 100px;
+  height: 40px;
+  margin-left: 695px;
+}
+.tableFac{
+  width: 90%;
+  height: 20%;
+  border-radius: 0.5rem;
+  color: #fff;
+  margin-top: 7px;
+  margin-left: 20px;
+  text-align: center;
+}
+.btnDelete{
+  background-color: transparent;
+  border-radius: 0.4rem;
+  border: 1px solid rgb(255, 0, 0);
+  width: 50px;
+  height: 50px;
+  background-image: url('../assets/imgs/eliminar.png');
+  background-repeat: no-repeat;
+}
+.btnFactsA{
+  border-radius: 0.5rem;
+  height: 40px;
+  width: 150px;
+  margin-left: 150px;
+}
+.btnFactsAB{
+  border-radius: 0.5rem;
+  height: 40px;
+  width: 150px;
+  margin-left: 250px;
+}

@@ -1,11 +1,17 @@
 import React from "react";
 import '../styles/CargaAcademica.scss'
 import {useNavigate} from "react-router-dom";
+import {useAuth} from "../hooks/useAuth";
 const CargaAcademica=()=>{
+    const auth=useAuth()
+    const user=auth.user
     const navigate=useNavigate();
     const hadleClick=(e)=>{
         e.preventDefault();
         navigate('/reinscripcion/factura')
+    }
+    const addMateria=()=>{
+
     }
 
     return(
@@ -15,6 +21,7 @@ const CargaAcademica=()=>{
                 <section className="checksR">
                     <div className="custom-control custom-radio custom-control-inline">
                         <input type="checkbox" aria-label="Checkbox for following text input"/>
+
                             <label style={{marginTop: "10px"}}>INSCRIPCION</label>
                     </div>
                     <div className="custom-control custom-radio custom-control-inline">
@@ -60,12 +67,13 @@ const CargaAcademica=()=>{
                     <input type="number" className="form-control" style={{width: "240px", height: "30px"}}/>
                 </div>
                 <div className="form-group">
-                    <h5 sstyle={{color: "white"}}>Correo</h5>
-                    <input type="email" className="form-control"  style={{width: "500px", height: "30px"}}/>
+                    <h5 style={{color: "white"}}>Correo</h5>
+                    <input type="email" className="form-control" style={{width: "500px", height: "30px"}}/>
                 </div>
                 <br/>
 
-                    <table className="tableR table-bordered"  style={{width: "730px", height: "50px"}}>
+                    <button className="btnAdd btn-outline-info" onClick={addMateria} type="button">Agregar</button>
+                    <table className="tableR table-bordered" style={{width: "730px", height: "50px"}}>
                         <thead>
                         <tr>
                             <th scope="col">CLAVE</th>
@@ -107,10 +115,22 @@ const CargaAcademica=()=>{
                         </tr>
                         </tbody>
                     </table>
+                {user.rol==3 ?(
+                        <section className="row">
+                            <button className="btnContReins2 btn-outline-primary"
+                                    onClick="location.href='facturaReinscripcionControl.html'">Incompleto
+                            </button>
+                            <button className="btnContReins3 btn-outline-primary"
+                                    onClick={hadleClick}>Siguiente
+                            </button>
+                        </section>
+                    ):
+                    (
                     <button className="btnContReins2 btn-outline-primary"
-                            onClick={hadleClick}
-                          >Continuar
+                    onClick={hadleClick}>Continuar
                     </button>
+                    )
+                }
             </section>
         </section>
 );

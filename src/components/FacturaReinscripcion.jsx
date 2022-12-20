@@ -1,29 +1,42 @@
 import React from "react";
-
+import '../styles/FacturaReinscripcion.scss'
+import {useAuth} from "../hooks/useAuth";
 const FacturaReinscripcion=()=>{
+    const auth=useAuth()
+    const user=auth.user
     return(
         <section className="contentFactReins">
-            <h2 className="titleCarga">Carga Academica</h2><br/>
+            <h2 className="titleCarga" style={{color: "white", marginLeft: "30px"}}>Carga Academica</h2><br/>
             <div className="form-group row">
-                <h5 htmlFor="inputText" className="textNC" style={{color: "rgb(255, 255, 255)"}}>No. de Comprobante :</h5>
+                <h5 htmlFor="inputText" className="textNC">No. de Comprobante :</h5>
                 <div className="col-sm-6">
                     <input type="text" className="format-control" id="inputNoControl"
                            style={{width: "500px", height: "30px"}}/>
                 </div>
             </div>
-            <div className="form-group">
-                <h5 className="" style={{color: "rgb(250, 250, 250)"}}>Seleccione el tipo de factura</h5>
-                <button className="btnComboCar btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                        aria-expanded="false" style={{width: "390px", height: "30px"}}>
-                    seleccionar
-                </button>
-                <div className="dropdown-menu">
-                    <a className="dropdown-item" href="#">Incripcion</a>
-                    <a className="dropdown-item" href="#">Curso de verano</a>
-                    <a className="dropdown-item" href="#">Seguro facultativo</a>
-                </div>
-            </div>
-            <button className="btnAdd btn-outline-info" type="button">Agregar</button>
+            {
+                user.rol!=3 &&(
+                    <div>
+                        <div className="form-group">
+                            <h5 className="" style={{color: "rgb(250, 250, 250)"}}>Seleccione el tipo de factura</h5>
+                            <button className="btnComboCar btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                                    aria-expanded="false" style={{width: "390px" ,height: "30px"}}>
+                                seleccionar
+                            </button>
+                            <div className="dropdown-menu">
+                                <a className="dropdown-item" href="#">Incripcion</a>
+                                <a className="dropdown-item" href="#">Curso de verano</a>
+                                <a className="dropdown-item" href="#">Seguro facultativo</a>
+                            </div>
+                        </div>
+
+                        <button className="btnAdd btn-outline-info" type="button">Agregar</button>
+                    </div>
+                )
+            }
+
+
+
             <table className="tableFac table-bordered">
                 <thead>
                 <tr>
@@ -44,16 +57,21 @@ const FacturaReinscripcion=()=>{
                 </tr>
                 </tbody>
             </table>
-            <label htmlFor="inputText" className="textNC" style={{color: "rgb(255, 255, 255)", marginLeft: "600px"}}>Total
-                :</label>
+            <label htmlFor="inputText" className="textNC" style={{marginLeft: "600px"}}>Total :</label>
             <input type="text" className="format-control" id="inputNoControl"
-                   style={{width: "143px", height: "30px", marginTop:"3px"}}/><br/>
+                   style={{width: "143px", height: "30px", marginTop: "3px"}}/><br/>
+            {user.rol==3?(
                 <section className="botonesFR row" style={{marginTop: "10px"}}>
-                    <button className="btnFactsA btn-outline-primary">Subir</button>
-                    <button className="btnFactsAB btn-outline-primary">Guardar</button>
+                    <button className="btnFactsA btn-outline-primary">Incompleto</button>
+                    <button className="btnFactsAB btn-outline-primary">Reinscribir</button>
                 </section>
+            ):(<section className="botonesFR row" style={{marginTop: "10px"}}>
+                <button className="btnFactsA btn-outline-primary">Subir</button>
+                <button className="btnFactsAB btn-outline-primary">Guardar</button>
+            </section>)}
         </section>
-    );
+
+);
 }
 
 export default FacturaReinscripcion;
