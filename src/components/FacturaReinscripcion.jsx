@@ -19,15 +19,13 @@ const FacturaReinscripcion=()=>{
                     <div>
                         <div className="form-group">
                             <h5 className="" style={{color: "rgb(250, 250, 250)"}}>Seleccione el tipo de factura</h5>
-                            <button className="btnComboCar btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                            <select className="btnComboCar btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
                                     aria-expanded="false" style={{width: "390px" ,height: "30px"}}>
-                                seleccionar
-                            </button>
-                            <div className="dropdown-menu">
-                                <a className="dropdown-item" href="#">Incripcion</a>
-                                <a className="dropdown-item" href="#">Curso de verano</a>
-                                <a className="dropdown-item" href="#">Seguro facultativo</a>
-                            </div>
+
+                                <option>
+                                    Seleccionar
+                                </option>
+                            </select>
                         </div>
 
                         <button className="btnAdd btn-outline-info" type="button">Agregar</button>

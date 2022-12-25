@@ -8,6 +8,7 @@ import axios from "axios";
 import ListaMaterias from "@components/ListaMaterias";
 import Cookie from 'js-cookie'
 const url='http://localhost:3000/api/v1/alumnos/datosCarga/'
+let idC=0
 const CargaAcademica=()=>{
     const {state}=useContext(AppContext)
     const operacion=state.operacion
@@ -18,11 +19,16 @@ const CargaAcademica=()=>{
 
     const [openModal,setOpenModal]=useState(false)
     const [materiasCarga,setMateriasCarga]=useState([])
+    const [tiposCarga,setTiposCarga]=useState([])
+
+    const [idCarga,setIdCarga]=useState(null)
 
     const [nombre,setNombre]=useState('');
     const [correo,setCorreo]=useState('');
     const [celular,setCelular]=useState('');
     const [carrera,setCarrera]=useState('');
+    const [fecha,setFecha]=useState(null);
+    const [tipoCarga,setTipoCarga]=useState(null)
 
     const totalCreditos=()=>{
         let sum=0
@@ -39,38 +45,62 @@ const CargaAcademica=()=>{
         setCorreo(datos.correo)
         setCarrera(datos.carrera)
     }
+
+    const getTiposCarga= async ()=>{
+        const cookie= Cookie.get('token')
+        axios.defaults.headers.Authorization='Bearer '+cookie;
+        const res = await axios.get('http://localhost:3000/api/v1/tipoCarga');
+        setTiposCarga(res.data)
+    }
     const hadleClick=(e)=>{
         e.preventDefault();
+
+        const data={
+            'fecha':fecha,
+            'claveTipoCarga':tipoCarga,
+            'matriculaAlumno':user.clave,
+            'idPeriodo':periodo[0].id
+        }
+        const cookie= Cookie.get('token')
+        axios.defaults.headers.Authorization='Bearer '+cookie;
+        const rta=axios.post('http://localhost:3000/api/v1/carga-academica',data)
+            .then(function(response){
+                idC=response.data
+                materiasCarga.map(materia=>{
+                    const dtaMateriaCarga={
+                        'claveMateria':materia.clave,
+                        'idCarga':idC
+                    }
+                    axios.post('http://localhost:3000/api/v1/materia-carga',dtaMateriaCarga)
+
+                });
+        })
+
         navigate('/reinscripcion/factura')
     }
 
     useEffect(  () => {
         getCargaData()
+        getTiposCarga()
     }, []);
-
-    useEffect(  () => {
-        console.log(materiasCarga)
-    }, [materiasCarga]);
-
 
     return(
         <section className="contentReins-carga">
             <h2 className="titleCarga">Carga Academica</h2><br/>
             <section className="FormReins row">
                 <section className="checksR">
-                    <div className="custom-control custom-radio custom-control-inline">
-                        <input type="checkbox" aria-label="Checkbox for following text input"/>
+                    {tiposCarga.map((tipo)=>(
+                        <div className="custom-control custom-radio custom-control-inline">
+                            <input type="checkbox" name="tipoCarga[]" value={tipo.clave} aria-label="Checkbox for following text input" onChange={(e)=>{
+                                if (e.target.checked){
+                                    setTipoCarga(e.target.value)
+                                }
 
-                            <label style={{marginTop: "10px"}}>INSCRIPCION</label>
-                    </div>
-                    <div className="custom-control custom-radio custom-control-inline">
-                        <input type="checkbox" aria-label="Checkbox for following text input"/>
-                            <label style={{marginTop: "10px"}}>REINSCRIPCION</label>
-                    </div>
-                    <div className="custom-control custom-radio custom-control-inline">
-                        <input type="checkbox" aria-label="Checkbox for following text input"/>
-                            <label style={{marginTop: "10px"}}>CURSO DE VERANO</label>
-                    </div>
+                            }}/>
+
+                            <label style={{marginTop: "10px"}}>{tipo.nombre}</label>
+                        </div>
+                    ))}
                 </section>
                 <div className="form-group">
                     <h5 style={{color: "white"}}>Nombre del estudiante</h5>
@@ -86,7 +116,7 @@ const CargaAcademica=()=>{
                 </div>
                 <div className="form-group">
                     <h5 style={{color: "white"}}>Fecha</h5>
-                    <input type="date" className="form-control" style={{width: "160px", height: "30px"}}/>
+                    <input type="date" className="form-control" onChange={(e)=>{setFecha(e.target.value)}} style={{width: "160px", height: "30px"}}/>
                 </div>
 
                 <div className="form-group">
