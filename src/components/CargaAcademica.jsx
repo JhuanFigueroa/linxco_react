@@ -5,6 +5,8 @@ import {useAuth} from "../hooks/useAuth";
 import {useContext} from "react";
 import AppContext from "../context/AppContext";
 import axios from "axios";
+import ListaMaterias from "@components/ListaMaterias";
+import Cookie from 'js-cookie'
 const url='http://localhost:3000/api/v1/alumnos/datosCarga/'
 const CargaAcademica=()=>{
     const {state}=useContext(AppContext)
@@ -13,11 +15,22 @@ const CargaAcademica=()=>{
     const user=auth.user
     const periodo=auth.periodo
     const navigate=useNavigate();
+
+    const [openModal,setOpenModal]=useState(false)
+    const [materiasCarga,setMateriasCarga]=useState([])
+
     const [nombre,setNombre]=useState('');
     const [correo,setCorreo]=useState('');
     const [celular,setCelular]=useState('');
     const [carrera,setCarrera]=useState('');
 
+    const totalCreditos=()=>{
+        let sum=0
+        const creditos=materiasCarga.map((materia)=>{
+            return sum+=materia.creditos
+        })
+        return sum
+    }
     const getCargaData= async ()=>{
         const res = await axios.get(url+user.clave);
         const datos=res.data[0]
@@ -31,14 +44,14 @@ const CargaAcademica=()=>{
         navigate('/reinscripcion/factura')
     }
 
-    const addMaterias=(e)=>{
-        e.preventDefault()
-        setOpenModal(true)
-    }
-
     useEffect(  () => {
         getCargaData()
     }, []);
+
+    useEffect(  () => {
+        console.log(materiasCarga)
+    }, [materiasCarga]);
+
 
     return(
         <section className="contentReins-carga">
@@ -89,10 +102,17 @@ const CargaAcademica=()=>{
                     <h5 style={{color: "white"}}>Correo</h5>
                     <input type="email" className="form-control" value={correo} style={{width: "500px", height: "30px"}}/>
                 </div>
-                <br/>
 
-                    <button className="btnAdd btn-outline-info" onClick={addMaterias} type="button">Agregar</button>
 
+                    <button className="btnAdd btn-outline-info"  onClick={()=>{setOpenModal(true)}} type="button">Agregar</button>
+
+
+                {!!openModal &&(
+                    <ListaMaterias
+                    setOpenModal={setOpenModal}
+                    setMateriasCarga={setMateriasCarga}
+                    />
+                )}
                     <table className="tableR table-bordered" style={{width: "730px", height: "50px"}}>
                         <thead>
                         <tr>
@@ -116,10 +136,22 @@ const CargaAcademica=()=>{
                             <td><input type="checkbox" aria-label="Checkbox for following text input"/></td>
                         </tr>
 
+                        {materiasCarga.map((materia)=>(
+                            <tr key={materia.clave}>
+                                <td>{materia.clave}</td>
+                                <td>{materia.nombre}</td>
+                                <td>{materia.creditos}</td>
+                                <td></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"/></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"/></td>
+                                <td><input type="checkbox" aria-label="Checkbox for following text input"/></td>
+                            </tr>
+                        ))}
+
                         <tr>
                             <td></td>
                             <td>Total:</td>
-                            <td>5</td>
+                            <td>{totalCreditos()}</td>
                             <td></td>
                             <td></td>
                             <td></td>

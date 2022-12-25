@@ -1,21 +1,48 @@
 import React, {useState} from "react";
 import axios from "axios";
 import {useEffect} from "react";
-import CarreraItem from "@components/CarreraItem";
 import Cookie from "js-cookie";
-import {raw} from "html-loader";
+let clavesMaterias=[]
 const ListaMaterias=(props)=>{
     const [materias,setMaterias]=useState([]);
     const [materiasSelected,setMateriasSelected]=useState([])
+    const [materiasFinal,setMateriasFinal]=useState([]);
     const getMaterias= async () =>{
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
         const rta=await axios.get('http://localhost:3000/api/v1/materias')
         setMaterias(rta.data)
-        console.log(materias)
+    }
+
+    const agregarClaves=()=>{
+        let size_materias=materiasSelected.length
+        for (let i=0;i<size_materias;i++){
+            clavesMaterias.push(materiasSelected[i])
+        }
+
+        let materiasC=[]
+     //   const populateData = (data) => {materiasC.push(data)}
+        function axiosTest (clave) {
+            axios.get("http://localhost:3000/api/v1/materias/"+clave)
+                .then(function(response){
+                     materiasC=materiasFinal
+                    materiasC.push(response.data);
+                     setMateriasFinal(materiasC)
+                })
+                .catch(function(error){
+                    console.log(error);
+                });
+        }
+
+        for (let i=0;i<size_materias;i++){
+
+            axiosTest(clavesMaterias[i])
+        }
     }
 
     const addMaterias=()=>{
+        //agregarClaves();
+
         props.setMateriasCarga(materiasSelected)
 
        props.setOpenModal(false)
@@ -33,7 +60,7 @@ const ListaMaterias=(props)=>{
                   <input type="checkbox"  name="materias[]" id="materia" value={materia.clave} onChange={(e)=>{
                       if (e.target.checked){
                           let newList=materiasSelected
-                          newList.push(e.target.value)
+                          newList.push(materia)
                           setMateriasSelected(newList)
                       }
 
