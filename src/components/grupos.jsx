@@ -1,6 +1,12 @@
-import "../styles/grupostilo.css"
+import "../styles/Grupos.scss"
 import React from "react";
+import {useNavigate} from "react-router-dom";
 const Grupos = () => {
+    const navigate=useNavigate()
+    const handeleClick=(e)=>{
+        e.preventDefault()
+        navigate('/actas/materias')
+    }
     return (
         <div>
 			
@@ -8,45 +14,45 @@ const Grupos = () => {
 
                 <div className="mate justify-content-center row">
                     <div className="botones mr-3">
-                        <button type="button " className="btngru btn-outline-primary" onclick="location.href='materiasD.html'"
+                        <button type="button " className="btngru btn-outline-primary" onClick={handeleClick}
                             style={{color:"cyan"}}>3101</button>
                     </div>
                     <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary" onclick="location.href='materiasD.html'"
+                        <button type="button" className="btngru btn-outline-primary" onClick={handeleClick}
                             style={{color:"cyan"}}>3102</button>
                     </div>
                     <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary" onclick="location.href='materiasD.html'"
+                        <button type="button" className="btngru btn-outline-primary" onClick={handeleClick}
                             style={{color:"cyan"}}>3103</button>
                     </div>
                 </div>
 
                 <div className="mate justify-content-center row ">
                     <div className="botones mr-3">
-                        <button type="button " className="btngru btn-outline-primary " onclick="location.href='materiasD.html'"
+                        <button type="button " className="btngru btn-outline-primary " onClick={handeleClick}
                             style={{color:"cyan"}}>3301</button>
                     </div>
                     <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary " onclick="location.href='materiasD.html'"
+                        <button type="button" className="btngru btn-outline-primary " onClick={handeleClick}
                             style={{color:"cyan"}}>3302</button>
                     </div>
                     <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary" onclick="location.href='materiasD.html'"
+                        <button type="button" className="btngru btn-outline-primary" onClick={handeleClick}
                             style={{color:"cyan"}}>3501</button>
                     </div>
                 </div>
 
                 <div className="mate justify-content-center row ">
                     <div className="botones mr-3">
-                        <button type="button " className="btngru btn-outline-primary " onclick="location.href='materiasD.html'"
+                        <button type="button " className="btngru btn-outline-primary " onClick={handeleClick}
                             style={{color:"cyan"}}>3502</button>
                     </div>
                     <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary" onclick="location.href='materiasD.html'"
+                        <button type="button" className="btngru btn-outline-primary" onClick={handeleClick}
                             style={{color:"cyan"}}>3701</button>
                     </div>
                     <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary " onclick="location.href='materiasD.html'"
+                        <button type="button" className="btngru btn-outline-primary " onClick={handeleClick}
                             style={{color:"cyan"}}>3901</button>
 
                     </div>

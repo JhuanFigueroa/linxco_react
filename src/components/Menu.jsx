@@ -2,8 +2,11 @@ import React from "react";
 import '../styles/Menu.scss'
 import {Link, useNavigate} from "react-router-dom";
 import AppContext from "../context/AppContext";
+import {useAuth} from "../hooks/useAuth";
 
 const Menu = () => {
+    const auth=useAuth()
+    const user=auth.user
     const{addOperacion}=React.useContext(AppContext);
 
     const navigate=useNavigate()
@@ -14,7 +17,11 @@ const Menu = () => {
         }
 
         if (operacion==='reinscripcion'){
-            navigate('/reinscripcion/carga')
+            if (user.rol==2 || user.rol==5){
+                navigate('/reinscripcion/control')
+            }else {
+                navigate('/reinscripcion/carga')
+            }
         }
 
         if (operacion==='bajas'){
@@ -22,15 +29,31 @@ const Menu = () => {
         }
 
         if (operacion==='constancia'){
-            navigate('/control/constancias')
+            if (user.rol==2 || user.rol==5){
+                navigate('/control/constancias')
+            }else {
+                navigate('/constancias')
+            }
+
         }
 
         if (operacion==='credencial'){
             navigate('/control/credencializacion')
         }
 
-        if (operacion==='maestro'){
-            navigate('/maestros')
+        if (operacion==='acta'){
+            if (user.rol==2 || user.rol==3){
+                navigate('/control/actas')
+            }else{
+                navigate('/actas')
+            }
+        }
+        if (operacion==='horario'){
+            if (user.rol==2 || user.rol==5){
+                navigate('/control/horarios')
+            }else{
+                navigate('/horarios')
+            }
         }
 
     }
@@ -45,76 +68,72 @@ const Menu = () => {
                            <h3 style={{color: "white", textAlign: "center"}}>Menu</h3>
                            <h5 style={{color: "white",textAlign: "center",marginBottom: "19px"}}>de Opciones</h5>
                        </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='InscripcionCarreras.html'">Inscripcion
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='reinscripciones.html'">Reinscripcion
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='carrerasReinscripcionControl.html'">Reinscripcion Control
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='carrerasBajas.html'">Bajas
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='constancias.html'">Constancias
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='carreraConstanciaControl.html'">Constancias Control
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='credencializacion.html'">Credencializacion
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='bienvenidaAs.html'">Aspirantes
-                           </button>
-                       </section>
-                       <section className="btnMenu">
+                       {(user.rol==2 || user.rol==5) &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                       onClick={()=>handleClickInsvripcion('inscripcion')}>Inscripcion
+                               </button>
+                           </section>
+                       )}
+                       {(user.rol==2 || user.rol==4 || user.rol==5) &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                       onClick={()=>handleClickInsvripcion('reinscripcion')}>Reinscripcion
+                               </button>
+                           </section>
+                       )
+                       }
+
+                       {(user.rol==2 | user.rol==5) &&
+                           (
+                               <section className="btnMenu">
+                                   <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                           onClick={()=>handleClickInsvripcion('bajas')}>Bajas
+                                   </button>
+                               </section>
+                           )
+                       }
+
+                       {(user.rol==2 || user.rol==4 || user.rol==5) &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                       onClick={()=>handleClickInsvripcion('constancia')}>Constancias
+                               </button>
+                           </section>
+                       )
+                       }
+
+                       {(user.rol==2 || user.rol==5) && (
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                       onClick={()=>handleClickInsvripcion('credencial')}>Credencializacion
+                               </button>
+                           </section>
+                       )}
+                       {/*<section className="btnMenu">
                            <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
                                    onClick="location.href='carreraConstanciaControl'">Aspirantes Control
                            </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='horarios.html'">Horarios Jefes
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='horariosControlCarreras.html'">Horarios Control
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='horarioAlumnos.html'">Horarios Alumnos
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='carrerasMaestros.html'">Maestros
-                           </button>
-                       </section>
-                       <section className="btnMenu">
-                           <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
-                                   onClick="location.href='carrerasMaestrosControl.html'">Maestros Control
-                           </button>
-                       </section>
+                       </section>*/}
+
+                       {user.rol !=1 &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                       onClick={()=>handleClickInsvripcion('horario')}>Horarios
+                               </button>
+                           </section>
+                       )}
+
+
+                       {(user.rol==1 || user.rol==2 ||user.rol==5 )&&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                       onClick={()=>handleClickInsvripcion('acta')}>Actas
+                               </button>
+                           </section>
+                       )
+
+                       }
                    </nav>
 
                    <label htmlFor="btn-menu">✖️</label>

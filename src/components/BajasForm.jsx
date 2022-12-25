@@ -6,6 +6,10 @@ const BajasForm = () => {
 
                 <section className="contenedor-bajas-form">
                     <div className="form-group">
+                        <h5 style={{color:"white"}}>No. Matricula</h5>
+                        <input type="number" className="form-control" style={{width:"300px",height:"30px"}}/>
+                    </div>
+                    <div className="form-group">
                         <h5 style={{color: "rgb(255, 255, 255)"}}>Tipo de Baja</h5>
                         <button
                             className="btnComboCar btn-secondary dropdown-toggle"
@@ -29,7 +33,7 @@ const BajasForm = () => {
                         className="titleDoc"
                         style={{color: "rgb(250, 252, 252)", width: "100%", marginLeft: "20px"}}
                     >
-                        Seleccione Los Archivos a Subir
+                        Razon(es) baja
                     </h5>
 
                     <div className="form-check">
@@ -44,7 +48,7 @@ const BajasForm = () => {
                             htmlFor="defaultCheck1"
                             style={{color: "aliceblue"}}
                         >
-                            Certificado de estudios
+                            Problemas economicos
                         </label>
                     </div>
                     <div className="form-check">
@@ -59,7 +63,7 @@ const BajasForm = () => {
                             htmlFor="defaultCheck1"
                             style={{color: "aliceblue"}}
                         >
-                            Acta de calificaciones
+                            Problemas de salud
                         </label>
                     </div>
 

@@ -1,6 +1,13 @@
 import React from "react";
 import '../styles/DocumentosInscripcion.scss'
+import {useNavigate} from "react-router-dom";
 const DocumentosInscripcion=()=>{
+
+    const navigate=useNavigate()
+    const handleClick=(e)=>{
+        e.preventDefault()
+        navigate("/inscripcion/carga")
+    }
     return(
         <section className="cont-checks">
             <h2 className="titleDoc" style={{color: "azure", width: "100%", marginLeft: "20px"}}>Seleccione Los Archivos a
@@ -31,7 +38,7 @@ const DocumentosInscripcion=()=>{
                         </label>
                 </div>
                 <button type="button"
-                        className="btnInscribir btn-outline-primary" onClick="location.href='#'">INSCRIBIRME
+                        className="btnInscribir btn-outline-primary" onClick={handleClick}>SIGUIENTE
                 </button>
         </section>
 );

@@ -1,0 +1,35 @@
+.materias{
+  margin: 250px;
+  height: 650px;
+  width: 750px;
+  background: rgba(255, 255, 255, 0.1);
+  margin-top: 70px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.mate{
+  margin-top: 5px;
+}
+.btngru{
+  color: white;
+  text-decoration-style: none;
+  text-decoration-line: none;
+  font-size: 20px;
+  font-weight: 700!important;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.452);
+  width: 200px;
+  height: 200px;
+
+}
+.btngru:hover{
+  color: white;
+  text-decoration-style: none;
+  text-decoration-line: none;
+  cursor: pointer;
+}

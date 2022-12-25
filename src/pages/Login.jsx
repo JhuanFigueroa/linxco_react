@@ -34,7 +34,7 @@ const Login = () => {
         if (!user){
             return (
                 <div className="container">
-                    <div className="row justify-content-center pt-5 mt-5 m-1">
+                    <div className="row justify-content-center align-items-center pt-5 mt-5 m-1">
                         <div className="col-md-6 col-sm-8 col-xl-4 col-lg-5 formulario-as">
                             <form ref={form}>
                                 <div className="form-group text-center pt-3">

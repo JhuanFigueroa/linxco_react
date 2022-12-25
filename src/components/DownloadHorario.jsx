@@ -1,13 +1,13 @@
 import React from "react";
-
+import '../styles/Horarios.scss'
+import gif from '@imagenes/hor.gif'
 const DownloadHorario=()=>{
     return(
         <section className="ContentHorariosJefes">
             <div className="horariosJ">
                 <h2 className="textHJ">Descargar Archivo</h2><br/>
-                <button className="descargaHA btn-outline-primary"><img src="images/hor.gif" width="100%"
+                <button className="descargaHA btn-outline-primary"><img src={gif} width="100%"
                                                                         height="100%"/></button>
-                <button className="btnHA btn-outline-primary">Descargar</button>
             </div>
         </section>
     );

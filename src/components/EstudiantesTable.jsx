@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 import {useNavigate} from "react-router-dom";
+import '../styles/EstudiantesTable.scss'
 import AppContext from "../context/AppContext";
 
 const EstudiantesTable = () => {
@@ -17,7 +18,7 @@ const EstudiantesTable = () => {
     }
     return (
 
-        <section className="contenedor">
+        <section className="contenedor-estudiantes">
             <nav className="buscador d-flex align-items-center">
                 <form className="form-inline">
                     <input className="form-control mr-sm-2 col-7" type="search"  style={{width:"700px"}}
@@ -30,7 +31,7 @@ const EstudiantesTable = () => {
                 <thead>
                 <tr>
                     <th scope="col">MATRICULA</th>
-                    <th scope="col">NOMBRE</th>
+                    <th scope="col">NOMBRE COMPLETO</th>
                     <th scope="col">CARRERA</th>
                     <th scope="col">SEMESTRE</th>
                     <th scope="col">VALIDAR</th>
@@ -58,6 +59,9 @@ const EstudiantesTable = () => {
                 </tbody>
             </table>
 
+            {operacion==='bajas'&&(
+                <button className="btn-outline-primary btn-nuevo" type="button">AGREGAR</button>
+            )}
 
         </section>
     );

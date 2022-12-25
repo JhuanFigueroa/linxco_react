@@ -8,7 +8,7 @@ const InscripcionForm=()=>{
         navigate('/inscripcion/documentos')
     }
     return(
-        <section className="formulario">
+        <section className="formulario-inscripcion">
             <h3 style={{color: "white", marginLeft: "350px"}}>Inscripcion</h3>
             <section className="row">
                 <div className="form-group">

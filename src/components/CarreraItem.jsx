@@ -6,7 +6,8 @@ import AppContext from "../context/AppContext";
 const CarreraItem = ({carrera}) => {
     const {state}=useContext(AppContext)
     const operacion=state.operacion
-
+    const auth=useAuth()
+    const user=auth.user
         const navigate=useNavigate()
     const handleSubmit=(e)=>{
             e.preventDefault()
@@ -24,8 +25,15 @@ const CarreraItem = ({carrera}) => {
             navigate('/control/constancias/tabla')
         }
 
-        if (operacion==='maestro'){
-            navigate('/maestros/materias')
+        if (operacion==='acta'){
+            if (user.rol==1){
+                navigate('/actas/grupos')
+            }else{
+                navigate('/control/actas/materias')
+            }
+        }
+        if (operacion==='horario'){
+            navigate('/horarios')
         }
     }
     return (

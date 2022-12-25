@@ -5,7 +5,7 @@ const FacturaReinscripcion=()=>{
     const auth=useAuth()
     const user=auth.user
     return(
-        <section className="contentFactReins">
+        <section className="contentFactReins" style={{height:"550px",marginRight:"200px"}}>
             <h2 className="titleCarga" style={{color: "white", marginLeft: "30px"}}>Carga Academica</h2><br/>
             <div className="form-group row">
                 <h5 htmlFor="inputText" className="textNC">No. de Comprobante :</h5>

@@ -30,6 +30,8 @@ import Aspirantes from "@components/aspirantes";
 import BienvenidaAs from "@components/bienvenidaAs";
 import Examen from "@components/examen";
 import Materias from "@components/materias-container";
+import Grupos from "@components/grupos";
+import MateriasContainer from "@components/materias-container";
 
 const App=()=>{
     const operacion=useOperacion()
@@ -38,7 +40,6 @@ const App=()=>{
         <AuthProvider>
             <AppContext.Provider value={operacion}>
             <Router>
-
                 <Layout>
 
                     <Routes>
@@ -60,11 +61,15 @@ const App=()=>{
                         <Route exact path="/inscripcion/carreras" element={<AuthRoute><TableAspirantes/></AuthRoute>}/>
                         <Route exact path="/inscripcion/estudiante" element={<AuthRoute><InscripcionForm/></AuthRoute>}/>
                         <Route exact path="/inscripcion/documentos" element={<AuthRoute><DocumentosInscripcion/></AuthRoute>}/>
+
+                        <Route exact path="/inscripcion/carga" element={<AuthRoute><CargaAcademica/></AuthRoute>}/>
+
+
                         <Route exact path="/reinscripcion/carga" element={<AuthRoute><CargaAcademica/></AuthRoute>}/>
                         <Route exact path="/reinscripcion/factura" element={<AuthRoute><FacturaReinscripcion/></AuthRoute>}/>
                         <Route exact path="/reinscripcion/control" element={<AuthRoute><Carreras/></AuthRoute>}/>
                         <Route exact path="/reinscripcion/control/estudiantes" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
-                        <Route exact path="/horarios" element={<AuthRoute><Horario/></AuthRoute>}/>
+
                         {/*BAJAS*/}
                         <Route exact path="/control/bajas" element={<AuthRoute><Carreras/></AuthRoute>}/>
                         <Route exact path="/control/bajas/estudiante" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
@@ -80,8 +85,17 @@ const App=()=>{
 
                         <Route exact path="/control/credencializacion" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
 
-                        <Route exact path="/maestros" element={<AuthRoute><Carreras/></AuthRoute>}/>
-                        <Route exact path="/maestros/materias" element={<AuthRoute><Materias/></AuthRoute>}/>
+                        <Route exact path="/horarios" element={<AuthRoute><Horario/></AuthRoute>}/>
+                        <Route exact path="/control/horarios" element={<AuthRoute><Carreras/></AuthRoute>}/>
+
+                        {/*Actas*/}
+                        <Route exact path="/control/actas" element={<AuthRoute><Carreras/></AuthRoute>}/>
+                        <Route exact path="/control/actas/materias" element={<AuthRoute><Materias/></AuthRoute>}/>
+                        <Route exact path="/actas" element={<AuthRoute><Carreras/></AuthRoute>}/>
+
+                        <Route exact path="/actas/grupos" element={<AuthRoute><Grupos/></AuthRoute>}/>
+                        <Route exact path="/actas/materias" element={<AuthRoute><MateriasContainer/></AuthRoute>}/>
+
 
                     </Routes>
 

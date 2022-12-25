@@ -1,18 +1,44 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import '../styles/CargaAcademica.scss'
 import {useNavigate} from "react-router-dom";
 import {useAuth} from "../hooks/useAuth";
+import {useContext} from "react";
+import AppContext from "../context/AppContext";
+import axios from "axios";
+const url='http://localhost:3000/api/v1/alumnos/datosCarga/'
 const CargaAcademica=()=>{
+    const {state}=useContext(AppContext)
+    const operacion=state.operacion
     const auth=useAuth()
     const user=auth.user
+    const periodo=auth.periodo
     const navigate=useNavigate();
+    const [nombre,setNombre]=useState('');
+    const [correo,setCorreo]=useState('');
+    const [celular,setCelular]=useState('');
+    const [carrera,setCarrera]=useState('');
+
+    const getCargaData= async ()=>{
+        const res = await axios.get(url+user.clave);
+        const datos=res.data[0]
+        setNombre(datos.nombre)
+        setCelular(datos.telefono)
+        setCorreo(datos.correo)
+        setCarrera(datos.carrera)
+    }
     const hadleClick=(e)=>{
         e.preventDefault();
         navigate('/reinscripcion/factura')
     }
-    const addMateria=()=>{
 
+    const addMaterias=(e)=>{
+        e.preventDefault()
+        setOpenModal(true)
     }
+
+    useEffect(  () => {
+        getCargaData()
+    }, []);
 
     return(
         <section className="contentReins-carga">
@@ -35,44 +61,38 @@ const CargaAcademica=()=>{
                 </section>
                 <div className="form-group">
                     <h5 style={{color: "white"}}>Nombre del estudiante</h5>
-                    <input type="text" className="form-control" style={{width: "540px", height: "30px"}}/>
+                    <input type="text" className="form-control" value={nombre} style={{width: "540px", height: "30px"}}/>
                 </div>
                 <div className="form-group">
                     <h5 style={{color: "white"}}>No. Matricula</h5>
-                    <input type="number" className="form-control" style={{width: "200px", height: "30px"}}/>
+                    <input type="number" className="form-control" value={user.clave} style={{width: "200px", height: "30px"}}/>
                 </div>
                 <div className="form-group">
                     <h5 style={{color: "white"}}>Periodo</h5>
-                    <input type="text" className="form-control" style={{width: "160px", height: "30px"}}/>
+                    <input type="text" className="form-control" value={periodo[0].numero} style={{width: "160px", height: "30px"}}/>
                 </div>
                 <div className="form-group">
                     <h5 style={{color: "white"}}>Fecha</h5>
                     <input type="date" className="form-control" style={{width: "160px", height: "30px"}}/>
                 </div>
+
                 <div className="form-group">
                     <h5 style={{color: "white"}}>Carrera</h5>
-                    <button className="btnComboCar btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                            aria-expanded="false" style={{width: "390px", height: "30px", color: "white"}}>
-                        seleccionar
-                    </button>
-                    <div className="dropdown-menu">
-                        <a className="dropdown-item" href="#">Carrera 1</a>
-                        <a className="dropdown-item" href="#">carrera 2</a>
-                        <a className="dropdown-item" href="#">carrera 3</a>
-                    </div>
+                    <input type="text" className="form-control" value={carrera} style={{width: "390px", height: "30px"}}/>
                 </div>
 
                 <div className="form-group">
                     <h5 style={{color: "white"}}>No. Celular</h5>
-                    <input type="number" className="form-control" style={{width: "240px", height: "30px"}}/>
+                    <input type="number" className="form-control" value={celular} style={{width: "240px", height: "30px"}}/>
                 </div>
                 <div className="form-group">
                     <h5 style={{color: "white"}}>Correo</h5>
-                    <input type="email" className="form-control" style={{width: "500px", height: "30px"}}/>
+                    <input type="email" className="form-control" value={correo} style={{width: "500px", height: "30px"}}/>
                 </div>
                 <br/>
 
-                    <button className="btnAdd btn-outline-info" onClick={addMateria} type="button">Agregar</button>
+                    <button className="btnAdd btn-outline-info" onClick={addMaterias} type="button">Agregar</button>
+
                     <table className="tableR table-bordered" style={{width: "730px", height: "50px"}}>
                         <thead>
                         <tr>
@@ -95,15 +115,7 @@ const CargaAcademica=()=>{
                             <td><input type="checkbox" aria-label="Checkbox for following text input"/></td>
                             <td><input type="checkbox" aria-label="Checkbox for following text input"/></td>
                         </tr>
-                        <tr>
-                            <td>.</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+
                         <tr>
                             <td></td>
                             <td>Total:</td>
@@ -115,7 +127,11 @@ const CargaAcademica=()=>{
                         </tr>
                         </tbody>
                     </table>
-                {user.rol==3 ?(
+                {(user.rol==2 || user.rol==5) && (operacion==="inscripcion") ?(
+                    <button className="btnContReins2 btn-outline-primary"
+                            >Finalizar
+                    </button>
+                    ): (user.rol==2 || user.rol==5) ? (
                         <section className="row-btn">
                             <button className="btnContReins2-ca btn-outline-primary"
                                     onClick="location.href='facturaReinscripcionControl.html'">Incompleto

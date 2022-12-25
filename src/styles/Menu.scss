@@ -1,4 +1,3 @@
-
 /*Menù lateral*/
 #btn-menu {
   display: none;
@@ -60,4 +59,119 @@
   color: #fff;
   cursor: pointer;
   font-size: 18px;
+}
+
+/*Fin de Menù lateral*/
+/*FORMULARIO ASPIRANTES*/
+.form-control{
+  background: rgba(0, 0, 0, 0.3);
+  border-style: none;
+  transition: 0.5 ease-in;
+  outline: none;
+  box-shadow: none;
+
+}
+.form-control:focus{
+  background: none;
+  box-shadow: none;
+  outline: none;
+}
+.form-control::placeholder{
+  color: rgb(244, 248, 248);
+
+
+}
+.guardar{
+  color: white;
+  text-decoration-style: none;
+  text-decoration-line: none;
+  font-size: 20px;
+  font-weight: 700!important;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.452);
+
+}
+.guardar:hover{
+  color: white;
+  text-decoration-style: none;
+  text-decoration-line: none;
+  cursor: pointer;
+}
+.containerAs{
+  width: 1300px;
+}
+.formulario{
+  background: rgba(255, 248, 248, 0.1);
+  margin-top: 70px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.63) ;
+  backdrop-filter: blur(3px) ;
+}
+.form-control{
+  background: rgba(0, 0, 0, 0.3);
+  border-style: none;
+  transition: 0.5 ease-in;
+  outline: none;
+  box-shadow: none;
+}
+.form-control:focus{
+  background: none;
+  box-shadow: none;
+  outline: none;
+}
+
+/*FIN FORMULARIO ASPIRANTES*/
+.barbutton{
+  margin-top: 200px;
+  background: rgba(255, 248, 248, 0.1);
+  width: auto;
+  height: 600px;
+}
+
+/*MENSAJE*/
+.mensaje{
+  margin-top: 250px;
+  margin-left: 550px;
+  background: rgba(0, 0, 0, 0.4);
+  width: 590px;
+}
+
+/*FIN MENSAJE*/
+
+/*Factura*/
+
+.factura{
+  margin-top: 100px;
+}
+.mensajefac{
+  margin-top: 50px;
+  margin-left: 550px;
+  background: rgba(0, 0, 0, 0.4);
+  width: 590px;
+  /*height: 200px;*/
+
+}
+.btnfin{
+  margin-left: 650px;
+}
+.btnsub{
+  margin-left: 650px;
+
+}
+/*fin Factura*/
+
+.btnMenu{
+  border: solid 0.5px rgb(1, 238, 255);
+  width: 250px;
+  height: 35px;
+}
+
+.btnM{
+  margin-top: 1px;
+  width: 100%;
+  height: 100%;
+
 }

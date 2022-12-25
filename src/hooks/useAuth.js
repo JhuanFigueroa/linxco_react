@@ -7,6 +7,7 @@ const AuthContext =createContext();
 
 function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
+    const [periodo,setPeriodo]=useState(null);
 
     const singIn=async (data)=> {
         const res = await axios.post(api + 'login', data);
@@ -33,13 +34,15 @@ function AuthProvider({ children }) {
             axios.defaults.headers.Authorization='Bearer '+cookie;
             const {data:user}= await axios.get(api+'profile');
             auth.setUser(user)
+            const {data:periodo}=await axios.get("http://localhost:3000/api/v1/tramites/periodo")
+            setPeriodo(periodo)
         }else {
             return <Navigate to="/" />;
         }
     }
 
 
-    const auth = { user,setUser ,singIn,autoLogin,Logout};
+    const auth = { user,setUser ,singIn,autoLogin,Logout,periodo,setPeriodo};
 
     return (
         <AuthContext.Provider value={auth}>
