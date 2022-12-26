@@ -21,8 +21,6 @@ const CargaAcademica=()=>{
     const [materiasCarga,setMateriasCarga]=useState([])
     const [tiposCarga,setTiposCarga]=useState([])
 
-    const [idCarga,setIdCarga]=useState(null)
-
     const [nombre,setNombre]=useState('');
     const [correo,setCorreo]=useState('');
     const [celular,setCelular]=useState('');
