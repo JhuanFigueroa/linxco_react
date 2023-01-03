@@ -32,6 +32,12 @@ import Examen from "@components/examen";
 import Materias from "@components/materias-container";
 import Grupos from "@components/grupos";
 import MateriasContainer from "@components/materias-container";
+import Carrerasform from "@components/Carrerasform";
+import VistaCarrera from "@components/VistaCarrera";
+import EmpleadoForm from "@components/EmpleadoForm";
+import VistaEmpleado from '../components/vistaEmpleado';
+import PeriodoForm from '../components/PeriodoForm';
+import VistaPeriodo from "@components/VistaPeriodo";
 
 const App=()=>{
     const operacion=useOperacion()
@@ -95,7 +101,21 @@ const App=()=>{
 
                         <Route exact path="/actas/grupos" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/materias" element={<AuthRoute><MateriasContainer/></AuthRoute>}/>
+                        
+                        {/*Carreras*/}
+                        <Route exact path="/carrera/Insertar" element={<AuthRoute><Carrerasform/></AuthRoute>}/>
+                        <Route exact path="/carrera/Ver" element={<AuthRoute><VistaCarrera/></AuthRoute>}/>
+                        <Route exact path="/carrera/Insertar/:clave" element={<AuthRoute><Carrerasform/></AuthRoute>}/>
 
+                        {/*enmleado*/}
+                        <Route exact path="/empleado/Insertar" element={<AuthRoute><EmpleadoForm/></AuthRoute>}/>
+                        <Route exact path="/empleado/Ver" element={<AuthRoute><VistaEmpleado/></AuthRoute>}/>
+                        <Route exact path="/empleado/Insertar/:id1" element={<AuthRoute><EmpleadoForm/></AuthRoute>}/>
+
+                        {/*Periodo*/}
+                        <Route exact path="/periodo/Insertar" element={<AuthRoute><PeriodoForm/></AuthRoute>}/>
+                        <Route exact path="/periodo/Ver" element={<AuthRoute><VistaPeriodo/></AuthRoute>}/>
+                        <Route exact path="/periodo/Insertar/:idPe" element={<AuthRoute><PeriodoForm/></AuthRoute>}/>
 
                     </Routes>
 

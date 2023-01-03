@@ -62,7 +62,7 @@ const Login = () => {
                                         <span><a href="" className="registrarse">REGISTRARSE</a></span>
                                     </div>
                                     <div className=" text-center pt-4">
-                                        <span><Link to={'/aspirante'} className="aspirante">ASPIRANTES</Link></span>
+                                        <span><Link to={'/aspirante/form'} className="aspirante">ASPIRANTES</Link></span>
                                     </div>
                                 </div>
                             </form>

@@ -1,0 +1,136 @@
+.facturaPe{
+    margin-top: 90px;
+	margin-left: 250px;
+	height: 350px;
+	width: 800px;
+	background: rgba(255, 255, 255, 0.1);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(3px);
+}
+.tablePe{
+	color: #fff;
+	border-radius: 0.5rem;
+	margin-top: 30px;
+	margin-left: 1px;
+	margin-bottom: auto;
+	table-layout: auto;
+	text-align: center;
+}
+
+.btnEditPe{
+	background-color: transparent;
+	border: 1px solid rgb(74, 228, 86);
+    border-radius: 0.4rem;
+	width: 50px;
+	height: 50px;
+	background-image: url("../assets/imgs/edit.png");
+	background-repeat: no-repeat;
+}
+.btnDeletePe{
+	background-color: transparent;
+	border-radius: 0.4rem;
+	border: 1px solid rgb(255, 0, 0);
+	width: 50px;
+	height: 50px;
+	background-image: url("../assets/imgs/eliminar.png");
+	background-repeat: no-repeat;
+}
+.btnPe{
+    height: 40px;
+    width: 200px;
+    background-color: transparent;
+    color: white;
+    margin-left: 300px;
+    border: solid 2px rgb(0, 195, 255);
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	.factura{
+		margin-top: 60px;
+		margin-left: 30px;
+		height: 480px;
+		width: 700px;
+		background: rgba(255, 255, 255, 0.1);
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+	}
+	.form-control{
+		width: 300px; 
+		background: rgba(0, 0, 0, 0.3);
+		color:white;
+		margin-left: 20px;
+	}
+	h5{
+		margin-top: 5px; 
+		color: white;
+		margin-left: 20px;
+	}
+	.btnFactsA{
+		border-radius: 0.5rem;
+		height: 40px;
+		width: 150px;
+		margin-left: 120px;
+		color: white;
+		background-color: transparent;
+	}
+	.btnFactsAB{
+		background-color: transparent;
+		border-radius: 0.5rem;
+		height: 40px;
+		width: 150px;
+		margin-left: 150px;
+		color: white;
+	}
+}
+@media screen and (max-width: 967px) {
+	.factura{
+		margin-top: 70px;
+		margin-left: 50px;
+		height: 480px;
+		width: 830px;
+		background: rgba(255, 255, 255, 0.1);
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+	}
+	.form-control{
+		width: 200px;
+		height: 30px; 
+		background: rgba(0, 0, 0, 0.3);
+		color:white;
+		margin-left: 20px;
+	}
+	h5{
+		margin-top: 5px; 
+		color: white;
+		margin-left: 20px;
+	}
+	.btnFactsA{
+		border-radius: 0.5rem;
+		height: 40px;
+		width: 150px;
+		margin-left: 80px;
+		color: white;
+		background-color: transparent;
+	}
+	.btnFactsAB{
+		background-color: transparent;
+		border-radius: 0.5rem;
+		height: 40px;
+		width: 150px;
+		margin-left: 40px;
+		color: white;
+	}
+	.cmbcarre{
+		background-color: rgba(0, 0, 0, 0.5); 
+		color: white; 
+		height: 30px; 
+		width: 200px; 
+		margin-left: 20px;
+	}
+
+}
