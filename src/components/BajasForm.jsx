@@ -1,30 +1,90 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import '../styles/BajasForm.scss'
-
+import axios from "axios";
+import Cookie from "js-cookie";
+import {useNavigate} from "react-router-dom";
+let idB=0
 const BajasForm = () => {
+
+    const navigate=useNavigate()
+    const [razones,setRazones]=useState([]);
+    const [tipoBaja,setTipoBaja]=useState([])
+    const [razonBaja,setRazonesBaja]=useState([])
+    const [matricula,setMatricula]=useState('')
+
+    const getRazones=async ()=>{
+        const rta=await axios.get('http://localhost:3000/api/v1/bajas/razones');
+        setRazones(rta.data)
+    }
+
+    const handleClick=()=>{
+        const tiempoTranscurrido = Date.now();
+        const hoy = new Date(tiempoTranscurrido);
+        const data={
+            'tipo':tipoBaja,
+            'fecha':hoy
+        }
+
+        const cookie = Cookie.get("token");
+        axios.defaults.headers.Authorization = "Bearer " + cookie;
+        const rta=axios.post('http://localhost:3000/api/v1/bajas',data)
+            .then(function (response){
+                idB=response.data
+                const dta={
+                    'idBaja':idB,
+                    'matriculaAlumno':matricula
+                }
+
+                axios.defaults.headers.Authorization = "Bearer " + cookie;
+                const res=axios.post('http://localhost:3000/api/v1/baja-alumno',dta)
+                razonBaja.map(razon=>{
+                    const dtaRazobBaja={
+                        'idBaja':idB,
+                        'claveRazon':razon
+                    }
+                    const cookie = Cookie.get("token");
+                    axios.defaults.headers.Authorization = "Bearer " + cookie;
+                    axios.post('http://localhost:3000/api/v1/bajas/razones',dtaRazobBaja)
+                })
+            })
+
+        navigate('/home')
+
+    }
+    useEffect(()=>{
+        getRazones()
+    },[])
     return (
 
                 <section className="contenedor-bajas-form">
                     <div className="form-group">
                         <h5 style={{color:"white"}}>No. Matricula</h5>
-                        <input type="number" className="form-control" style={{width:"300px",height:"30px"}}/>
+                        <input type="number" className="form-control" style={{width:"300px",height:"30px"}}
+                        onChange={(e)=>{setMatricula(e.target.value)}}
+                        />
                     </div>
                     <div className="form-group">
                         <h5 style={{color: "rgb(255, 255, 255)"}}>Tipo de Baja</h5>
-                        <button
+                        <select
                             className="btnComboCar btn-secondary dropdown-toggle"
                             type="button"
+                            onChange={(e) => {
+                                setTipoBaja(e.target.value)
+                            }}
                             data-toggle="dropdown"
                             aria-expanded="false"
-                            style={{width: "390px", height: "30px", color: "white"}}
+                            style={{width: "390px", height: "30px"}}
                         >
-                            seleccionar
-                        </button>
-                        <div className="dropdown-menu">
-                            <a className="dropdown-item" href="#">Carrera 1</a>
-                            <a className="dropdown-item" href="#">carrera 2</a>
-                            <a className="dropdown-item" href="#">carrera 3</a>
-                        </div>
+                            <option>SELECCIONE</option>
+
+                                <option>
+                                    BAJA TEMPORAL
+                                </option>
+                            <option>
+                                BAJA DEFINITIVA
+                            </option>
+
+                        </select>
                     </div>
 
                     <br/>
@@ -36,41 +96,37 @@ const BajasForm = () => {
                         Razon(es) baja
                     </h5>
 
-                    <div className="form-check">
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="defaultCheck1"
-                        />
-                        <label
+
+                        {razones.map(razon=>(
+                            <div className="form-check" key={razon.clave}>
+                            <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value={razon.clave}
+                                id="defaultCheck1"
+                                onChange={(e)=>{
+                                    if (e.target.checked){
+                                        let newList=razonBaja
+                                        newList.push(razon.clave)
+                                        setRazonesBaja(newList)
+                                    }
+
+                                }}
+                            />
+                            <label
                             className="form-check-label"
                             htmlFor="defaultCheck1"
                             style={{color: "aliceblue"}}
-                        >
-                            Problemas economicos
-                        </label>
-                    </div>
-                    <div className="form-check">
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="defaultCheck1"
-                        />
-                        <label
-                            className="form-check-label"
-                            htmlFor="defaultCheck1"
-                            style={{color: "aliceblue"}}
-                        >
-                            Problemas de salud
-                        </label>
-                    </div>
+                            >
+                                {razon.descripcion}
+                            </label>
+                            </div>
+                        ))}
 
                     <button
                         type="button"
                         className="btnInscribir btn-outline-primary"
-                        onClick="location.href='#'"
+                        onClick={handleClick}
                         style=
                             {{
                                 width: "300px",
@@ -79,6 +135,7 @@ const BajasForm = () => {
                                 marginTop: "80px",
                                 borderRadius: "0.5rem"
                             }}
+
                     >
                         GUARDAR
                     </button>

@@ -32,6 +32,7 @@ import Examen from "@components/examen";
 import Materias from "@components/materias-container";
 import Grupos from "@components/grupos";
 import MateriasContainer from "@components/materias-container";
+import RenunciasSeg from "@components/RenunciasSeg";
 
 const App=()=>{
     const operacion=useOperacion()
@@ -67,12 +68,15 @@ const App=()=>{
 
                         <Route exact path="/reinscripcion/carga" element={<AuthRoute><CargaAcademica/></AuthRoute>}/>
                         <Route exact path="/reinscripcion/factura" element={<AuthRoute><FacturaReinscripcion/></AuthRoute>}/>
-                        <Route exact path="/reinscripcion/control" element={<AuthRoute><Carreras/></AuthRoute>}/>
-                        <Route exact path="/reinscripcion/control/estudiantes" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
 
+                        <Route exact path="/reinscripcion/control" element={<AuthRoute><Carreras/></AuthRoute>}/>
+                        <Route exact path="/reinscripcion/control/estudiantes/:clave" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
+                        <Route exact path="/reinscripcion/control/carga/:matricula" element={<AuthRoute><CargaAcademica/></AuthRoute>}/>
+                        <Route exact path="/reinscripcion/control/factura/:matricula" element={<AuthRoute><FacturaReinscripcion/></AuthRoute>}/>
+                    
                         {/*BAJAS*/}
                         <Route exact path="/control/bajas" element={<AuthRoute><Carreras/></AuthRoute>}/>
-                        <Route exact path="/control/bajas/estudiante" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
+                        <Route exact path="/control/bajas/estudiantes/:clave" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
                         <Route exact path="/control/bajas/form" element={<AuthRoute><BajasForm/></AuthRoute>}/>
                         {/*Constancias*/}
                         <Route exact path="/constancias" element={<AuthRoute><Constancias/></AuthRoute>}/>
@@ -95,6 +99,9 @@ const App=()=>{
 
                         <Route exact path="/actas/grupos" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/materias" element={<AuthRoute><MateriasContainer/></AuthRoute>}/>
+
+
+                        <Route exact path="/renuncia-seguro" element={<AuthRoute><RenunciasSeg/></AuthRoute>}/>
 
 
                     </Routes>
