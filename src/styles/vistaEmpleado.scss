@@ -1,8 +1,9 @@
 .formE{
     margin-top: 90px;
-	margin-left: 100px;
+	margin-left: 10px;
+	border-bottom: 10px;
 	height: auto;
-	width: 900px;
+	width: 800px;
 	background: rgba(255, 255, 255, 0.1);
 	padding: 20px;
 	border-radius: 10px;
@@ -12,7 +13,7 @@
 .tableE{
 	color: #fff;
 	border-radius: 0.5rem;
-	margin-top: 30px;
+	margin-top: 10px;
 	margin-left: 1px;
 	margin-bottom: auto;
 	table-layout: auto;
@@ -37,101 +38,105 @@
 	background-image: url("../assets/imgs/eliminar.png");
 	background-repeat: no-repeat;
 }
-.btnE{
+.btnVistaEA{
     height: 40px;
     width: 100px;
     background-color: transparent;
     color: white;
-    margin-top: 20px;
-    margin-left: 400px;
+    margin-top: 10px;
+    margin-left: 200px;
     border: solid 2px rgb(0, 195, 255);
+	margin-bottom: 10px;
+}
+.btnVistaEB{
+    height: 40px;
+    width: 100px;
+    background-color: transparent;
+    color: white;
+    margin-top: 10px;
+    margin-left: 200px;
+    border: solid 2px rgb(0, 195, 255);
+	margin-bottom: 10px;
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-	.formEmple{
-		margin-top: 60px;
+	.formE{
+		margin-top: 90px;
 		margin-left: 30px;
-		height: 480px;
-		width: 700px;
+		height: auto;
+		width: 670px;
 		background: rgba(255, 255, 255, 0.1);
 		padding: 20px;
 		border-radius: 10px;
 		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 		backdrop-filter: blur(3px);
 	}
-	.form-control{
-		width: 300px; 
-		background: rgba(0, 0, 0, 0.3);
-		color:white;
-		margin-left: 20px;
+	.tableE{
+		width: 500px;
+		color: #fff;
+		border-radius: 0.5rem;
+		margin-top: 30px;
+		margin-left: 1px;
+		table-layout: auto;
+		text-align: center;
 	}
 	h5{
 		margin-top: 5px; 
 		color: white;
 		margin-left: 20px;
 	}
-	.btnFactsA{
-		border-radius: 0.5rem;
+	.btnVistaEA{
 		height: 40px;
-		width: 150px;
+		width: 100px;
+		background-color: transparent;
+		color: white;
+		margin-top: 10px;
 		margin-left: 120px;
-		color: white;
-		background-color: transparent;
+		border: solid 2px rgb(0, 195, 255);
 	}
-	.btnFactsAB{
-		background-color: transparent;
-		border-radius: 0.5rem;
+	.btnVistaEB{
 		height: 40px;
-		width: 150px;
-		margin-left: 150px;
+		width: 100px;
+		background-color: transparent;
 		color: white;
+		margin-top: 10px;
+		margin-left: 200px;
+		border: solid 2px rgb(0, 195, 255);
 	}
 }
 @media screen and (max-width: 767px) {
-	.formEmple{
-		margin-top: 70px;
-		margin-left: 50px;
-		height: 450px;
-		width: 530px;
+	.formE{
+		margin-top: 120px;
+		margin-left: 5px;
+		height: auto;
+		width: 660px;
 		background: rgba(255, 255, 255, 0.1);
 		padding: 20px;
 		border-radius: 10px;
 		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 		backdrop-filter: blur(3px);
 	}
-	.form-control{
-		width: 200px;
-		height: 30px; 
-		background: rgba(0, 0, 0, 0.3);
-		color:white;
-		margin-left: 20px;
-	}
 	h5{
 		margin-top: 5px; 
 		color: white;
 		margin-left: 20px;
 	}
-	.btnFactsA{
-		border-radius: 0.5rem;
+	.btnVistaEA{
 		height: 40px;
-		width: 150px;
-		margin-left: 80px;
+		width: 100px;
+		background-color: transparent;
 		color: white;
-		background-color: transparent;
+		margin-top: 10px;
+		margin-left: 155px;
+		border: solid 2px rgb(0, 195, 255);
 	}
-	.btnFactsAB{
-		background-color: transparent;
-		border-radius: 0.5rem;
+	.btnVistaEB{
 		height: 40px;
-		width: 150px;
-		margin-left: 40px;
+		width: 100px;
+		background-color: transparent;
 		color: white;
-	}
-	.cmbcarre{
-		background-color: rgba(0, 0, 0, 0.5); 
-		color: white; 
-		height: 30px; 
-		width: 200px; 
-		margin-left: 20px;
+		margin-top: 10px;
+		margin-left: 150px;
+		border: solid 2px rgb(0, 195, 255);
 	}
 
 }

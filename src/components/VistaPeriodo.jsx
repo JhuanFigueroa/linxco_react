@@ -25,9 +25,9 @@ const VistaPeriodo = () =>{
     const reload =()=>{
         Window.location.reload(true)
     }
-    function cambioVistaOperacionEditat(id){
+    function cambioVistaOperacionEditat(id2){
         addOperacion('cambioOperacion1')
-        navigate(`/periodo/Insertar/${id}`)
+        navigate(`/periodo/Insertar/${id2}`)
 
     }
     function cambioVistaOperacionAgregart(){
@@ -35,18 +35,20 @@ const VistaPeriodo = () =>{
         navigate('/periodo/Insertar')
 
     }
-    function eliminarCampo(id1){
+    function eliminarCampo(id2){
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        axios.delete('http://localhost:3000/api/v1/perido/'+id1+'')
-        llenarTabla()
+        axios.delete('http://localhost:3000/api/v1/periodo/'+id2+'')
+        llenarTablaPe()
     }
 
 
     return(
         <><div className="capa"></div>
         <section className="facturaPe row">
-            <table className="tablePe table-bordered">
+        <button className="btnPerA btn-outline-primary" onClick={()=>cambioVistaOperacionAgregart()}>Agregar</button>
+            <button className="btnPeB btn-outline-primary" onClick={()=>navigate('/home')}>Finalizar</button>
+            <table className="tablePeri table-bordered">
                 <thead>
                     <tr>
                         <th scope="col">No.Periodo</th>
@@ -68,14 +70,12 @@ const VistaPeriodo = () =>{
                                             <button className="btnEditC btn-outline-success" type="button" onClick={()=>cambioVistaOperacionEditat(tipo.id_periodo)}></button>
                                         </td>
                                         <td>
-                                            <button className="btnDeleteC btn-outline-danger" type="button" ></button>
+                                            <button className="btnDeleteC btn-outline-danger" type="button" onClick={()=>eliminarCampo(tipo.id_periodo)}></button>
                                         </td>
                                     </tr>
 						        ))}
                 </tbody>
             </table>
-            <button className="btnPe btn-outline-primary" onClick={()=>cambioVistaOperacionAgregart()}>Agregar</button>
-            <button className="btnPe btn-outline-primary" onClick={()=>navigate('/home')}>Finalizar</button>
 
         </section></>
     )

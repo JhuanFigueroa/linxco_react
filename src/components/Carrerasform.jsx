@@ -76,29 +76,29 @@ const Carrerasform=()=>{
 
     return(
         <><div className="capa"></div>
-        <section className="formulario row">
+        <section className="carreraV row">
             <div className="form-group">
                 <h5>Clave de la Carrera</h5>
-                {operacion==='cambioOperacion'?(<input type="text" readOnly className="form-control" value={claveCarrera} onChange={(e)=>{setclaveCarrera(e.target.value)}}></input>):(<input type="text" className="form-control" value={claveCarrera} onChange={(e)=>{setclaveCarrera(e.target.value)}}></input>)}
+                {operacion==='cambioOperacion'?(<input type="text" readOnly className="form-carrera" value={claveCarrera} onChange={(e)=>{setclaveCarrera(e.target.value)}}></input>):(<input type="text" className="form-carrera" value={claveCarrera} onChange={(e)=>{setclaveCarrera(e.target.value)}}></input>)}
             </div>
             <div className="form-group">
                 <h5>Nombre de la Carrera</h5>
-                <input type="text" className="form-control" value={nombreCarrera} onChange={(e)=>{setnombreCarrera(e.target.value)}}/>
+                <input type="text" className="form-carrera" value={nombreCarrera} onChange={(e)=>{setnombreCarrera(e.target.value)}}/>
             </div>
             <div className="form-group">
                 <h5>Especialidad</h5>
-                <input type="text" className="form-control" value={especialidadCarrera} onChange={(e)=>{setespecialidadCarrera(e.target.value)}}/>
+                <input type="text" className="form-carrera" value={especialidadCarrera} onChange={(e)=>{setespecialidadCarrera(e.target.value)}}/>
             </div>
             <div className="form-group">
                 <h5>Plan de Estudios</h5>
-                <input type="text" className="form-control" value={planEsCarrera} onChange={(e)=>{setplanEsCarrera(e.target.value)}}/>
+                <input type="text" className="form-carrera" value={planEsCarrera} onChange={(e)=>{setplanEsCarrera(e.target.value)}}/>
             </div>
             <div className="form-group">
                 <h5>Imagen</h5>
-                <input type="file" lassName="btn btn-block subir"  style={{width: "600px", height: "50px", color:"white", marginLeft: "30px"}} onChange={(e)=>{setimgCarrear(e.target.value)}}/>
+                <input type="file" lassName="btn btn-block subir"  style={{width: "600px", height: "50px", color:"white", marginLeft: "20px"}} onChange={(e)=>{setimgCarrear(e.target.value)}}/>
             </div>
             <section className="botonesFR row" style={{marginTop: "10px"}}>
-                {operacion==='cambioOperacion'?(<button className="btnFactsA btn-outline-primary" onClick={updateClik}>Editar</button>):(<button className="btnFactsA btn-outline-primary" onClick={handleClick}>Agregar</button>)}
+                <button className="btnFactsA btn-outline-primary" onClick={handleClick}>Agregar</button>
                 <button className="btnFactsAB btn-outline-primary" onClick={()=>navigate('/carrera/Ver')} >VER</button>
             </section>
         </section></>

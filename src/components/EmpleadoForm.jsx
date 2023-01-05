@@ -93,7 +93,7 @@ const EmpleadoForm=()=>{
     
     return(
         <><div className="capa"></div>
-        <section className="formulario row">
+        <section className="forEmple row">
             <div className="form-group">
                 <h5>Nombre del Empleado</h5>
                 <input type="text" value={nombreEmp} className="form-control"onChange={(e)=>{setnombreEmp(e.target.value)}}/>

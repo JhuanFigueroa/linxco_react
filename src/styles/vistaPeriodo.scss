@@ -1,7 +1,7 @@
 .facturaPe{
-    margin-top: 90px;
-	margin-left: 250px;
-	height: 350px;
+    margin-top: 70px;
+	margin-left: 50px;
+	height: auto;
 	width: 800px;
 	background: rgba(255, 255, 255, 0.1);
 	padding: 20px;
@@ -9,8 +9,10 @@
 	box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(3px);
 }
-.tablePe{
+.tablePeri{
 	color: #fff;
+	width: 900px;
+	height: auto;
 	border-radius: 0.5rem;
 	margin-top: 30px;
 	margin-left: 1px;
@@ -37,19 +39,28 @@
 	background-image: url("../assets/imgs/eliminar.png");
 	background-repeat: no-repeat;
 }
-.btnPe{
+.btnPerA{
     height: 40px;
+	margin-left: 120px !important;
     width: 200px;
     background-color: transparent;
     color: white;
     margin-left: 300px;
     border: solid 2px rgb(0, 195, 255);
 }
+.btnPeB{
+    height: 40px;
+    width: 200px;
+    background-color: transparent;
+    color: white;
+    margin-left: 100px;
+    border: solid 2px rgb(0, 195, 255);
+}
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-	.factura{
-		margin-top: 60px;
-		margin-left: 30px;
-		height: 480px;
+	.facturaPe{
+		margin-top: 100px;
+		margin-left: 30px ;
+		height: auto;
 		width: 700px;
 		background: rgba(255, 255, 255, 0.1);
 		padding: 20px;
@@ -57,80 +68,91 @@
 		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 		backdrop-filter: blur(3px);
 	}
-	.form-control{
-		width: 300px; 
-		background: rgba(0, 0, 0, 0.3);
-		color:white;
-		margin-left: 20px;
+	.tablePeri{
+		color: #fff;
+		width: 650px;
+		height: auto;
+		border-radius: 0.5rem;
+		margin-top: 10px;
+		margin-left: 1px;
+		margin-bottom: auto;
+		table-layout: auto;
+		text-align: center;
 	}
 	h5{
 		margin-top: 5px; 
 		color: white;
 		margin-left: 20px;
 	}
-	.btnFactsA{
-		border-radius: 0.5rem;
+	.btnPerA{
+		margin-top: 10px;
 		height: 40px;
-		width: 150px;
-		margin-left: 120px;
-		color: white;
+		margin-left: 80px !important;
+		width: 200px;
 		background-color: transparent;
+		color: white;
+		margin-left: 300px;
+		border: solid 2px rgb(0, 195, 255);
+		margin-bottom: 10px;
 	}
-	.btnFactsAB{
-		background-color: transparent;
-		border-radius: 0.5rem;
+	.btnPeB{
+		margin-bottom: 10px;
+		margin-top: 10px;
 		height: 40px;
-		width: 150px;
-		margin-left: 150px;
+		width: 200px;
+		background-color: transparent;
 		color: white;
+		margin-left: 100px;
+		border: solid 2px rgb(0, 195, 255);
 	}
 }
 @media screen and (max-width: 967px) {
-	.factura{
-		margin-top: 70px;
-		margin-left: 50px;
-		height: 480px;
-		width: 830px;
+	.facturaPe{
+		margin-top: 120px;
+		margin-left: 20px;
+		height: auto;
+		width: 430px;
 		background: rgba(255, 255, 255, 0.1);
 		padding: 20px;
 		border-radius: 10px;
 		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 		backdrop-filter: blur(3px);
 	}
-	.form-control{
-		width: 200px;
-		height: 30px; 
-		background: rgba(0, 0, 0, 0.3);
-		color:white;
-		margin-left: 20px;
+	.tablePeri{
+		color: #fff;
+		width: 500px;
+		height: auto;
+		border-radius: 0.5rem;
+		margin-top: 1px !important;
+		margin-left: 1px;
+		margin-bottom: auto;
+		table-layout: auto;
+		text-align: center;
 	}
 	h5{
 		margin-top: 5px; 
 		color: white;
 		margin-left: 20px;
 	}
-	.btnFactsA{
-		border-radius: 0.5rem;
+	.btnPerA{
+		margin-top: 10px;
 		height: 40px;
-		width: 150px;
-		margin-left: 80px;
+		margin-left: 10px !important;
+		width: 180px;
+		background-color: transparent;
 		color: white;
-		background-color: transparent;
-	}
-	.btnFactsAB{
-		background-color: transparent;
-		border-radius: 0.5rem;
+		border: solid 2px rgb(0, 195, 255);
+		margin-bottom: 20px;
+	} 
+	.btnPeB{
+		margin-bottom: 20px;
+		margin-top: 10px;
 		height: 40px;
-		width: 150px;
-		margin-left: 40px;
+		width: 180px;
+		background-color: transparent;
 		color: white;
-	}
-	.cmbcarre{
-		background-color: rgba(0, 0, 0, 0.5); 
-		color: white; 
-		height: 30px; 
-		width: 200px; 
-		margin-left: 20px;
+		margin-left: 10px;
+		border: solid 2px rgb(0, 195, 255);
 	}
 
 }

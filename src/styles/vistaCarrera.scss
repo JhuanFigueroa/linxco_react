@@ -1,6 +1,6 @@
 .formularioC{
-    margin-top: 90px;
-	margin-left: 190px;
+    margin-top: 5px;
+	margin-left: 50px;
 	height: auto;
 	width: 750px;
 	background: rgba(255, 255, 255, 0.1);
@@ -42,31 +42,20 @@
     width: 200px;
     background-color: transparent;
     color: white;
-    margin-left: 400px;
+    margin-left: 100px;
     border: solid 2px rgb(0, 195, 255);
 }
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 	.formularioC{
-		margin-top: 60px;
+		margin-top: 20px;
 		margin-left: 30px;
-		height: 480px;
+		height: 680px;
 		width: 700px;
 		background: rgba(255, 255, 255, 0.1);
 		padding: 20px;
 		border-radius: 10px;
 		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 		backdrop-filter: blur(3px);
-	}
-	.form-control{
-		width: 300px; 
-		background: rgba(0, 0, 0, 0.3);
-		color:white;
-		margin-left: 20px;
-	}
-	h5{
-		margin-top: 5px; 
-		color: white;
-		margin-left: 20px;
 	}
 	.btnFactsA{
 		border-radius: 0.5rem;
@@ -84,13 +73,21 @@
 		margin-left: 150px;
 		color: white;
 	}
+	.btn-carrera{
+		height: 40px;
+		width: 200px;
+		background-color: transparent;
+		color: white;
+		margin-left: 100px;
+		border: solid 2px rgb(0, 195, 255);
+	}
 }
 @media screen and (max-width: 767px) {
 	.formularioC{
 		margin-top: 70px;
-		margin-left: 50px;
-		height: 450px;
-		width: 530px;
+		margin-left: 5px;
+		height: auto;
+		width: 680px;
 		background: rgba(255, 255, 255, 0.1);
 		padding: 20px;
 		border-radius: 10px;
@@ -125,12 +122,13 @@
 		margin-left: 40px;
 		color: white;
 	}
-	.cmbcarre{
-		background-color: rgba(0, 0, 0, 0.5); 
-		color: white; 
-		height: 30px; 
-		width: 200px; 
-		margin-left: 20px;
+	.btn-carrera{
+		height: 40px;
+		width: 180px;
+		background-color: transparent;
+		color: white;
+		margin-left: 100px;
+		border: solid 2px rgb(0, 195, 255);
 	}
 
 }

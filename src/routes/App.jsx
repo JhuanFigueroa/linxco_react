@@ -115,7 +115,7 @@ const App=()=>{
                         {/*Periodo*/}
                         <Route exact path="/periodo/Insertar" element={<AuthRoute><PeriodoForm/></AuthRoute>}/>
                         <Route exact path="/periodo/Ver" element={<AuthRoute><VistaPeriodo/></AuthRoute>}/>
-                        <Route exact path="/periodo/Insertar/:idPe" element={<AuthRoute><PeriodoForm/></AuthRoute>}/>
+                        <Route exact path="/periodo/Insertar/:id2" element={<AuthRoute><PeriodoForm/></AuthRoute>}/>
 
                     </Routes>
 

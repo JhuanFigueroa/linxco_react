@@ -43,7 +43,11 @@ const VistaEmpleado = () =>{
 
     return(
         <><div className="capa"></div>
+       
         <section className="formE row">
+         <button className="btnVistaEA btn-outline-primary" onClick={()=>cambioVistaOperacionAgregarEmpleado()}>Agregar</button>
+        <button className="btnVistaEB btn-outline-primary" onClick={()=>navigate('/home')}>Finalizar</button><br />
+
             <table className="tableE table-bordered">
                 <thead>
                     <tr>
@@ -88,8 +92,7 @@ const VistaEmpleado = () =>{
                         ))}
                 </tbody>
             </table>
-            <button className="btnE btn-outline-primary"onClick={()=>cambioVistaOperacionAgregarEmpleado()}>Agregar</button>
-            <button className="btnE btn-outline-primary" onClick={()=>navigate('/home')}>Finalizar</button>
+            
         </section></>      
     )
 }
