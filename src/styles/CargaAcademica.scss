@@ -1,4 +1,12 @@
-
+.capa {
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.6);
+	z-index: -1;
+	top: 0;
+	left: 0;
+}
 .contentReins-carga{
   height: auto;
   width: 850px;
@@ -19,10 +27,9 @@
 }
 .checksR{
   margin-left: 140px;
-  margin-bottom: 30px;
   color: darkgrey;
 }
-.form-group{
+.form-group-cargaIns{
   margin-left: 30px;
 }
 .btnComboCar{
@@ -47,19 +54,33 @@
 .btnContReins2-ca{
     margin-left: 200px;
     margin-top: 20px;
-  margin-bottom: 20px;
+    margin-bottom: 50px;
     width: 170px;
+    height: 40px;
     border-radius: 0.4rem;
+    background-color: transparent;
+    color: white;
 }
-
+.btnContReinsCarga{
+  height: 40px;
+  margin-left: 650px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 170px;
+  border-radius: 0.4rem;
+  background-color: transparent;
+  color: white;
+}
 
 .btnContReins3{
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 150px;
   width: 150px;
+  height: 40px;
   border-radius: 0.4rem;
-
+  background-color: transparent;
+  color: white;
 }
 
 .form-control{
@@ -70,7 +91,7 @@
   margin-top: 10px;
   color: #fff;
 }
-.btnAdd{
+.btnAddCarga{
   background-color: transparent;
   border-radius: 0.4rem;
   color: #fff;
@@ -85,7 +106,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
 }

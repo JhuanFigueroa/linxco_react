@@ -9,9 +9,9 @@ const Grupos = () => {
     }
     return (
         <div>
-			
+			<div className="capa"></div>
             <div className="materias pt-1">
-
+                <h3 className="titleGrupo">seleccione su grupo</h3>
                 <div className="mate justify-content-center row">
                     <div className="botones mr-3">
                         <button type="button " className="btngru btn-outline-primary" onClick={handeleClick}

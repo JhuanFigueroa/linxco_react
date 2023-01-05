@@ -3,8 +3,15 @@ import '../styles/FacturaReinscripcion.scss'
 import {useAuth} from "../hooks/useAuth";
 import axios from "axios";
 import Cookie from 'js-cookie';
+import {useNavigate} from "react-router-dom";
 
 const FacturaReinscripcion = () => {
+
+    const navigate=useNavigate();
+    const handleClick1=(e)=>{
+        e.preventDefault();
+        navigate('/')
+    }
     let facts=[]
     const auth = useAuth()
     const user = auth.user
@@ -48,11 +55,13 @@ const FacturaReinscripcion = () => {
     }
 
     return (
-        <section className="contentFactReins" style={{height: "550px", marginRight: "200px"}}>
+        <div>
+        <div className="capa"></div>
+        <section className="contentFactReinsAl"><br/>
             <h2 className="titleCarga" style={{color: "white", marginLeft: "30px"}}>Carga Academica</h2><br/>
-            <div className="form-group row">
+            <div className="form-group-factRAl row">
                 <h5 htmlFor="inputText" className="textNC">No. de Comprobante :</h5>
-                <div className="col-sm-6">
+                <div className="">
                     <input type="text" className="format-control" id="inputNoControl"
                            style={{width: "500px", height: "30px"}}/>
                 </div>
@@ -60,7 +69,7 @@ const FacturaReinscripcion = () => {
             {
                 user.rol != 3 && (
                     <div>
-                        <div className="form-group">
+                        <div className="form-group-factRAl ">
                             <h5 className="" style={{color: "rgb(250, 250, 250)"}}>Seleccione el tipo de factura</h5>
                             <select className="btnComboCar btn-secondary dropdown-toggle" type="button"
                                     onChange={
@@ -83,7 +92,7 @@ const FacturaReinscripcion = () => {
                             </select>
                         </div>
 
-                        <button className="btnAdd btn-outline-info"
+                        <button className="btnAddAl btn-outline-info"
                                 onClick={handleClick}
                                 type="button">Agregar</button>
                     </div>
@@ -91,7 +100,7 @@ const FacturaReinscripcion = () => {
             }
 
 
-            <table className="tableFac table-bordered">
+            <table className="tableReAl table-bordered">
                 <thead>
                 <tr>
                     <th scope="col">Cantidad</th>
@@ -119,21 +128,21 @@ const FacturaReinscripcion = () => {
 
                 </tbody>
             </table>
-            <label htmlFor="inputText" className="textNC" style={{marginLeft: "600px"}}>Total$:</label>
+            <label htmlFor="inputText" className="textTotalFR">Total$:</label>
             <input type="text" className="format-control" id="inputNoControl"
                    value={totalFactura()}
                    style={{width: "143px", height: "30px", marginTop: "3px"}}/>
             {user.rol == 3 ? (
-                <section className="botonesFR row" style={{marginTop: "10px"}}>
-                    <button className="btnFactsA btn-outline-primary">Incompleto</button>
-                    <button className="btnFactsAB btn-outline-primary">Reinscribir</button>
+                <section className="botonesFRAl row" style={{marginTop: "10px"}}>
+                    <button className="btnFactsAAl btn-outline-primary">Incompleto</button>
+                    <button className="btnFactsABAl btn-outline-primary">Reinscribir</button>
                 </section>
-            ) : (<section className="botonesFR row" style={{marginTop: "10px"}}>
-                <button className="btnFactsA btn-outline-primary">Subir</button>
-                <button className="btnFactsAB btn-outline-primary">Guardar</button>
+            ) : (<section className="botonesFRAl row" style={{marginTop: "10px"}}>
+                <button className="btnFactsAAl btn-outline-primary">Subir</button>
+                <button className="btnFactsABAl btn-outline-primary" onClick={handleClick1}>Guardar</button>
             </section>)}
         </section>
-
+        </div>
     );
 }
 

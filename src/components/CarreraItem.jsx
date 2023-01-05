@@ -38,16 +38,20 @@ const CarreraItem = ({carrera}) => {
     }
     return (
         <figure>
+            
             <img src={carrera.imagen} alt=""/>
+            
                 <h2>materia</h2>
-                <div className="btnca">
-                    <button type="button" className="btn btn-outline-success"
-                            onClick={handleSubmit}
-                            style={{marginTop: "25px", width: "150px"}}>Ingresar
-                    </button>
-                </div>
+                    <div className="btnca">
+                        <button type="button" className="btn btn-outline-success"
+                                onClick={handleSubmit}
+                                style={{marginTop: "25px", width: "150px"}}>Ingresar
+                        </button>
+                    </div>
+                
 
         </figure>
+        
     );
 }
 

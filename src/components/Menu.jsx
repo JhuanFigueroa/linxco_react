@@ -62,6 +62,7 @@ const Menu = () => {
        <div>
            <input type="checkbox" id="btn-menu"/>
            <div className="container-menu">
+           <div className="capa"></div>
                <div className="cont-menu">
                    <nav>
                        <section>

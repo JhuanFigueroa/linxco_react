@@ -8,13 +8,14 @@ const ConstanciaControl2 = () =>{
         navigate('/control/constancias/datos')
     }
     return(
-            <section className="contentFactReins">
-                <h2 className="titleCarga">DATOS</h2><br></br>
+        <div className="capa">
+            <section className="contentConstanciaT">
+                <h2 className="titleConst">DATOS</h2><br></br>
                 <form className="form-inline">
                     <input className="form-control mr-sm-2 col-7" type="search" size={40} style={{width:"700px"}} placeholder="buscar" aria-label="Search" />
-                    <button className="btn btn-outline-primaryy mt-7" type="submit">Buscar</button>
+                    <button className="btnBuscarConCon btn-outline-primary" type="submit">Buscar</button>
                 </form>
-                <table className="tableFac table-bordered">
+                <table className="tableConstT table-bordered">
                     <thead>
                         <tr>
                             <th scope="col">TIPO</th>
@@ -29,13 +30,14 @@ const ConstanciaControl2 = () =>{
                             <td>BASE DE DATOS</td>
                             <td>ALAN BECERRIL</td>
                             <td>
-                                <button onClick={handleClick}>VER</button>
+                                <button className='btnVerCont btn-outline-info' onClick={handleClick}>VER</button>
                             </td>
                         </tr>
                     </tbody>
                 </table>
                 <br></br>
             </section>
+            </div>
     )
 }
 export default ConstanciaControl2

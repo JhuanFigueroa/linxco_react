@@ -1,10 +1,18 @@
 import React from 'react'
 import '../styles/ConstanciaDatos.scss'
+import {useNavigate} from "react-router-dom";
 
 const ConstanciaDatos =()=>{
+    const navigate=useNavigate();
+     const hadleClick=(e)=>{
+         e.preventDefault();
+       navigate('/')
+     }
     return(
 
+        <div className="capa">
         <section className="contentReins-ConstanciaDatos">
+            
             <h2 className="titleCarga" style={{color: "white", marginLeft: "20px"}}>DATOS FACTURA</h2>
             <div className="form-group row">
                 <h5 for="inputText" className="textNC" style={{color: "white", marginLeft: "20px"}}>No.Comprobante :</h5>
@@ -36,12 +44,12 @@ const ConstanciaDatos =()=>{
             <table className="tableFac table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col">MATRICULA</th>
-                        <th scope="col">NOMBRE COMPLETO</th>
-                        <th scope="col">SEMESTRE</th>
-                        <th scope="col">CARRERA</th>
-                        <th scope="col">PLAN DE ESTUDIOS</th>
-                        <th scope="col">PROMEDIO GENERAL</th>
+                        <th scope="col">Matricula</th>
+                        <th scope="col">Nombre Completo</th>
+                        <th scope="col">Semestre</th>
+                        <th scope="col">Carrera</th>
+                        <th scope="col">Plan de estudios</th>
+                        <th scope="col">Promedio general</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,8 +76,9 @@ const ConstanciaDatos =()=>{
                     <input type="date" className="form-control" style={{width: "160px", height: "20px", marginLeft: "10px", marginTop: "5px"}}/>
                 </div>
 
-                <button className="btnContReins2 btn-outline-primary" onclick="location.href='constanciaControl2.html'">GUARDAR</button>
+                <button type='button' onClick={hadleClick} className="btnGuardarConst btn-outline-primary">GUARDAR</button>
         </section>
+        </div>
     )
 }
 export default ConstanciaDatos

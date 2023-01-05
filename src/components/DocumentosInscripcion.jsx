@@ -9,38 +9,41 @@ const DocumentosInscripcion=()=>{
         navigate("/inscripcion/carga")
     }
     return(
-        <section className="cont-checks">
+        <div className="capa">
+        <section className="cont-checks-ins">
+            
             <h2 className="titleDoc" style={{color: "azure", width: "100%", marginLeft: "20px"}}>Seleccione Los Archivos a
                 Subir</h2>
             <br/>
-                <div className="form-check">
+                <div className="form-check-ins">
                     <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
                         <label className="form-check-label" htmlFor="defaultCheck1" style={{color: "aliceblue"}}>
                             Certificado de estudios
                         </label>
                 </div>
-                <div className="form-check">
+                <div className="form-check-ins">
                     <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
                         <label className="form-check-label" htmlFor="defaultCheck1" style={{color: "aliceblue"}}>
                             Acta de calificaciones
                         </label>
                 </div>
-                <div className="form-check">
+                <div className="form-check-ins">
                     <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
                         <label className="form-check-label" htmlFor="defaultCheck1" style={{color: "aliceblue"}}>
                             Demas archivos
                         </label>
                 </div>
-                <div className="form-check">
+                <div className="form-check-ins">
                     <input className="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
                         <label className="form-check-label" htmlFor="defaultCheck1" style={{color: "aliceblue"}}>
                             otros
                         </label>
                 </div>
                 <button type="button"
-                        className="btnInscribir btn-outline-primary" onClick={handleClick}>SIGUIENTE
+                        className="btn btnInscribir btn-outline-primary" onClick={handleClick}>SIGUIENTE
                 </button>
         </section>
+        </div>
 );
 }
 

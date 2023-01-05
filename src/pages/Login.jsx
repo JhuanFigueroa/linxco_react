@@ -34,43 +34,42 @@ const Login = () => {
         if (!user){
             return (
                 <div className="container">
-                    <div className="row justify-content-center align-items-center pt-5 mt-5 m-1">
+                    <div className="capa"></div>
+                    <div className="row justify-content-center align-items-center pt-5 mt-2 m-1">
                         <div className="col-md-6 col-sm-8 col-xl-4 col-lg-5 formulario-as">
                             <form ref={form}>
-                                <div className="form-group text-center pt-3">
+                                <div className="form-group text-center">
                                     <h1 className="text-light">INICIAR SESIÓN</h1>
                                 </div>
-                                <div className="form-group mx-sm-4 pt-3">
+                                <div className="form-group1">
                                     <input type="text" className="form-control" name="username"
                                            style={{width:"300px"}}
                                            placeholder="Ingrese su Usuario"/>
                                 </div>
-                                <div className="form-group mx-sm-4 pb-3">
+                                <div className="form-group1">
                                     <input type="password" className="form-control" name="password"
                                            style={{width:"300px"}}
                                            placeholder="Contraseña"/>
                                 </div>
-                                <div className="form-group mx-sm-4 pb-2">
-                                    <input type="submit" className="btn btn-block ingresar" onClick={handleSubmit}
+                                <div className="btnIngresarLogin">
+                                    <input type="submit" className="btn btn-outline-primary ingresar" style={{color:"white"}} onClick={handleSubmit}
                                            value="INGRESAR"/>
                                 </div>
-                                <div className="form-group mx-sm-4 text-right">
-                                    <span className=""> <a href="#" className="olvide">Olvide mi contraseña</a></span>
+                                <div className="form-group mx-sm-4 text-center">
+                                    <span className=""> <a href="#" className="olvide" style={{color:"cyan"}}>Olvide mi contraseña</a></span>
                                 </div>
-                                <div className="buttons pb-4">
+                                <div className="buttonsRegAs pb-4">
                                     <div className="text-center  ">
-                                        <span><a href="" className="registrarse">REGISTRARSE</a></span>
+                                        <span><a href="" className="registrarse" style={{color:"cyan"}}>REGISTRARSE</a></span>
                                     </div>
                                     <div className=" text-center pt-4">
-                                        <span><Link to={'/aspirante'} className="aspirante">ASPIRANTES</Link></span>
+                                        <span><Link to={'/aspirante'} className="aspirante" style={{color:"cyan"}}>ASPIRANTES</Link></span>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-
                 </div>
-
             );
         }else{
             navigate('/home');
