@@ -42,7 +42,74 @@
   text-decoration-line: none;
   cursor: pointer;
 }
+<<<<<<< HEAD
 .titleGrupo{
   margin-left: 180px;
   color: white;
+=======
+@media only screen and (max-width: 1718px) {
+	
+	.materias{
+		margin: 250px;
+		height: 650px;
+		width: 750px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-top: 70px;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+		margin-left: 400px;
+	}
+	
+	
+}
+@media only screen and (max-width: 1443px) {
+	
+	.materias{
+		margin: 250px;
+		height: 650px;
+		width: 750px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-top: 70px;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+		margin-left: 300px;
+	}
+	
+}
+@media only screen and (max-width: 1243px) {
+	
+	.materias{
+		margin: 250px;
+		height: 650px;
+		width: 750px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-top: 70px;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+		margin-left: 150px;
+	}
+	
+}
+@media only screen and (max-width: 1026px) {
+	
+	.materias{
+		margin: 250px;
+		height: 650px;
+		width: 750px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-top: 70px;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+		margin-left: 100px;
+	}
+	
+>>>>>>> 146d3c806edbdd8de716281f2bb5214443375511
 }

@@ -55,6 +55,15 @@ const Menu = () => {
                 navigate('/horarios')
             }
         }
+        if (operacion==='insertarCarrera'){
+            navigate('/carrera/Insertar')
+        }
+        if (operacion==='insertarEmpleado'){
+            navigate('/empleado/Insertar')
+        }
+        if (operacion==='insertarPeriodo'){
+            navigate('/periodo/Insertar')
+        }
 
     }
 
@@ -135,6 +144,28 @@ const Menu = () => {
                        )
 
                        }
+                       {user.rol ==5 &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                       onClick={()=>handleClickInsvripcion('insertarCarrera')}>Carrera Insertar
+                               </button>
+                           </section>
+                       )}
+                       {user.rol ==5 &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                       onClick={()=>handleClickInsvripcion('insertarEmpleado')}>Empleado Insertar
+                               </button>
+                           </section>
+                       )}
+                       {user.rol ==5 &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                       onClick={()=>handleClickInsvripcion('insertarPeriodo')}>Periodo Insertar
+                               </button>
+                           </section>
+                       )}
+                       
                    </nav>
 
                    <label htmlFor="btn-menu">✖️</label>

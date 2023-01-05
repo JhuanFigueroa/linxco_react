@@ -1,14 +1,88 @@
-import React from "react";
+import React, { useState } from "react";
 import '../styles/aspirantes.scss'
 import {useNavigate} from "react-router-dom";
+import axios from "axios";
+import Cookie from "js-cookie";
+import { useEffect } from "react";
 const aspirantes=()=>{
+	const [tipoCarrera,setTipoCarrera]=useState([])
      const navigate=useNavigate();
      const handleClick=(e)=>{
          e.preventDefault();
+<<<<<<< HEAD
          navigate('/aspirante/examen')
 		 
+=======
+		 //console.log(certificadAsp.substring(12))
+         //navigate('/aspirante/examen')
+		 const data={
+			'numero':numFicha,
+			'nombre':nomAspirante,
+			'apellido_paterno':apePaternoAs,
+			'apellido_materno':apeMaternoAs,
+			'telefono':telefonoAspirante,
+			'telefono_emergencia':telefonoEmeAspirante,
+			'correo':correoAspirante,
+			'promedio':promedioAspirante,
+			'curp':curpAspirante,
+			'domicilio':domicilioAspirante,
+			'escuela':escProceAsptirante,
+			'sangre':tipoSangreAspirante,
+			'genero':generoAspirante,
+			'lugar_nacimiento':lugNacAspirante,
+			'lugar_aplicacion':lugAapliAspirante,
+			'persona_emergencia':personaEmerAspirante,
+			'claveCarrera':claveCarrera,
+			'fecha':fechaAspiante,
+			'certificado':certificadAsp,
+			'actaNac':actafiAsp,
+			'identificacion':idenfiAsp,
+			'foto':fotofiAsp,
+			'curpfi':curpfiAsp
+		}
+		 const cookie= Cookie.get('token')
+         axios.defaults.headers.Authorization='Bearer '+cookie;
+		 axios.post('http://localhost:3000/api/v1/admision',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
+		 navigate('/aspirante/examen')
+>>>>>>> 146d3c806edbdd8de716281f2bb5214443375511
      }
-
+	 //creear constantes de cada input
+	 const[numFicha,setnumFicha]=useState(0)
+	 const[nomAspirante,setnomAspirante]=useState('')
+	 const[apePaternoAs,setapePaternoAs]=useState('')
+	 const[apeMaternoAs,setapeMaternoAs]=useState('')
+	 const[telefonoAspirante,settelefonoAspirante]=useState('')
+	 const[telefonoEmeAspirante,settelefonoEmeAspirante]=useState('')
+	 const[correoAspirante,setcorreoAspirante]=useState('')
+	 const[promedioAspirante,setpromedioAspirante]=useState(0.0)
+	 const[curpAspirante,setcurpAspirante]=useState('')
+	 const[domicilioAspirante,setdomicilioAspirante]=useState('')
+	 const[escProceAsptirante,setescProceAsptirante]=useState('')
+	 const[tipoSangreAspirante,settipoSangreAspirante]=useState('')
+	 const[generoAspirante,setgeneroAspirante]=useState('')
+	 const[lugNacAspirante,setlugNacAspirante]=useState('')
+	 const[lugAapliAspirante,setlugAapliAspirante]=useState('jilo')
+	 const[personaEmerAspirante,setpersonaEmerAspirante]=useState('')
+	 const[fechaAspiante,setfechaAspiante]=useState('')
+	 const[claveCarrera,setClaveCarrera]=useState('')
+	 //Datos de tipo archivo
+	 const[certificadAsp, setcertificadAsp]=useState('')
+	 const[actafiAsp, setactaAsp]=useState('')
+	 const[idenfiAsp, setidenAsp]=useState('')
+	 const[fotofiAsp,setfotoAsp]=useState('')
+	 const[curpfiAsp,setcurpfiAsp]=useState('')
+	 
+	 useEffect(() => {
+        getTipoCarrera()
+ 	},[]);
+ 	function getTipoCarrera(){
+		const carreras = axios.get('http://localhost:3000/api/v1/admision')
+		.then((res) => {
+			//console.log(res.data);
+			setTipoCarrera(res.data)
+		});
+		
+	}
     return(
 		<div className="containerAs ">
 			<div className="capa"></div>
@@ -18,7 +92,11 @@ const aspirantes=()=>{
 					<form action="">
 					<div className="form-group text-center " >
 						<h2 className="text-light">DATOS DEL ASPIRANTE: </h2>
+<<<<<<< HEAD
 						<div className="fecha" style={{color: "white"}} >
+=======
+						<div className="fecha" style={{color: "cyan"}} onChange={(e)=>{setfechaAspiante(e.target.value)}}>
+>>>>>>> 146d3c806edbdd8de716281f2bb5214443375511
 						<input type="date" name="fecha" step="1" />
 						</div>
 					</div>
@@ -26,6 +104,7 @@ const aspirantes=()=>{
 					
 				
 					<div className="form-group  pt-3">
+<<<<<<< HEAD
 						<input type="number"  className="form-control"  placeholder="Ficha de Admision"style={{width: "350px", color:"white"}}/>
 					</div>
 					<div className="form-group ">
@@ -83,6 +162,108 @@ const aspirantes=()=>{
 							<option>Quimica</option>
 							<option>TIC'S</option>
 						</select>
+=======
+						<input type="number"  className="form-control"  placeholder="Ficha de Admision"style={{width: "400px", color:"white"}}
+							onChange={(e)=>{setnumFicha(e.target.value)}}
+						/>
+						
+					</div>
+					<div className="form-group ">
+						<input type="text"  className="form-control" placeholder="Nombre(s)"style={{width: "400px", color:"white"}} onChange={(e)=>{setnomAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text"  className="form-control" placeholder="Apellido Paterno"style={{width: "400px", color:"white"}} onChange={(e)=>{setapePaternoAs(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text" className="form-control" placeholder="Apellido Materno"style={{width: "400px",color:"white"}} onChange={(e)=>{setapeMaternoAs(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="tel" className="form-control" placeholder="Telefono"style={{width: "400px", color:"white"}} onChange={(e)=>{settelefonoAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text"  className="form-control" placeholder="Nombre(s) Persona de Emergencia"style={{width: "400px", color:"white"}} onChange={(e)=>{setpersonaEmerAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="tel" className="form-control" placeholder="Tel. Emergencia"style={{width: "400px", color:"white"}} onChange={(e)=>{settelefonoEmeAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="email" className="form-control" placeholder="Correo Electronico"style={{width: "400px",color:"white"}} onChange={(e)=>{setcorreoAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text"  className="form-control" placeholder="CURP"style={{width: "400px", color:"white"}} onChange={(e)=>{setcurpAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group pt-3 ">
+						<input type="text" className="form-control" placeholder="Domicilio"style={{width: "400px", color:"white"}} onChange={(e)=>{setdomicilioAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text" className="form-control" placeholder="Escuela de Procedencia"style={{width:"400px", color:"white"}} onChange={(e)=>{setescProceAsptirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text" className="form-control" placeholder="Tipo de Sangre"style={{width: "400px", color:"white"}} onChange={(e)=>{settipoSangreAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text" className="form-control" placeholder="Genero (M o F)"style={{width: "400px", color:"white"}} onChange={(e)=>{setgeneroAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text" className="form-control" placeholder="Lugar de Nacimiento"style={{width: "400px", color:"white"}} onChange={(e)=>{setlugNacAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text" className="form-control" placeholder="Lugar de Aplicacion"style={{width: "400px", color:"white"}} onChange={(e)=>{setlugAapliAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<input type="text"  className="form-control" placeholder="Promedio"style={{width: "400px", color:"white"}} onChange={(e)=>{setpromedioAspirante(e.target.value)}}/>
+					</div>
+					<div className="form-group ">
+						<select className="cmbcarre" 
+						
+						style={{backgroundColor: "rgba(0, 0, 0, 0.5)", color: "white", height: "30px", width: "250px"}}
+							onChange={(e)=>{setClaveCarrera(e.target.value)}}
+						>
+							<option>Seleccione una Carrera...</option>
+							{tipoCarrera.map((tipo) => (
+                                    <option key={tipo.clave_carrera} value={tipo.clave_carrera}>
+                                        {tipo.nombre_carrera}
+                                    </option>
+								))}
+						</select>
+					</div>
+					<div className="documentos">
+						<div className="container-main" style={{color: "cyan"}}>
+							<h5>Certificado</h5>
+						</div>
+
+						<div className="examinar ">
+							<input type="file" className="btn btn-block ingresar" style={{width: "400px", color:"white", border: "1px solid rgb(37, 148, 182)" }} onChange={(e)=>{setcertificadAsp(e.target.value)}} />
+						</div>
+
+						<div className="container-main" style={{color: "cyan"}}>
+							<h5>Acta de Nacimineto</h5>
+						</div>
+
+						<div className="examinar ">
+							<input type="file" className="btn btn-block ingresar" style={{width: "400px", color:"white", border: "1px solid rgb(37, 148, 182)"}}   onChange={(e)=>{setactaAsp(e.target.value)}}/>
+						</div>
+						<div className="container-main" style={{color: "cyan"}}>
+							<h5>Identificacion con Fotografia</h5>
+						</div>
+						
+						<div className="examinar ">
+							<input type="file" className="btn btn-block ingresar" style={{width: "400px", color:"white", border: "1px solid rgb(37, 148, 182)" }}   onChange={(e)=>{setidenAsp(e.target.value)}}/>
+						</div>
+						<div className="container-main" style={{color: "cyan"}}>
+							<h5>Fotografia Tamaño Infantil</h5>
+						</div>
+						
+						<div className="examinar ">
+							<input type="file" className="btn btn-block ingresar" style={{width: "400px", color:"white", border: "1px solid rgb(37, 148, 182)" }} onChange={(e)=>{setfotoAsp(e.target.value)}}/>
+						</div>
+						<div className="container-main" style={{color: "cyan"}}>
+							<h5>CURP</h5>
+						</div>
+						<div className="examinar ">
+							<input type="file" className="btn btn-block ingresar" style={{width: "400px", color:"white", border: "1px solid rgb(37, 148, 182)" }}  onChange={(e)=>{setcurpfiAsp(e.target.value)}}/>
+						</div>
+>>>>>>> 146d3c806edbdd8de716281f2bb5214443375511
 					</div>
 					<div className="documentos">
 						<div className="container-main" style={{color: "white"}}>

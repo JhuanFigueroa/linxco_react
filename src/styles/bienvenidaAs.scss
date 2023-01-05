@@ -31,8 +31,71 @@
 	color: #fff;
 }
 .form-control::placeholder{
+<<<<<<< HEAD
 	color: rgb(255, 255, 255);
 }
 .btnsig{
 	margin-right: 100px;
+=======
+	color: cyan;
+}
+@media only screen and (max-width: 1450px) {
+	.forbienvenida{
+		margin-left: 300px;
+		height: 600px;
+		width: 700px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-top: 20px;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+	}
+
+}
+@media only screen and (max-width: 1300px) {
+	
+	.forbienvenida{
+		margin-left: 250px;
+		height: 600px;
+		width: 700px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-top: 20px;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+	}
+	
+}
+@media only screen and (max-width: 1200px) {
+	
+	.forbienvenida{
+		margin-left: 200px;
+		height: 600px;
+		width: 700px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-top: 20px;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+	}
+	
+}
+@media only screen and (max-width: 1160px) {
+	
+	.forbienvenida{
+		margin-left: 100px;
+		height: 600px;
+		width: 700px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-top: 20px;
+		padding: 20px;
+		border-radius: 10px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+	}
+	
+>>>>>>> 146d3c806edbdd8de716281f2bb5214443375511
 }
