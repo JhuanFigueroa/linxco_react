@@ -15,6 +15,7 @@ const EstudiantesTable = () => {
     const auth=useAuth()
     const user=auth.user
     const [studentsReins, setStudentsReins] = useState([]);
+    const{addOperacion}=React.useContext(AppContext);
 
     const getEstudiantesReinscripcion = () => {
 
@@ -27,6 +28,12 @@ const EstudiantesTable = () => {
                 setStudentsReins(res.data);
             });
     };
+
+    const getCredenciales=()=>{
+        const rta=axios.get('http://localhost:3000/api/v1/tramites/credenciales').then(res=>{
+            setStudentsReins(res.data)
+        })
+    }
 
     const getBajas=()=>{
         axios.get('http://localhost:3000/api/v1/bajas/'+clave)
@@ -42,13 +49,24 @@ const EstudiantesTable = () => {
         if (operacion === "bajas") {
             navigate("/control/bajas/form");
         }
+        if (operacion === "credencial") {
+            if (matricula.length>0){
+                addOperacion('editCredencial')
+                navigate(`/control/credencializacion/edit/${matricula}`);
+            }else{
+                navigate("/control/credencializacion/form");
+            }
+
+        }
     };
 
     useEffect(() => {
         if (operacion==='reinscripcion'){
             getEstudiantesReinscripcion();
-        }else{
+        }else if (operacion==='bajas'){
             getBajas()
+        }else{
+            getCredenciales()
         }
     }, []);
 
@@ -104,11 +122,6 @@ const EstudiantesTable = () => {
                    </tbody>
                </table>
 
-               {operacion === "bajas" && (
-                   <button className="btn-outline-primary btn-nuevo" type="button">
-                       AGREGAR
-                   </button>
-               )}
            </section>
        );
    }else{
@@ -130,6 +143,12 @@ const EstudiantesTable = () => {
                    </form>
                </nav>
                <br></br>
+
+                   <button className="btn-outline-primary btn-nuevo" type="button"
+                           onClick={handleClick}>
+                       AGREGAR
+                   </button>
+
                <table className="table table-bordered">
                    <thead>
                    <tr>
@@ -162,13 +181,6 @@ const EstudiantesTable = () => {
                        )}
                    </tbody>
                </table>
-
-               {operacion === "bajas" && (
-                   <button className="btn-outline-primary btn-nuevo" type="button"
-                   onClick={handleClick}>
-                       AGREGAR
-                   </button>
-               )}
            </section>
        )
    }

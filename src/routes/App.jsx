@@ -87,7 +87,9 @@ const App=()=>{
 
                         <Route exact path="/factura" element={<AuthRoute><Factura/></AuthRoute>}/>
 
-                        <Route exact path="/control/credencializacion" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
+                        <Route exact path="/control/credencializacion" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
+                        <Route exact path="/control/credencializacion/form" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
+                        <Route exact path="/control/credencializacion/edit/:matriculaAlumno" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
 
                         <Route exact path="/horarios" element={<AuthRoute><Horario/></AuthRoute>}/>
                         <Route exact path="/control/horarios" element={<AuthRoute><Carreras/></AuthRoute>}/>

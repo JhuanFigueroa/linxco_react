@@ -1,31 +1,47 @@
-import React, {useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import '../styles/Credencializacion.scss'
 import axios from "axios";
 import Cookie from "js-cookie";
+import AppContext from "../context/AppContext";
+import {useNavigate, useParams} from "react-router-dom";
 
 const Credencializacion = () =>{
+    const navigate=useNavigate()
+    const {matriculaAlumno}=useParams()
+    const {state} = useContext(AppContext);
+    const operacion = state.operacion;
     const [matricula,setMatricula]=useState('')
     const [numero,setNumero]=useState('')
+    const [factura,setFactura]=useState([])
+    const{addOperacion}=React.useContext(AppContext);
 
-    const handleClick=()=>{
+    const getDatosCredencial=()=>{
+        const rta=axios.get('http://localhost:3000/api/v1/tramites/credenciales/factura/'+matriculaAlumno)
+            .then(res=>{
+                setFactura(res.data[0])
+                setNumero(res.data[0].numero_comprobante)
+            });
+    }
+
+    const addCredencial= async ()=>{
         //CREDENCIAL
         const dta={
             'matriculaAlumno':matricula
         }
-        const rta=axios.post('http://localhost:3000/api/v1/tramites/credencial',dta)
+        const rta= await  axios.post('http://localhost:3000/api/v1/tramites/credencial',dta)
 
         //FACTURA
         const data = {
             'numero_comprobante': numero,
             'monto_total': 50,
             'matriculaAlumno': matricula,
-            'status':0
+            'status':1
         };
         let idF=0
 
         const cookie = Cookie.get("token");
         axios.defaults.headers.Authorization = "Bearer " + cookie;
-        const res = axios
+        const res = await axios
             .post("http://localhost:3000/api/v1/factura", data)
             .then(res=>{
                 idF = res.data;
@@ -33,31 +49,63 @@ const Credencializacion = () =>{
                     idFactura: idF,
                     claveRazon: 'CR323',
                 };
-                axios.post(
+                 axios.post(
                     "http://localhost:3000/api/v1/razonf-factura",
                     dtaRazonfFactura
                 );
-            })
+            });
 
-
+        navigate('/control/credencializacion')
 
     }
+
+    const editCredencial=()=>{
+        //FACTURA
+        const data = {
+            'numero_comprobante': numero,
+        };
+        let idF=0
+
+        const cookie = Cookie.get("token");
+        axios.defaults.headers.Authorization = "Bearer " + cookie;
+        const res = axios
+            .patch("http://localhost:3000/api/v1/factura/"+factura.id_factura, data);
+
+        addOperacion('credencial')
+        navigate('/control/credencializacion');
+    }
+    const handleClick=()=>{
+            if (operacion==='editCredencial'){
+                editCredencial()
+            }else {
+                addCredencial()
+            }
+    }
+
+    useEffect(()=>{
+        if (operacion==='editCredencial'){
+            getDatosCredencial()
+        }
+    },[])
     return(
         <><div className="capa"></div>
         <section className="contentFactReins">
             <h2 className="titleCarga">Credencializacion</h2><br/>
             <div className="form-group row">
-                <h5 for="inputText" className="textNC">Matricula :</h5>
+                <h5  className="textNC">Matricula :</h5>
                 <div className="col-sm-6">
                     <input type="text" className="format-control" id="inputNoControl" style={{width: "500px", height: "30px"}}
-                    onChange={(e)=>{setMatricula(e.target.value)}}/>
+                        value={matriculaAlumno}
+                           onChange={(e)=>{setMatricula(e.target.value)}}/>
+
                 </div>
             </div>
 
             <div className="form-group row">
-                <h5 for="inputText" className="textNC">No. de Comprobante :</h5>
+                <h5 className="textNC">No. de Comprobante :</h5>
                 <div className="col-sm-6">
                     <input type="text" className="format-control" id="inputNoControl" style={{width: "500px", height: "30px"}}
+                    value={numero}
                     onChange={(e)=>{setNumero(e.target.value)}}/>
                 </div>
             </div>
@@ -82,7 +130,7 @@ const Credencializacion = () =>{
                     </tr>
                 </tbody>
             </table>
-            <label for="inputText" className="textNC" style={{marginLeft: "600px"}}>Total :50</label>
+            <label htmlFor="inputText" className="textNC" style={{marginLeft: "600px"}}>Total :50</label>
             <input type="text" className="format-control" id="inputNoControl" style={{width: "143px", height: "30px", marginTop: "3px"}} value={50}/><br></br>
                 <section className="botonesFR row" style={{marginTop: "10px"}}>
                     <button className="btnFactsA btn-outline-primary"
