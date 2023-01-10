@@ -63,11 +63,7 @@ const Login = () => {
                                         <span><a href="" className="registrarse" style={{color:"cyan"}}>REGISTRARSE</a></span>
                                     </div>
                                     <div className=" text-center pt-4">
-<<<<<<< HEAD
-                                        <span><Link to={'/aspirante'} className="aspirante" style={{color:"cyan"}}>ASPIRANTES</Link></span>
-=======
                                         <span><Link to={'/aspirante/form'} className="aspirante">ASPIRANTES</Link></span>
->>>>>>> 146d3c806edbdd8de716281f2bb5214443375511
                                     </div>
                                 </div>
                             </form>

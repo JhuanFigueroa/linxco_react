@@ -9,10 +9,6 @@ const aspirantes=()=>{
      const navigate=useNavigate();
      const handleClick=(e)=>{
          e.preventDefault();
-<<<<<<< HEAD
-         navigate('/aspirante/examen')
-		 
-=======
 		 //console.log(certificadAsp.substring(12))
          //navigate('/aspirante/examen')
 		 const data={
@@ -44,7 +40,6 @@ const aspirantes=()=>{
          axios.defaults.headers.Authorization='Bearer '+cookie;
 		 axios.post('http://localhost:3000/api/v1/admision',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
 		 navigate('/aspirante/examen')
->>>>>>> 146d3c806edbdd8de716281f2bb5214443375511
      }
 	 //creear constantes de cada input
 	 const[numFicha,setnumFicha]=useState(0)
@@ -92,11 +87,7 @@ const aspirantes=()=>{
 					<form action="">
 					<div className="form-group text-center " >
 						<h2 className="text-light">DATOS DEL ASPIRANTE: </h2>
-<<<<<<< HEAD
-						<div className="fecha" style={{color: "white"}} >
-=======
 						<div className="fecha" style={{color: "cyan"}} onChange={(e)=>{setfechaAspiante(e.target.value)}}>
->>>>>>> 146d3c806edbdd8de716281f2bb5214443375511
 						<input type="date" name="fecha" step="1" />
 						</div>
 					</div>
@@ -104,65 +95,6 @@ const aspirantes=()=>{
 					
 				
 					<div className="form-group  pt-3">
-<<<<<<< HEAD
-						<input type="number"  className="form-control"  placeholder="Ficha de Admision"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="Nombre(s)"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="Apellido Paterno"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Apellido Materno"style={{width: "350px",color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="tel" className="form-control" placeholder="Telefono"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="Nombre(s) Persona de Emergencia"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="tel" className="form-control" placeholder="Tel. Emergencia"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="email" className="form-control" placeholder="Correo Electronico"style={{width: "350px",color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="CURP"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group pt-3 ">
-						<input type="text" className="form-control" placeholder="Domicilio"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Escuela de Procedencia"style={{width:"350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Tipo de Sangre"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Genero"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Lugar de Nacimiento"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="Promedio"style={{width: "350px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<select className="cmbcarre" style={{backgroundColor: "rgba(0, 0, 0, 0.5)", color: "white", height: "30px", width: "250px"}}>
-							<option>Seleccione una Carrera...</option>
-							<option>Administracion</option>
-							<option>Civil</option>
-							<option>Electrica</option>	
-							<option>industrial</option>	
-							<option>Ingenieria en Sistemas Computacionales</option>	
-							<option>Logistica</option>
-							<option>Mecatronica</option>
-							<option>Quimica</option>
-							<option>TIC'S</option>
-						</select>
-=======
 						<input type="number"  className="form-control"  placeholder="Ficha de Admision"style={{width: "400px", color:"white"}}
 							onChange={(e)=>{setnumFicha(e.target.value)}}
 						/>
@@ -228,78 +160,40 @@ const aspirantes=()=>{
 						</select>
 					</div>
 					<div className="documentos">
-						<div className="container-main" style={{color: "cyan"}}>
-							<h5>Certificado</h5>
-						</div>
-
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "400px", color:"white", border: "1px solid rgb(37, 148, 182)" }} onChange={(e)=>{setcertificadAsp(e.target.value)}} />
-						</div>
-
-						<div className="container-main" style={{color: "cyan"}}>
-							<h5>Acta de Nacimineto</h5>
-						</div>
-
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "400px", color:"white", border: "1px solid rgb(37, 148, 182)"}}   onChange={(e)=>{setactaAsp(e.target.value)}}/>
-						</div>
-						<div className="container-main" style={{color: "cyan"}}>
-							<h5>Identificacion con Fotografia</h5>
-						</div>
-						
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "400px", color:"white", border: "1px solid rgb(37, 148, 182)" }}   onChange={(e)=>{setidenAsp(e.target.value)}}/>
-						</div>
-						<div className="container-main" style={{color: "cyan"}}>
-							<h5>Fotografia Tamaño Infantil</h5>
-						</div>
-						
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "400px", color:"white", border: "1px solid rgb(37, 148, 182)" }} onChange={(e)=>{setfotoAsp(e.target.value)}}/>
-						</div>
-						<div className="container-main" style={{color: "cyan"}}>
-							<h5>CURP</h5>
-						</div>
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "400px", color:"white", border: "1px solid rgb(37, 148, 182)" }}  onChange={(e)=>{setcurpfiAsp(e.target.value)}}/>
-						</div>
->>>>>>> 146d3c806edbdd8de716281f2bb5214443375511
-					</div>
-					<div className="documentos">
 						<div className="container-main" style={{color: "white"}}>
 							<h5>Certificado</h5>
 						</div>
 						
 						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }} />
+							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }} onChange={(e)=>{setcertificadAsp(e.target.value)}}/>
 						</div>
 						<div className="container-main" style={{color: "white"}}>
 							<h5>Acta de Nacimineto</h5>
 						</div>
 						
 						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)"}}   />
+							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)"}}   onChange={(e)=>{setactaAsp(e.target.value)}}/>
 						</div>
 						<div className="container-main" style={{color: "white"}}>
 							<h5>Identificacion con Fotografia</h5>
 						</div>
 						
 						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }}   />
+							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }}   onChange={(e)=>{setidenAsp(e.target.value)}}/>
 						</div>
 						<div className="container-main" style={{color: "white"}}>
 							<h5>Fotografia Tamaño Infantil</h5>
 						</div>
 						
 						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }}  />
+							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }}  onChange={(e)=>{setfotoAsp(e.target.value)}}/>
 						</div>
 						<div className="container-main" style={{color: "white"}}>
 							<h5>CURP</h5>
 						</div>
 						
 						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }}  />
+							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }}  onChange={(e)=>{setcurpfiAsp(e.target.value)}}/>
 						</div>
 					</div>
 					<div className="button row justify-content-center pt-3" >
