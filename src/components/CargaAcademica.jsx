@@ -121,7 +121,7 @@ const CargaAcademica = () => {
     };
 
     useEffect(() => {
-
+        console.log(periodo[0].numero)
         if (user.rol != 4) {
             matriculaAlumno = matricula;
             getCargaAlumno();
@@ -141,18 +141,27 @@ const CargaAcademica = () => {
                 <section className="checksR">
                     {tiposCarga.map((tipo) => (
                         <div className="custom-control custom-radio custom-control-inline">
-                            <input
-                                type="checkbox"
-                                name="tipoCarga[]"
-                                value={tipo.clave}
-                                checked={tipo.clave==tipoCargaAlumno}
-                                aria-label="Checkbox for following text input"
-                                onChange={(e) => {
-                                    if (e.target.checked) {
-                                        setTipoCarga(e.target.value);
-                                    }
-                                }}
-                            />
+                            {(user.rol!=4) ? (
+                                <input
+                                    type="checkbox"
+                                    name="tipoCarga[]"
+                                    value={tipo.clave}
+                                    checked={tipo.clave==tipoCargaAlumno}
+                                    aria-label="Checkbox for following text input"
+                                />
+                            ):(
+                                <input
+                                    type="checkbox"
+                                    name="tipoCarga[]"
+                                    value={tipo.clave}
+                                    aria-label="Checkbox for following text input"
+                                    onChange={(e) => {
+                                        if (e.target.checked) {
+                                            setTipoCarga(e.target.value);
+                                        }
+                                    }}
+                                />
+                            )}
 
                             <label style={{marginTop: "10px"}}>{tipo.nombre}</label>
                         </div>
@@ -281,19 +290,27 @@ const CargaAcademica = () => {
                                 {cursos.map(curso => {
                                     return (
                                         <td key={curso.id}>
-                                            <input
-                                                type="checkbox"
-                                                aria-label="Checkbox for following text input"
-                                                value={curso.id}
-                                                checked={curso.id == materia.id_curso}
-                                                onChange={(e) => {
-                                                    if (e.target.checked) {
-                                                        let oportunidades = cursoCarga
-                                                        oportunidades.push(curso.id)
-                                                        setCursoCarga(oportunidades);
-                                                    }
-                                                }}
-                                            />
+                                            {user.rol!=4 ? (
+                                                <input
+                                                    type="checkbox"
+                                                    aria-label="Checkbox for following text input"
+                                                    value={curso.id}
+                                                    checked={curso.id == materia.id_curso}
+                                                />
+                                            ):(
+                                                <input
+                                                    type="checkbox"
+                                                    aria-label="Checkbox for following text input"
+                                                    value={curso.id}
+                                                    onChange={(e) => {
+                                                        if (e.target.checked) {
+                                                            let oportunidades = cursoCarga
+                                                            oportunidades.push(curso.id)
+                                                            setCursoCarga(oportunidades);
+                                                        }
+                                                    }}
+                                                />
+                                            )}
                                         </td>
                                     )
                                 })}
