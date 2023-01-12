@@ -45,6 +45,7 @@ const Menu = () => {
             if (user.rol==2 || user.rol==3){
                 navigate('/control/actas')
             }else{
+                
                 navigate('/actas')
             }
         }
@@ -54,6 +55,9 @@ const Menu = () => {
             }else{
                 navigate('/horarios')
             }
+        }
+        if (operacion==='maestroForm'){
+            navigate('/maestroForm/insert')
         }
 
     }
@@ -123,11 +127,18 @@ const Menu = () => {
                                </button>
                            </section>
                        )}
+                       {user.rol ==5 &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                       onClick={()=>handleClickInsvripcion('maestroForm')}>Maestos Insertar
+                               </button>
+                           </section>
+                       )}
 
 
                        {(user.rol==1 || user.rol==2 ||user.rol==5 )&&(
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark"  style={{textAlign: "initial"}}
                                        onClick={()=>handleClickInsvripcion('acta')}>Actas
                                </button>
                            </section>

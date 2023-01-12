@@ -114,7 +114,7 @@
 .contMaterias{
 
   height: 500px;
-  width: 800px;
+  width: 980px;
   background: rgba(255, 255, 255, 0.1);
   margin-top: 70px;
   padding: 20px;
@@ -128,7 +128,8 @@
 }
 .tableR .btn{
   color: white;
-  width: 70%;
+  width: 80%;
+  margin: 20px;
 }
 .btncal{
   width: 200px;
@@ -137,4 +138,18 @@
   color: white;
   border-radius: 0.5rem;
   margin-top: 50px;
+}
+.btnSend{
+  background-color: transparent;
+  border-radius: 0.4rem;
+  border: 1px solid rgb(119, 0, 255);
+  width: 45px;
+  margin-top: 20px;
+  height: 45px;
+  background-image: url( '../assets/imgs/send.png');
+  background-repeat: no-repeat;
+}
+.docs{
+  width: 100%;
+  margin-left: 1px;
 }

@@ -32,6 +32,10 @@ import Examen from "@components/examen";
 import Materias from "@components/materias-container";
 import Grupos from "@components/grupos";
 import MateriasContainer from "@components/materias-container";
+import MaestroForm from "@components/MaestroForm";
+import MaestroConsultas from "@components/MaestroConsultas";
+
+
 
 const App=()=>{
     const operacion=useOperacion()
@@ -94,7 +98,13 @@ const App=()=>{
                         <Route exact path="/actas" element={<AuthRoute><Carreras/></AuthRoute>}/>
 
                         <Route exact path="/actas/grupos" element={<AuthRoute><Grupos/></AuthRoute>}/>
+                        <Route exact path="/actas/grupos/:clave" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/materias" element={<AuthRoute><MateriasContainer/></AuthRoute>}/>
+
+                        {/*Maestros*/}
+                        <Route exact path="/maestroForm/insert" element={<AuthRoute><MaestroForm/></AuthRoute>}/>
+                        <Route exact path="/maestroForm/insert/:clave" element={<AuthRoute><MaestroForm/></AuthRoute>}/>
+                        <Route exact path="/maestroForm/consulta" element={<AuthRoute><MaestroConsultas/></AuthRoute>}/>
 
 
                     </Routes>

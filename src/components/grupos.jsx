@@ -1,7 +1,32 @@
+import React, { useState, useContext } from "react";
 import "../styles/Grupos.scss"
-import React from "react";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
+import axios from "axios";
+import Cookie from "js-cookie";
+import {useAuth} from "../hooks/useAuth";
+import { useEffect } from "react";
+import AppContext from "../context/AppContext";
+
 const Grupos = () => {
+    const [grupo, setGrupo]=useState([]);
+    const auth = useAuth();
+    const user = auth.user;
+    const {clave} = useParams();
+
+    const getGrupo=async (user, clave)=>{
+        const cookie= Cookie.get('token')
+        axios.defaults.headers.Authorization='Bearer '+cookie;
+        const rta= axios.get('http://localhost:3000/api/v1/grupos/maestro/'+user.clave+'/'+clave+'').then(rest => {
+            setGrupo(rest.data)
+        });
+        
+        
+
+    }
+    useEffect(() => {
+        getGrupo(user,clave)
+       
+    },[]);
     const navigate=useNavigate()
     const handeleClick=(e)=>{
         e.preventDefault()
@@ -13,53 +38,14 @@ const Grupos = () => {
             <div className="materias pt-1">
 
                 <div className="mate justify-content-center row">
-                    <div className="botones mr-3">
-                        <button type="button " className="btngru btn-outline-primary" onClick={handeleClick}
-                            style={{color:"cyan"}}>3101</button>
-                    </div>
-                    <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary" onClick={handeleClick}
-                            style={{color:"cyan"}}>3102</button>
-                    </div>
-                    <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary" onClick={handeleClick}
-                            style={{color:"cyan"}}>3103</button>
-                    </div>
+                        {grupo.map((grupos)=>(
+                            <div className="botones mr-3">
+                            <button type="button " className="btngru btn-outline-primary" onClick={handeleClick}
+                            style={{color:"cyan"}}>{grupos.grupo}</button>
+                            </div>
+                        ))}
+                    
                 </div>
-
-                <div className="mate justify-content-center row ">
-                    <div className="botones mr-3">
-                        <button type="button " className="btngru btn-outline-primary " onClick={handeleClick}
-                            style={{color:"cyan"}}>3301</button>
-                    </div>
-                    <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary " onClick={handeleClick}
-                            style={{color:"cyan"}}>3302</button>
-                    </div>
-                    <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary" onClick={handeleClick}
-                            style={{color:"cyan"}}>3501</button>
-                    </div>
-                </div>
-
-                <div className="mate justify-content-center row ">
-                    <div className="botones mr-3">
-                        <button type="button " className="btngru btn-outline-primary " onClick={handeleClick}
-                            style={{color:"cyan"}}>3502</button>
-                    </div>
-                    <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary" onClick={handeleClick}
-                            style={{color:"cyan"}}>3701</button>
-                    </div>
-                    <div className="button mr-3">
-                        <button type="button" className="btngru btn-outline-primary " onClick={handeleClick}
-                            style={{color:"cyan"}}>3901</button>
-
-                    </div>
-                </div>
-
-
-
             </div>
         </div>
     );

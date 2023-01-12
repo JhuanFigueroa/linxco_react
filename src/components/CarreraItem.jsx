@@ -3,14 +3,15 @@ import '../styles/Carreras.scss'
 import {useNavigate} from "react-router-dom";
 import {useAuth} from "../hooks/useAuth";
 import AppContext from "../context/AppContext";
+
 const CarreraItem = ({carrera}) => {
     const {state}=useContext(AppContext)
     const operacion=state.operacion
     const auth=useAuth()
     const user=auth.user
         const navigate=useNavigate()
-    const handleSubmit=(e)=>{
-            e.preventDefault()
+    const handleSubmit=(clave)=>{
+            
         console.log(operacion)
         if (operacion==='inscripcion'){
             navigate('/inscripcion/carreras');
@@ -27,7 +28,7 @@ const CarreraItem = ({carrera}) => {
 
         if (operacion==='acta'){
             if (user.rol==1){
-                navigate('/actas/grupos')
+                navigate(`/actas/grupos/${clave}`)
             }else{
                 navigate('/control/actas/materias')
             }
@@ -42,7 +43,7 @@ const CarreraItem = ({carrera}) => {
                 <h2>materia</h2>
                 <div className="btnca">
                     <button type="button" className="btn btn-outline-success"
-                            onClick={handleSubmit}
+                            onClick={ () => handleSubmit(carrera.clave)}
                             style={{marginTop: "25px", width: "150px"}}>Ingresar
                     </button>
                 </div>

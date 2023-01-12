@@ -1,6 +1,7 @@
 import React from "react";
 import '../styles/aspirantes.scss'
 import {useNavigate} from "react-router-dom";
+
 const aspirantes=()=>{
      const navigate=useNavigate();
      const handleClick=(e)=>{
