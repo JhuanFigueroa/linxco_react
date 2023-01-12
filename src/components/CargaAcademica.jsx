@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from "react";
-import '../styles/CargaAcademica.scss'
-import {useNavigate} from "react-router-dom";
+import React, {useContext, useEffect, useState} from "react";
+import "../styles/CargaAcademica.scss";
+import {useNavigate, useParams} from "react-router-dom";
 import {useAuth} from "../hooks/useAuth";
-import {useContext} from "react";
 import AppContext from "../context/AppContext";
 import axios from "axios";
 import ListaMaterias from "@components/ListaMaterias";
@@ -18,10 +17,6 @@ const CargaAcademica = () => {
     const user = auth.user;
     const periodo = auth.periodo;
     const navigate = useNavigate();
-     const handleClickk=(e)=>{
-         e.preventDefault();
-         navigate('/')
-     }
 
     const [openModal, setOpenModal] = useState(false);
     const [materiasCarga, setMateriasCarga] = useState([]);
@@ -98,7 +93,6 @@ const CargaAcademica = () => {
                             dtaMateriaCarga
                         );
                     }
-                    axios.post('http://localhost:3000/api/v1/materia-carga',dtaMateriaCarga)
 
                 });
 
