@@ -29,12 +29,7 @@ const aspirantes=()=>{
 			'lugar_aplicacion':lugAapliAspirante,
 			'persona_emergencia':personaEmerAspirante,
 			'claveCarrera':claveCarrera,
-			'fecha':fechaAspiante,
-			'certificado':certificadAsp,
-			'actaNac':actafiAsp,
-			'identificacion':idenfiAsp,
-			'foto':fotofiAsp,
-			'curpfi':curpfiAsp
+			'fecha':fechaAspiante
 		}
 		 const cookie= Cookie.get('token')
          axios.defaults.headers.Authorization='Bearer '+cookie;
@@ -95,55 +90,55 @@ const aspirantes=()=>{
 					
 				
 					<div className="form-group  pt-3">
-						<input type="number"  className="form-control"  placeholder="Ficha de Admision"style={{width: "400px", color:"white"}}
+						<input type="number"  className="form-control"  placeholder="Ficha de Admision"style={{width: "350px", color:"white"}}
 							onChange={(e)=>{setnumFicha(e.target.value)}}
 						/>
 						
 					</div>
 					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="Nombre(s)"style={{width: "400px", color:"white"}} onChange={(e)=>{setnomAspirante(e.target.value)}}/>
+						<input type="text"  className="form-control" placeholder="Nombre(s)"style={{width: "350px", color:"white"}} onChange={(e)=>{setnomAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="Apellido Paterno"style={{width: "400px", color:"white"}} onChange={(e)=>{setapePaternoAs(e.target.value)}}/>
+						<input type="text"  className="form-control" placeholder="Apellido Paterno"style={{width: "350px", color:"white"}} onChange={(e)=>{setapePaternoAs(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Apellido Materno"style={{width: "400px",color:"white"}} onChange={(e)=>{setapeMaternoAs(e.target.value)}}/>
+						<input type="text" className="form-control" placeholder="Apellido Materno"style={{width: "350px",color:"white"}} onChange={(e)=>{setapeMaternoAs(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="tel" className="form-control" placeholder="Telefono"style={{width: "400px", color:"white"}} onChange={(e)=>{settelefonoAspirante(e.target.value)}}/>
+						<input type="tel" className="form-control" placeholder="Telefono"style={{width: "350px", color:"white"}} onChange={(e)=>{settelefonoAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="Nombre(s) Persona de Emergencia"style={{width: "400px", color:"white"}} onChange={(e)=>{setpersonaEmerAspirante(e.target.value)}}/>
+						<input type="text"  className="form-control" placeholder="Nombre(s) Persona de Emergencia"style={{width: "350px", color:"white"}} onChange={(e)=>{setpersonaEmerAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="tel" className="form-control" placeholder="Tel. Emergencia"style={{width: "400px", color:"white"}} onChange={(e)=>{settelefonoEmeAspirante(e.target.value)}}/>
+						<input type="tel" className="form-control" placeholder="Tel. Emergencia"style={{width: "350px", color:"white"}} onChange={(e)=>{settelefonoEmeAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="email" className="form-control" placeholder="Correo Electronico"style={{width: "400px",color:"white"}} onChange={(e)=>{setcorreoAspirante(e.target.value)}}/>
+						<input type="email" className="form-control" placeholder="Correo Electronico"style={{width: "350px",color:"white"}} onChange={(e)=>{setcorreoAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="CURP"style={{width: "400px", color:"white"}} onChange={(e)=>{setcurpAspirante(e.target.value)}}/>
+						<input type="text"  className="form-control" placeholder="CURP"style={{width: "350px", color:"white"}} onChange={(e)=>{setcurpAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group pt-3 ">
-						<input type="text" className="form-control" placeholder="Domicilio"style={{width: "400px", color:"white"}} onChange={(e)=>{setdomicilioAspirante(e.target.value)}}/>
+						<input type="text" className="form-control" placeholder="Domicilio"style={{width: "350px", color:"white"}} onChange={(e)=>{setdomicilioAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Escuela de Procedencia"style={{width:"400px", color:"white"}} onChange={(e)=>{setescProceAsptirante(e.target.value)}}/>
+						<input type="text" className="form-control" placeholder="Escuela de Procedencia"style={{width:"350px", color:"white"}} onChange={(e)=>{setescProceAsptirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Tipo de Sangre"style={{width: "400px", color:"white"}} onChange={(e)=>{settipoSangreAspirante(e.target.value)}}/>
+						<input type="text" className="form-control" placeholder="Tipo de Sangre"style={{width: "350px", color:"white"}} onChange={(e)=>{settipoSangreAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Genero (M o F)"style={{width: "400px", color:"white"}} onChange={(e)=>{setgeneroAspirante(e.target.value)}}/>
+						<input type="text" className="form-control" placeholder="Genero (M o F)"style={{width: "350px", color:"white"}} onChange={(e)=>{setgeneroAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Lugar de Nacimiento"style={{width: "400px", color:"white"}} onChange={(e)=>{setlugNacAspirante(e.target.value)}}/>
+						<input type="text" className="form-control" placeholder="Lugar de Nacimiento"style={{width: "350px", color:"white"}} onChange={(e)=>{setlugNacAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Lugar de Aplicacion"style={{width: "400px", color:"white"}} onChange={(e)=>{setlugAapliAspirante(e.target.value)}}/>
+						<input type="text" className="form-control" placeholder="Lugar de Aplicacion"style={{width: "350px", color:"white"}} onChange={(e)=>{setlugAapliAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="Promedio"style={{width: "400px", color:"white"}} onChange={(e)=>{setpromedioAspirante(e.target.value)}}/>
+						<input type="text"  className="form-control" placeholder="Promedio"style={{width: "350px", color:"white"}} onChange={(e)=>{setpromedioAspirante(e.target.value)}}/>
 					</div>
 					<div className="form-group ">
 						<select className="cmbcarre" 
