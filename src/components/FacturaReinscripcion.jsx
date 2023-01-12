@@ -84,6 +84,67 @@ const FacturaReinscripcion = () => {
                     setFacturasC(factT);
                 });
         });
+    };
+
+    const addFactura = () => {
+        console.log(numComprobante);
+        const data = {
+            'numero_comprobante': numComprobante,
+            'monto_total': totalFactura(),
+            'matriculaAlumno': user.clave,
+            'status':1
+        };
+
+        const cookie = Cookie.get("token");
+        axios.defaults.headers.Authorization = "Bearer " + cookie;
+        const rta = axios
+            .post("http://localhost:3000/api/v1/factura", data)
+            .then(function (response) {
+                idF = response.data;
+                facturasC.map((factura) => {
+                    const dtaRazonfFactura = {
+                        idFactura: idF,
+                        claveRazon: factura.clave_razon_factura,
+                    };
+                    axios.post(
+                        "http://localhost:3000/api/v1/razonf-factura",
+                        dtaRazonfFactura
+                    );
+                });
+            });
+
+        const matricula = {
+            matricula: user.clave,
+        };
+
+        axios.post("http://localhost:3000/api/v1/tramites/reinscribir", matricula);
+        console.log(matricula);
+        console.log(data);
+    };
+
+    const reinscribir = () => {
+        const data = {
+            'folio': numComprobante,
+            'matricula': matriculaAlumno
+        }
+        const rta = axios.post('http://localhost:3000/api/v1/tramites/reinscribir-alumno', data)
+    }
+    const deleteRazonFactura = (factura) => {
+        facts = facturasC;
+        console.log(facts);
+        const newFacturas = facts.filter((item) => item !== factura);
+        console.log(newFacturas);
+        setFacturas(newFacturas);
+        setFacturasC(newFacturas);
+    };
+
+    const handleSubmit = () => {
+        if (user.rol == 4) {
+            addFactura()
+        } else {
+            reinscribir()
+        }
+        navigate('/home')
     }
 
     return (
@@ -148,7 +209,7 @@ const FacturaReinscripcion = () => {
                 </div>
             )}
 
-            <table className="tableReAl table-bordered">
+            <table className="tableFac table-bordered">
                 <thead>
                 <tr>
                     <th scope="col">Cantidad</th>
@@ -174,7 +235,6 @@ const FacturaReinscripcion = () => {
                         </td>
                     </tr>
                 ))}
-
                 </tbody>
             </table>
             <label
@@ -194,12 +254,12 @@ const FacturaReinscripcion = () => {
             {(user.rol == 3 || user.rol==5)? (
                 <section className="botonesFR row" style={{marginTop: "10px"}}>
                     <button className="btnFactsA btn-outline-primary"
-                    onClick={()=>{
-                        navigate('/home')
-                    }}
+                            onClick={()=>{
+                                navigate('/home')
+                            }}
                     >Incompleto</button>
                     <button className="btnFactsAB btn-outline-primary"
-                    onClick={handleSubmit}
+                            onClick={handleSubmit}
                     >
                         Reinscribir
                     </button>
