@@ -139,7 +139,7 @@ const Menu = () => {
                        )}
                        {user.rol ==5 &&(
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial", marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('maestroForm')}>Maestos Insertar
                                </button>
                            </section>
