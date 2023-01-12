@@ -39,7 +39,9 @@ const CarreraItem = ({carrera}) => {
     }
     return (
         <figure>
+            
             <img src={carrera.imagen} alt=""/>
+            
                 <h2>materia</h2>
                 <div className="btnca">
                     <button type="button" className="btn btn-outline-success"
@@ -49,6 +51,7 @@ const CarreraItem = ({carrera}) => {
                 </div>
 
         </figure>
+        
     );
 }
 

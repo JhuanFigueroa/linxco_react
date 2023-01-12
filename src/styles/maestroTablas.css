@@ -58,3 +58,32 @@ body {
 	border-radius: 0.4rem;
 	color: white;
 }
+@media only screen and (max-width: 1200px) {
+	
+	.contentMaestros{
+		margin-left: 200px;
+		height: 300px;
+		width: 800px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-top: 60px;
+		border-radius: 5px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+	}
+	
+	
+}
+@media only screen and (max-width: 1160px) {
+	
+	.contentMaestros{
+		margin-left: 100px;
+		height: 300px;
+		width: 800px;
+		background: rgba(255, 255, 255, 0.1);
+		margin-top: 60px;
+		border-radius: 5px;
+		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+		backdrop-filter: blur(3px);
+	}
+	
+}

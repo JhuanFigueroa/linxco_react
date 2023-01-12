@@ -1,10 +1,18 @@
 import React from "react";
 import '../styles/BajasForm.scss'
+import {useNavigate} from "react-router-dom";
 
 const BajasForm = () => {
+    
+     const navigate=useNavigate();
+     const hadleClick=(e)=>{
+         e.preventDefault();
+       navigate('/')
+     }
     return (
-
+        <div className="capa">
                 <section className="contenedor-bajas-form">
+                    
                     <div className="form-group">
                         <h5 style={{color:"white"}}>No. Matricula</h5>
                         <input type="number" className="form-control" style={{width:"300px",height:"30px"}}/>
@@ -70,21 +78,23 @@ const BajasForm = () => {
                     <button
                         type="button"
                         className="btnInscribir btn-outline-primary"
-                        onClick="location.href='#'"
+                        onClick={hadleClick}
                         style=
                             {{
                                 width: "300px",
-                                height: "50px",
+                                height: "40px",
                                 marginLeft: "80px",
                                 marginTop: "80px",
-                                borderRadius: "0.5rem"
+                                borderRadius: "0.5rem",
+                                backgroundColor: "transparent",
+                                color: "white"
                             }}
                     >
                         GUARDAR
                     </button>
                 </section>
 
-
+        </div>
     );
 }
 

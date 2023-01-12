@@ -29,6 +29,7 @@ const Materias = () => {
 
 	return (
 
+		<div className="capa">
 			<section className="contMaterias">
 				<div className="calificaciones pt-1 ">
 					<div className="titulo justify-content-center" style={{ textAlign:"center", color: "white", marginLleft: "300px"}} >
@@ -36,7 +37,7 @@ const Materias = () => {
 					</div>
 			
 
-					<table className="tableR table-bordered" style={{width: "850px", height: "50px", marginTop: "50px" }}>
+					<table className="tableCal table-bordered" style={{width: "850px", height: "50px", marginTop: "50px" }}>
 						<thead>
 							<tr>
 								<th scope="col">MATERIA</th>
@@ -74,7 +75,7 @@ const Materias = () => {
 					
 					</div>
 			</section>
-
+			</div>
 	);
 }
 

@@ -8,46 +8,21 @@ const bienvenidaAs=()=>{
        navigate('/aspirante/form')
      }
 
-    return(
-
-		<div className="forbienvenida ">
-			<div className="row justify-content-center ">
-					<div className="mensaje text-center" style={{color: "white"}}>
-						
-					</div>
-					<form action="">
-							
-					<div className="form-group">
-						<input type="text"  className="form-control"  placeholder="Nombre(s)"style={{width: "500px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text"  className="form-control" placeholder="CURP"style={{width: "500px", color:"white"}}/>
-					</div>
-					<div className="form-group ">
-						<input type="text" className="form-control" placeholder="Calificación"style={{width: "500px",color:"white"}}/>
-					</div>
-					<div className="documentos">
-						<div className="container-main" style={{color: "white"}}>
-							<h3>Acta de Nacimiento</h3>
-						</div>
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "500px", color:"white"}}/>
-						</div>
-						<div className="container-main" style={{color: "white"}}>
-							<h3>CURP</h3>
-						</div>
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "500px", color:"white"}}   />
-						</div>
-					</div>
-					</form>
+    return( 
+		<div className="capa">
+			<div className="forbienvenida ">
+				<div className="row justify-content-center ">
+						<div className="mensajeBienvenida text-center" style={{color: "white"}}>
+						<h4>Instrucciones</h4>	
 			</div>
-			<div className="btnsig text-center pt-2">
-				<button type="button" onClick={hadleClick}
-						className="btn btn-outline-primary">Finalizar
-				</button>
+				</div>
+				<div className="btnsig text-center pt-2">
+					<button type="button" onClick={hadleClick}
+							className="btn btn-outline-primary" style={{color: "white", marginTop:"15px"}}>Continuar
+					</button>
+				</div>
 			</div>
-		</div>
+		</div>	
 
 );
 }

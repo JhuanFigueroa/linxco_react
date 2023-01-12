@@ -8,17 +8,18 @@ const TableAspirantes=()=>{
         navigate('/inscripcion/estudiante')
     }
     return(
-        <section className="contTablaDatos">
-            <nav className="menu2 d-flex align-items-center">
+        <div className="capa">
+        <section className="contTablaDatosInscripcion">
+            <nav className="menuTableAspirantes d-flex align-items-center">
                 <form className="form-inline">
-                    <input className="form-control mr-sm-2 col-7" type="search"  style={{width:"700px"}}
+                    <input className="form-control row" type="search"  style={{width:"400px"}}
                         placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-primary" style={{marginTop: "10px",height: "45px", color: "white"}}
+                    <button className="btnBuscarAspirante btn-outline-primary"
                             type="submit">Buscar</button>
                 </form>
             </nav>
             <h5 className="textoAd">ADMISION</h5>
-            <table className="table table-bordered">
+            <table className="tableAspirantes table-bordered">
                 <thead>
                 <tr>
                     <th scope="col">NO. FICHA</th>
@@ -39,6 +40,7 @@ const TableAspirantes=()=>{
                 </tbody>
             </table>
         </section>
+        </div>
 );
 }
 

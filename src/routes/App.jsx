@@ -36,6 +36,12 @@ import MaestroForm from "@components/MaestroForm";
 import MaestroConsultas from "@components/MaestroConsultas";
 
 
+import Carrerasform from "@components/Carrerasform";
+import VistaCarrera from "@components/VistaCarrera";
+import EmpleadoForm from "@components/EmpleadoForm";
+import VistaEmpleado from '../components/vistaEmpleado';
+import PeriodoForm from '../components/PeriodoForm';
+import VistaPeriodo from "@components/VistaPeriodo";
 
 const App=()=>{
     const operacion=useOperacion()
@@ -100,12 +106,26 @@ const App=()=>{
                         <Route exact path="/actas/grupos" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/grupos/:clave" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/materias" element={<AuthRoute><MateriasContainer/></AuthRoute>}/>
+                        
+                        {/*Carreras*/}
+                        <Route exact path="/carrera/Insertar" element={<AuthRoute><Carrerasform/></AuthRoute>}/>
+                        <Route exact path="/carrera/Ver" element={<AuthRoute><VistaCarrera/></AuthRoute>}/>
+                        <Route exact path="/carrera/Insertar/:clave" element={<AuthRoute><Carrerasform/></AuthRoute>}/>
 
                         {/*Maestros*/}
                         <Route exact path="/maestroForm/insert" element={<AuthRoute><MaestroForm/></AuthRoute>}/>
                         <Route exact path="/maestroForm/insert/:clave" element={<AuthRoute><MaestroForm/></AuthRoute>}/>
                         <Route exact path="/maestroForm/consulta" element={<AuthRoute><MaestroConsultas/></AuthRoute>}/>
 
+                        {/*enmleado*/}
+                        <Route exact path="/empleado/Insertar" element={<AuthRoute><EmpleadoForm/></AuthRoute>}/>
+                        <Route exact path="/empleado/Ver" element={<AuthRoute><VistaEmpleado/></AuthRoute>}/>
+                        <Route exact path="/empleado/Insertar/:id1" element={<AuthRoute><EmpleadoForm/></AuthRoute>}/>
+
+                        {/*Periodo*/}
+                        <Route exact path="/periodo/Insertar" element={<AuthRoute><PeriodoForm/></AuthRoute>}/>
+                        <Route exact path="/periodo/Ver" element={<AuthRoute><VistaPeriodo/></AuthRoute>}/>
+                        <Route exact path="/periodo/Insertar/:id2" element={<AuthRoute><PeriodoForm/></AuthRoute>}/>
 
                     </Routes>
 

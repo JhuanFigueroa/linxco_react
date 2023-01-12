@@ -10,58 +10,49 @@ const Constancias=()=>{
     return(
        <div>
            <section className="contTramites">
-               <div className="mensaje text-center" style={{color: "white"}}>
+               <div className="mensajeIConst text-center" style={{color: "white"}}>
                    <h1>Instrucciones</h1>
                </div>
                <div className="button row">
-                   <div className="conssemestre mr-3" style={{marginTop:"40px",marginLeft:"40px"}}>
+
+                    <div className="conssemestre mr-3" >
                        <button
                            type="button"
                            onClick={handleClick}
-                           className="constancia btn-outline-primary"
-                           style={{color: "cyan", width: "200px", height: "200px"}}
-                       >
-                           Constancias de estudios
+                           className="constancia btn-outline-primary">
+                           Constancia de Estudios
                        </button>
                    </div>
-                   <div className="conssemestre mr-3" style={{marginTop:"40px",marginLeft:"40px"}}>
+                   <div className="conssemestre mr-3" >
                        <button
                            type="button"
                            onClick={handleClick}
-                           className="constancia btn-outline-primary"
-                           style={{color: "cyan", width: "200px", height: "200px"}}
-                       >
+                           className="constancia btn-outline-primary">
                            Constancia Semestre
                        </button>
                    </div>
 
-                   <div className="conssemestre mr-3" style={{marginTop:"40px",marginLeft:"40px"}}>
+                   <div className="conssemestre mr-3" >
                        <button
                            type="button"
                            onClick={handleClick}
-                           className="constancia btn-outline-primary"
-                           style={{color: "cyan", width: "200px", height: "200px"}}
-                       >
+                           className="constancia btn-outline-primary">
                            Materias Cursadas
                        </button>
                    </div>
-                   <div className="conssemestre mr-3" style={{marginTop:"40px",marginLeft:"40px"}}>
+                   <div className="conssemestre mr-3" >
                        <button
                            type="button"
                            onClick={handleClick}
-                           className="constancia btn-outline-primary"
-                           style={{color: "cyan", width: "200px", height: "200px"}}
-                       >
+                           className="constancia btn-outline-primary">
                            Buena conducta
                        </button>
                    </div>
-                   <div className="conssemestre mr-3" style={{marginTop:"40px",marginLeft:"40px"}}>
+                   <div className="conssemestre mr-3">
                        <button
                            type="button"
                            onClick={handleClick}
-                           className="constancia btn-outline-primary"
-                           style={{color: "cyan", width: "200px", height: "200px"}}
-                       >
+                           className="constancia btn-outline-primary">
                           Egresado simple
                        </button>
                    </div>

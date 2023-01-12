@@ -17,17 +17,20 @@ const EstudiantesTable = () => {
         }
     }
     return (
-
+        <div>
+        <div className="capa"></div>
         <section className="contenedor-estudiantes">
             <nav className="buscador d-flex align-items-center">
                 <form className="form-inline">
-                    <input className="form-control mr-sm-2 col-7" type="search"  style={{width:"700px"}}
-                           placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-primaryy mt-7" type="submit">Buscar</button>
+                    <input className="form-control" type="search"  style={{width:"400px"}}
+                    placeholder="Search" aria-label="Search"/>
+                    <button className="btnBuscarEstudiantes btn-outline-primary" type="submit">Buscar</button>
                 </form>
             </nav>
-            <br></br>
-            <table className="table table-bordered">
+            {operacion==='bajas'&&(
+                <button className="btnAgregarEsT btn-outline-primary" type="button">AGREGAR</button>
+            )}
+            <table className="tableEstudiantes table-bordered">
                 <thead>
                 <tr>
                     <th scope="col">MATRICULA</th>
@@ -59,11 +62,8 @@ const EstudiantesTable = () => {
                 </tbody>
             </table>
 
-            {operacion==='bajas'&&(
-                <button className="btn-outline-primary btn-nuevo" type="button">AGREGAR</button>
-            )}
-
         </section>
+        </div>
     );
 }
 
