@@ -1,5 +1,5 @@
 import React, {useRef, useState} from "react";
-import '../styles/Horarios.scss'
+import '../styles/HorariosUpload.scss'
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {useAuth} from "../hooks/useAuth";
