@@ -34,7 +34,7 @@ const aspirantes=()=>{
 		 const cookie= Cookie.get('token')
          axios.defaults.headers.Authorization='Bearer '+cookie;
 		 axios.post('http://localhost:3000/api/v1/admision',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
-		 navigate('/aspirante/examen')
+		 navigate('/home')
      }
 	 //creear constantes de cada input
 	 const[numFicha,setnumFicha]=useState(0)
