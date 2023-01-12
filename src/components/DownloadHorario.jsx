@@ -33,18 +33,17 @@ const DownloadHorario = () => {
     }, [])
 
     return (
-        <section className="ContentHorariosJefes">
-            <div className="horariosJ">
-                <h2 className="textHJ">Descargar Archivo</h2><br/>
 
-
+    <div className="capa">
+        <section className="ContentHorariosD">
+            <div className="horariosD">
+                <h2 className="textHD">Descargar Archivo</h2><br/>
                 <a href={documento}  download={"horario.pdf"}>
-                    <button className="descargaHA btn-outline-primary">
-                        <img src={gif} max-width="100%" height="100%"/>
-                    </button>
-                </a>
+                <button className="descargaHD btn-outline-primary"><img src={gif} width="100%"
+                                                                                    height="100%"/></button></a>
             </div>
         </section>
+    </div>
     );
 }
 
