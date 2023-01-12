@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import '../styles/ConstanciaDatos.scss'
 import axios from "axios";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 
 const ConstanciaDatos =()=>{
+    const navigate=useNavigate()
     const {matricula}=useParams()
     const [numero,setNumero]=useState()
     const [tipoConstancia,setTipoConstancia]=useState([])
@@ -63,6 +64,7 @@ const ConstanciaDatos =()=>{
 
     const handleClick=()=>{
         addConstancia()
+        navigate('/home')
     }
 
     useEffect(()=>{

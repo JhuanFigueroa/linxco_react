@@ -29,8 +29,9 @@ const Constancias=()=>{
                    <h1>Instrucciones</h1>
                </div>
                <div className="button row">
-                   {tiposConstancia.map(tipo=>(
-                       <div className="conssemestre mr-3" style={{marginTop:"40px",marginLeft:"40px"}} key={tipo.id}>
+
+                       <div className="conssemestre mr-3" style={{marginTop:"40px",marginLeft:"40px"}} >
+                           {tiposConstancia.map(tipo=>(
                            <button
                                type="button"
                                onClick={()=>{handleClick(tipo.descripcion)}}
@@ -39,8 +40,9 @@ const Constancias=()=>{
                            >
                                {tipo.descripcion}
                            </button>
+                           ))}
                        </div>
-                   ))}
+
 
                </div>
            </section>

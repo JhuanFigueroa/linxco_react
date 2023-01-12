@@ -40,7 +40,7 @@ const DownloadHorario = () => {
 
                 <a href={documento}  download={"horario.pdf"}>
                     <button className="descargaHA btn-outline-primary">
-                        <img src={gif} width="100%" height="100%"/>
+                        <img src={gif} max-width="100%" height="100%"/>
                     </button>
                 </a>
             </div>
