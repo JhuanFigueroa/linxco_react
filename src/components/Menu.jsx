@@ -80,14 +80,14 @@ const Menu = () => {
                        </section>
                        {(user.rol==2 || user.rol==5) &&(
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial", marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('inscripcion')}>Inscripcion
                                </button>
                            </section>
                        )}
                        {(user.rol==2 || user.rol==4 || user.rol==5) &&(
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('reinscripcion')}>Reinscripcion
                                </button>
                            </section>
@@ -97,7 +97,7 @@ const Menu = () => {
                        {(user.rol==2 | user.rol==5) &&
                            (
                                <section className="btnMenu">
-                                   <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                                   <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                            onClick={()=>handleClickInsvripcion('bajas')}>Bajas
                                    </button>
                                </section>
@@ -106,7 +106,7 @@ const Menu = () => {
 
                        {(user.rol==2 || user.rol==4 || user.rol==5) &&(
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('constancia')}>Constancias
                                </button>
                            </section>
@@ -115,7 +115,7 @@ const Menu = () => {
 
                        {(user.rol==2 || user.rol==5) && (
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('credencial')}>Credencializacion
                                </button>
                            </section>
@@ -128,7 +128,7 @@ const Menu = () => {
 
                        {user.rol !=1 &&(
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('horario')}>Horarios
                                </button>
                            </section>
@@ -137,7 +137,7 @@ const Menu = () => {
 
                        {(user.rol==1 || user.rol==2 ||user.rol==5 )&&(
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('acta')}>Actas
                                </button>
                            </section>
@@ -146,21 +146,21 @@ const Menu = () => {
                        }
                        {user.rol ==5 &&(
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('insertarCarrera')}>Carrera Insertar
                                </button>
                            </section>
                        )}
                        {user.rol ==5 &&(
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('insertarEmpleado')}>Empleado Insertar
                                </button>
                            </section>
                        )}
                        {user.rol ==5 &&(
                            <section className="btnMenu">
-                               <button className="btnM btn btn-dark" style={{textAlign: "initial"}}
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('insertarPeriodo')}>Periodo Insertar
                                </button>
                            </section>

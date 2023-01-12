@@ -12,7 +12,7 @@ const Carreras=()=>{
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
         const rta= await axios.get(api);
-        setCarreras(rta.data)
+        setCarreras(rta.data.carreras)
 
     }
     React.useEffect(() => {
