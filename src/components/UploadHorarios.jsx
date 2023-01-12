@@ -32,19 +32,21 @@ const UploadHorarios=()=>{
         navigate('/home')
     }
     return(
-        <div className="capa">
+
+    <div className="capa">
         <section className="ContentHorariosJefes">
 
             <div className="horariosJ">
                 <h2 className="textHJ">Seleccionar o arrastrar archivo</h2><br/>
-                <input type="file" className="form-control" style={{height: "200px", width: "650px"}}
-                       onChange={handleFileChange} placeholder="Subir"/>
-
-                        <button onClick={handleClick} className="btnHSubir btn-outline-primary">Subir</button>
+                <div className="form-control-HJ">
+                    <input type="file" className="subirArchHor" onChange={handleFileChange} placeholder="Subir"/>
+                </div>
+                <br/>
+                <button onClick={handleClick} className="btnHSubir btn-outline-primary">Subir</button>
             </div>
 
         </section>
-        </div>
+    </div>
     );
 }
 
