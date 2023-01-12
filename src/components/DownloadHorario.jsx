@@ -3,32 +3,46 @@ import '../styles/Horarios.scss'
 import gif from '@imagenes/hor.gif'
 import {useAuth} from "../hooks/useAuth";
 import axios from "axios";
-let Documento
-const DownloadHorario=()=>{
-    let claveCarrera=0
-    const auth=useAuth()
+import {useParams} from "react-router-dom";
+const DownloadHorario = () => {
+    const {carrera}=useParams()
+    let claveCarrera = 0
+    const auth = useAuth()
     const user = auth.user;
+    const [documento,setDocumento]=useState(null)
 
-    const obtnenerClaveCarrera= async ()=>{
-        const rta= await axios.get('http://localhost:3000/api/v1/alumnos/'+user.clave)
-        claveCarrera=rta.data.claveCarrera
-        const res=await axios.get('http://localhost:3000/api/v1/horarios/carrera/'+claveCarrera)
+    const obtnenerHorarioAlumno = async () => {
+        const rta = await axios.get('http://localhost:3000/api/v1/alumnos/' + user.clave)
+        claveCarrera = rta.data.claveCarrera
+        const res = await axios.get('http://localhost:3000/api/v1/horarios/carrera/' + claveCarrera)
+        setDocumento(res.data.ubicacion)
+        //console.log(Documento)
     }
 
-    useEffect(()=>{
-        obtnenerClaveCarrera()
+    const obtenerHorarioControl= async ()=>{
+        const res = await axios.get('http://localhost:3000/api/v1/horarios/carrera/' + carrera)
+        setDocumento(res.data.ubicacion)
+    }
 
+    useEffect(() => {
+        if (user.rol==4){
+            obtnenerHorarioAlumno()
+        }else{
+            obtenerHorarioControl()
+        }
+    }, [])
 
-    },[])
-
-    return(
+    return (
         <section className="ContentHorariosJefes">
             <div className="horariosJ">
                 <h2 className="textHJ">Descargar Archivo</h2><br/>
 
 
-                <a href={Documento} download> <button className="descargaHA btn-outline-primary"><img src={gif} width="100%"
-                                                                                                                            height="100%"/></button></a>
+                <a href={documento}  download={"horario.pdf"}>
+                    <button className="descargaHA btn-outline-primary">
+                        <img src={gif} width="100%" height="100%"/>
+                    </button>
+                </a>
             </div>
         </section>
     );

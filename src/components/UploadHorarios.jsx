@@ -21,13 +21,14 @@ const UploadHorarios=()=>{
 
 
         const res=axios.get('http://localhost:3000/api/v1/jefes/'+user.clave).then(resp=>{
-            setClaveCarrera(resp.data.claveCarrera)
-        })
-        formData.append('ubicacion',selectedFile,selectedFile.name)
-        formData.append('claveCarrera',claveCarrera)
-        formData.append('idPeriodo',periodo[0].id)
 
-        const rta=axios.post('http://localhost:3000/api/v1/jefes/horarios',formData)
+            formData.append('ubicacion',selectedFile,selectedFile.name)
+            formData.append('claveCarrera',resp.data.claveCarrera)
+            formData.append('idPeriodo',periodo[0].id)
+
+            const rta=axios.post('http://localhost:3000/api/v1/jefes/horarios',formData)
+        })
+
         navigate('/home')
     }
     return(

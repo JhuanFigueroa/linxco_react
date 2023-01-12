@@ -1,12 +1,26 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import '../styles/ConstanciaControl2.scss'
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
+import axios from "axios";
 const ConstanciaControl2 = () =>{
+    const {clave}=useParams()
     const navigate=useNavigate()
-    const handleClick=(e)=>{
-        e.preventDefault();
-        navigate('/control/constancias/datos')
+    const [peticiones,setPeticiones]=useState([])
+    const getPeticiones=()=>{
+        const rta=axios.get('http://localhost:3000/api/v1/peticiones/carrera/'+clave)
+            .then(res=>{
+                setPeticiones(res.data)
+            })
     }
+
+    const handleClick=(matricula)=>{
+
+        navigate(`/control/constancias/datos/${matricula}`)
+    }
+
+    useEffect(()=>{
+        getPeticiones()
+    })
     return(
             <section className="contentFactReins">
                 <h2 className="titleCarga">DATOS</h2><br></br>
@@ -24,14 +38,16 @@ const ConstanciaControl2 = () =>{
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>RECURSE</td>
-                            <td>BASE DE DATOS</td>
-                            <td>ALAN BECERRIL</td>
+                    {peticiones.map(peticion=>(
+                        <tr key={peticion.matricula}>
+                            <td>{peticion.tipo}</td>
+                            <td>{peticion.matricula}</td>
+                            <td>{peticion.nombre}</td>
                             <td>
-                                <button onClick={handleClick}>VER</button>
+                                <button onClick={()=>{handleClick(peticion.matricula)}}>VER</button>
                             </td>
                         </tr>
+                    ))}
                     </tbody>
                 </table>
                 <br></br>

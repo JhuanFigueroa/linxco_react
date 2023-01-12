@@ -22,7 +22,7 @@ const CarreraItem = ({carrera}) => {
             navigate(`/control/bajas/estudiantes/${clave}`);
         }
         if (operacion==='constancia'){
-            navigate('/control/constancias/tabla')
+            navigate(`/control/constancias/tabla/${clave}`)
         }
 
         if (operacion==='acta'){
@@ -33,7 +33,7 @@ const CarreraItem = ({carrera}) => {
             }
         }
         if (operacion==='horario'){
-            navigate('/horarios')
+            navigate(`/horarios/${clave}`)
         }
     }
     return (

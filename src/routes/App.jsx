@@ -33,6 +33,7 @@ import Materias from "@components/materias-container";
 import Grupos from "@components/grupos";
 import MateriasContainer from "@components/materias-container";
 import RenunciasSeg from "@components/RenunciasSeg";
+import DownloadHorario from "@components/DownloadHorario";
 
 const App=()=>{
     const operacion=useOperacion()
@@ -81,17 +82,18 @@ const App=()=>{
                         {/*Constancias*/}
                         <Route exact path="/constancias" element={<AuthRoute><Constancias/></AuthRoute>}/>
                         <Route exact path="/control/constancias" element={<AuthRoute><Carreras/></AuthRoute>}/>
-                        <Route exact path="/control/constancias/tabla" element={<AuthRoute><ConstanciaControl2/></AuthRoute>}/>
-                        <Route exact path="/control/constancias/datos" element={<AuthRoute><ConstanciaDatos/></AuthRoute>}/>
+                        <Route exact path="/control/constancias/tabla/:clave" element={<AuthRoute><ConstanciaControl2/></AuthRoute>}/>
+                        <Route exact path="/control/constancias/datos/:matricula" element={<AuthRoute><ConstanciaDatos/></AuthRoute>}/>
                         <Route exact path="/control/bajas" element={<AuthRoute><Carreras/></AuthRoute>}/>
 
-                        <Route exact path="/factura" element={<AuthRoute><Factura/></AuthRoute>}/>
+                        <Route exact path="/factura/:descripcion" element={<AuthRoute><Factura/></AuthRoute>}/>
 
                         <Route exact path="/control/credencializacion" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
                         <Route exact path="/control/credencializacion/form" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
                         <Route exact path="/control/credencializacion/edit/:matriculaAlumno" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
 
                         <Route exact path="/horarios" element={<AuthRoute><Horario/></AuthRoute>}/>
+                        <Route exact path="/horarios/:carrera" element={<AuthRoute><DownloadHorario/></AuthRoute>}/>
                         <Route exact path="/control/horarios" element={<AuthRoute><Carreras/></AuthRoute>}/>
 
                         {/*Actas*/}
