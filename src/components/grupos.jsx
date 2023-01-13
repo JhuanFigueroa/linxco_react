@@ -2,6 +2,7 @@ import "../styles/Grupos.scss"
 import React from "react";
 import {useNavigate} from "react-router-dom";
 const Grupos = () => {
+  //  const [grupos,setGrupo]=useState([])//
     const navigate=useNavigate()
     const handeleClick=(e)=>{
         e.preventDefault()

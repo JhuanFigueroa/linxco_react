@@ -1,6 +1,5 @@
-
 import React from "react";
-import '../styles/Materia.scss'
+import '../styles/gruposForm.scss'
 import {useNavigate} from "react-router-dom";
 
 const Materias = () => {
