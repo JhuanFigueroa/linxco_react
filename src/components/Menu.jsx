@@ -75,7 +75,10 @@ const Menu = () => {
         if (operacion==='insertarGrupo'){
             navigate('/grupoF')
         }
-
+        if (operacion==='insertarMaterias'){
+            navigate('/materiasF')
+        }
+        
     }
 
     return (
@@ -154,7 +157,7 @@ const Menu = () => {
                        {user.rol ==5 &&(
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial", marginLeft:0}}
-                                       onClick={()=>handleClickInsvripcion('maestroForm')}>Maestos Insertar
+                                       onClick={()=>handleClickInsvripcion('maestroForm')}>Insertar Maestros
                                </button>
                            </section>
                        )}
@@ -172,31 +175,38 @@ const Menu = () => {
                        {user.rol ==5 &&(
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
-                                       onClick={()=>handleClickInsvripcion('insertarCarrera')}>Carrera Insertar
+                                       onClick={()=>handleClickInsvripcion('insertarCarrera')}>Insertar Carrera
                                </button>
                            </section>
                        )}
                        {user.rol ==5 &&(
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
-                                       onClick={()=>handleClickInsvripcion('insertarEmpleado')}>Empleado Insertar
+                                       onClick={()=>handleClickInsvripcion('insertarEmpleado')}>Insertar Empleado
                                </button>
                            </section>
                        )}
                        {user.rol ==5 &&(
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
-                                       onClick={()=>handleClickInsvripcion('insertarPeriodo')}>Periodo Insertar
+                                       onClick={()=>handleClickInsvripcion('insertarPeriodo')}>Insertar Periodo
                                </button>
                            </section>
                        )}
                        {user.rol ==5 &&(
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
-                                       onClick={()=>handleClickInsvripcion('insertarGrupo')}>Grupo Insertar
+                                       onClick={()=>handleClickInsvripcion('insertarGrupo')}>Insertar Grupo
                                </button>
                            </section>
                        )}
+                       {user.rol ==5 &&(
+                        <section className="btnMenu">
+                            <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
+                                    onClick={()=>handleClickInsvripcion('insertarMaterias')}>Insertar Materias
+                            </button>
+                        </section>
+                    )}
                        
                    </nav>
 

@@ -45,6 +45,7 @@ import VistaEmpleado from '../components/vistaEmpleado';
 import PeriodoForm from '../components/PeriodoForm';
 import VistaPeriodo from "@components/VistaPeriodo";
 import GruposForm from "@components/gruposForm";
+import MateriasForm from "@components/materiasForm";
 
 const App=()=>{
     const operacion=useOperacion()
@@ -140,6 +141,9 @@ const App=()=>{
 
                         {/*Grupos form*/}
                         <Route exact path="/grupoF" element={<AuthRoute><GruposForm/></AuthRoute>}/>
+                       
+                        {/*Materias form*/}
+                       <Route exact path="/materiasF" element={<AuthRoute><MateriasForm/></AuthRoute>}/>
 
                     </Routes>
 

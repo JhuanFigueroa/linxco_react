@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../styles/gruposForm.scss'
+import '../styles/materiasForm.scss'
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import Cookie from "js-cookie";
@@ -12,24 +12,28 @@ const navigate=useNavigate();
     }
 return(
     <div>
-        
-	<div className="capa"></div>
+         <div className="capa"></div>
+
 <section className="factura row">
     <div className="form-group">
-        <h5>Id del grupo</h5>	
+        <h5>Clave de Materia</h5>	
         <input type="text"  className="form-control"/>
     </div>	
     <div className="form-group">
-        <h5>Numero del grupo</h5>	
+        <h5>Nombre de la materia</h5>	
         <input type="text"  className="form-control"/>
-    </div>
+    </div>	
+    <div className="form-group">
+        <h5>Creditos</h5>	
+        <input type="number"  className="form-control"/>
+    </div>	
     <div className="form-group">
         <h5>Status</h5>	
         <input type="text"  className="form-control"/>
     </div>
     <section className="botonesFR row" style={{marginTop: "10px"}}>
 		<button className="btnFactsA btn-outline-primary">Agregar</button>
-		<button className="btnFactsAB btn-outline-primary" onclick="location.href='tablaGrupo.html'">VER</button>
+		<button className="btnFactsAB btn-outline-primary" onclick="location.href='tablaMateria.html'">VER</button>
 	</section>
 </section>
     </div>
