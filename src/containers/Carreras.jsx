@@ -40,16 +40,22 @@ const api="http://localhost:3000/api/v1/carreras"
     }, []);
 
     return(
-        <section className="contcarreras">
-            <div className="set row justify-content-center">
-                <div className="carre">
-                    {carreras.map((carrera)=>(
-                        <CarreraItem key={carrera.clave} carrera={carrera}/>
-                    ))}
+        <div>
+            
+            <section className="contcarreras">
+            
+                <div className="set row justify-content-center">
+                <h1>Carreras</h1>
+                
+                    <div className="carre">
+                        {carreras.map((carrera) => (
+                            <CarreraItem key={carrera.clave} carrera={carrera} />
+                        ))}
+                    </div>
                 </div>
-            </div>
 
-        </section>
+            </section>
+        </div>
     );
 }
 export default Carreras;

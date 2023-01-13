@@ -11,19 +11,18 @@ const CarreraItem = ({carrera}) => {
     const user=auth.user
         const navigate=useNavigate()
     const handleSubmit=(clave)=>{
-            
-        console.log(operacion)
+
         if (operacion==='inscripcion'){
             navigate('/inscripcion/carreras');
         }
         if (operacion==='reinscripcion'){
-            navigate('/reinscripcion/control/estudiantes');
+            navigate(`/reinscripcion/control/estudiantes/${clave}`);
         }
         if (operacion==='bajas'){
-            navigate('/control/bajas/estudiante');
+            navigate(`/control/bajas/estudiantes/${clave}`);
         }
         if (operacion==='constancia'){
-            navigate('/control/constancias/tabla')
+            navigate(`/control/constancias/tabla/${clave}`)
         }
 
         if (operacion==='acta'){
@@ -34,24 +33,21 @@ const CarreraItem = ({carrera}) => {
             }
         }
         if (operacion==='horario'){
-            navigate('/horarios')
+            navigate(`/horarios/${clave}`)
         }
     }
     return (
         <figure>
-            
             <img src={carrera.imagen} alt=""/>
-            
                 <h2>materia</h2>
                 <div className="btnca">
                     <button type="button" className="btn btn-outline-success"
-                            onClick={ () => handleSubmit(carrera.clave)}
+                            onClick={()=>{handleSubmit(carrera.clave)}}
                             style={{marginTop: "25px", width: "150px"}}>Ingresar
                     </button>
                 </div>
 
         </figure>
-        
     );
 }
 

@@ -41,6 +41,10 @@ const Menu = () => {
             navigate('/control/credencializacion')
         }
 
+        if (operacion==='seguro'){
+            navigate('/renuncia-seguro')
+        }
+
         if (operacion==='acta'){
             if (user.rol==2 || user.rol==3){
                 navigate('/control/actas')
@@ -124,6 +128,13 @@ const Menu = () => {
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('credencial')}>Credencializacion
+                               </button>
+                           </section>
+                       )}
+                       {(user.rol==2 || user.rol==5) && (
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial", marginLeft:0}}
+                                       onClick={()=>handleClickInsvripcion('seguro')}>Renuncia Seguro
                                </button>
                            </section>
                        )}
