@@ -72,6 +72,9 @@ const Menu = () => {
         if (operacion==='insertarPeriodo'){
             navigate('/periodo/Insertar')
         }
+        if (operacion==='insertarGrupo'){
+            navigate('/grupoF')
+        }
 
     }
 
@@ -184,6 +187,13 @@ const Menu = () => {
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
                                        onClick={()=>handleClickInsvripcion('insertarPeriodo')}>Periodo Insertar
+                               </button>
+                           </section>
+                       )}
+                       {user.rol ==5 &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
+                                       onClick={()=>handleClickInsvripcion('insertarGrupo')}>Grupo Insertar
                                </button>
                            </section>
                        )}
