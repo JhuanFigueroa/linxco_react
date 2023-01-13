@@ -32,6 +32,10 @@ import Examen from "@components/examen";
 import Materias from "@components/materias-container";
 import Grupos from "@components/grupos";
 import MateriasContainer from "@components/materias-container";
+import MaestroForm from "@components/MaestroForm";
+import MaestroConsultas from "@components/MaestroConsultas";
+
+
 import Carrerasform from "@components/Carrerasform";
 import VistaCarrera from "@components/VistaCarrera";
 import EmpleadoForm from "@components/EmpleadoForm";
@@ -101,12 +105,18 @@ const App=()=>{
                         <Route exact path="/actas" element={<AuthRoute><Carreras/></AuthRoute>}/>
 
                         <Route exact path="/actas/grupos" element={<AuthRoute><Grupos/></AuthRoute>}/>
+                        <Route exact path="/actas/grupos/:clave" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/materias" element={<AuthRoute><MateriasContainer/></AuthRoute>}/>
                         
                         {/*Carreras*/}
                         <Route exact path="/carrera/Insertar" element={<AuthRoute><Carrerasform/></AuthRoute>}/>
                         <Route exact path="/carrera/Ver" element={<AuthRoute><VistaCarrera/></AuthRoute>}/>
                         <Route exact path="/carrera/Insertar/:clave" element={<AuthRoute><Carrerasform/></AuthRoute>}/>
+
+                        {/*Maestros*/}
+                        <Route exact path="/maestroForm/insert" element={<AuthRoute><MaestroForm/></AuthRoute>}/>
+                        <Route exact path="/maestroForm/insert/:clave" element={<AuthRoute><MaestroForm/></AuthRoute>}/>
+                        <Route exact path="/maestroForm/consulta" element={<AuthRoute><MaestroConsultas/></AuthRoute>}/>
 
                         {/*enmleado*/}
                         <Route exact path="/empleado/Insertar" element={<AuthRoute><EmpleadoForm/></AuthRoute>}/>

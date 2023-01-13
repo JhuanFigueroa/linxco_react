@@ -1,22 +1,18 @@
+
 import React from "react";
-import '../styles/gruposForm.scss'
-import {useNavigate} from "react-router-dom";
 
 const Materias = () => {
-	const navigate=useNavigate();
-     const hadleClick=(e)=>{
-         e.preventDefault();
-       navigate('/')
-     }
 	return (
-		<div className="capa">
+		
+		<div>
+			<div className="capa"></div>
+
 			<section className="contMaterias">
-				
-				<div className="actasCal pt-1 ">
+				<div className="calificaciones pt-1 ">
 					<div className="titulo justify-content-center" style={{color: "white", marginLleft: "300px"}} >
 						<h2>SEMESTRES</h2>
 					</div>
-					<select className="semestresMat" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)", color: "white", height: "30px", width: "350px" }}>
+					<select className="semestres" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)", color: "white", height: "30px", width: "350px" }}>
 						<option>Seleccione una Semestre...</option>
 						<option>Primer Semestre</option>
 						<option>Segundo Semestre</option>
@@ -28,7 +24,7 @@ const Materias = () => {
 						<option>Octavo Semestre</option>
 					</select>
 
-					<table className="tableCal table-bordered" style={{width: "600px", height: "50px", marginTop: "50px" }}>
+					<table className="tableR table-bordered" style={{width: "730px", height: "50px", marginTop: "50px" }}>
 						<thead>
 							<tr>
 								<th scope="col">MATERIA</th>
@@ -61,10 +57,12 @@ const Materias = () => {
 							</tr>
 						</tbody>
 					</table>
-					<button onClick={hadleClick} className="btncal btn-outline-primary">Continuar</button>
+					<button className="btncal btn-outline-primary">Continuar</button>
 				</div>
 			</section>
-			</div>
+		</div>
+
+		
 	);
 }
 
