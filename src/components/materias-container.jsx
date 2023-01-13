@@ -1,4 +1,4 @@
-import "../styles/materias.css"
+
 import React from "react";
 
 const Materias = () => {

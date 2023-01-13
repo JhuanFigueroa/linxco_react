@@ -1,6 +1,7 @@
 import "../styles/grupostilo.css"
 import React from "react";
 const Grupos = () => {
+  //  const [grupos,setGrupo]=useState([])//
     return (
         <div>
 			
