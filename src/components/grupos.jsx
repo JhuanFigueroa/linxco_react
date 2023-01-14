@@ -37,9 +37,13 @@ const Grupos = () => {
        
     },[]);
     const navigate=useNavigate()
-    const handeleClick=(e)=>{
-        e.preventDefault()
-        navigate('/actas/materias')
+    const handeleClick=(grupo)=>{
+
+        if (user.rol ==2 || user.rol==5){
+        navigate(`/control/actas/materias/${grupo}`)
+        }else{
+            navigate('/actas/materias')
+        }
     }
     return (
         <div>
@@ -49,7 +53,7 @@ const Grupos = () => {
                 <div className="mate justify-content-center row">
                         {grupo.map((grupos)=>(
                             <div className="botones mr-3">
-                            <button type="button " className="btngru btn-outline-primary" onClick={handeleClick}
+                            <button type="button " className="btngru btn-outline-primary" onClick={()=>{handeleClick(grupos.id)}}
                             style={{color:"cyan"}}>{grupos.grupo}</button>
                             </div>
                         ))}
