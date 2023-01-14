@@ -147,6 +147,13 @@ const FacturaReinscripcion = () => {
         navigate('/home')
     }
 
+    useEffect(()=>{
+        getTipoFactura()
+        if (user.rol!=4){
+            getFacturaAlumno()
+            getRazonesFact()
+        }
+    },[])
     return (
         <section
             className="contentFactReins"

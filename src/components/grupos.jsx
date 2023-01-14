@@ -19,12 +19,21 @@ const Grupos = () => {
         const rta= axios.get('http://localhost:3000/api/v1/grupos/maestro/'+user.clave+'/'+clave+'').then(rest => {
             setGrupo(rest.data)
         });
-        
-        
+    }
 
+    const getGrrupoByCarrera= async ()=>{
+        const rta=await axios.get('http://localhost:3000/api/v1/grupos/carrera/'+clave)
+            .then(res=>{
+                console.log(res.data)
+                setGrupo(res.data)
+            })
     }
     useEffect(() => {
-        getGrupo(user,clave)
+        if (user.rol==2 || user.rol==5){
+            getGrrupoByCarrera()
+        }else {
+            getGrupo(user,clave)
+        }
        
     },[]);
     const navigate=useNavigate()

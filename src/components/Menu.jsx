@@ -46,7 +46,7 @@ const Menu = () => {
         }
 
         if (operacion==='acta'){
-            if (user.rol==2 || user.rol==3){
+            if (user.rol==2 || user.rol==5){
                 navigate('/control/actas')
             }else{
                 

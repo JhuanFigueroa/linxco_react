@@ -99,19 +99,23 @@ const App=()=>{
 
                         <Route exact path="/factura/:descripcion" element={<AuthRoute><Factura/></AuthRoute>}/>
 
+                        {/*Credencializacion*/}
                         <Route exact path="/control/credencializacion" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
                         <Route exact path="/control/credencializacion/form" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
                         <Route exact path="/control/credencializacion/edit/:matriculaAlumno" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
 
+                        {/*Horarios*/}
                         <Route exact path="/horarios" element={<AuthRoute><Horario/></AuthRoute>}/>
                         <Route exact path="/horarios/:carrera" element={<AuthRoute><DownloadHorario/></AuthRoute>}/>
                         <Route exact path="/control/horarios" element={<AuthRoute><Carreras/></AuthRoute>}/>
 
                         {/*Actas*/}
                         <Route exact path="/control/actas" element={<AuthRoute><Carreras/></AuthRoute>}/>
+                        <Route exact path="/control/actas/grupos/:clave" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/control/actas/materias" element={<AuthRoute><Materias/></AuthRoute>}/>
                         <Route exact path="/actas" element={<AuthRoute><Carreras/></AuthRoute>}/>
 
+                        {/*ACTAS*/}
                         <Route exact path="/actas/grupos" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/grupos/:clave" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/materias" element={<AuthRoute><MateriasContainer/></AuthRoute>}/>

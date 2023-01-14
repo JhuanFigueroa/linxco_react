@@ -122,7 +122,7 @@
 }
 .contMaterias{
   height: auto;
-  width: 740px;
+  width: 1000px;
   background: rgba(255, 255, 255, 0.1);
   margin-top: 120px;
   margin-left: 280px;
@@ -132,7 +132,7 @@
   backdrop-filter: blur(3px);
 }
 .tableCal{
-  width: 100%;
+  width: 100% !important;
   height: auto;
   text-align: center;
   color: white;
@@ -140,7 +140,9 @@
 .tableCal .btn{
   color: white;
   width: 50%;
-  margin-right: 150px;
+  margin-right: 50px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 .btncal{
   width: 200px;
@@ -163,7 +165,7 @@
 }
 .docs{
   width: 100%;
-  margin-left: 1px;
+  margin-left: 5px;
 }
 @media only screen and (max-width: 1450px) {
 	.contMaterias{
