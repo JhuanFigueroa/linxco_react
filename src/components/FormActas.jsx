@@ -8,17 +8,25 @@ import Cookie from "js-cookie";
 
 let alumnos = [];
 const EstudiantesTable = () => {
+    let desempeño=''
+    let calificacion=''
+    const auth=useAuth()
+    const periodo = auth.periodo;
+    const user=auth.user
     const {state} = useContext(AppContext);
     const operacion = state.operacion;
     const navigate = useNavigate();
     const {materia} = useParams()
     const {grupo} = useParams()
-    const auth=useAuth()
-    const user=auth.user
+
     const [studentsReins, setStudentsReins] = useState([]);
     const{addOperacion}=React.useContext(AppContext);
-    const [calificacion,setCalificacion]=useState()
-    const [desempeño,setDesempeño]=useState('')
+    const [calificaciones,setCalificaciones]=useState([])
+    const [califC,setCalifC]=useState('')
+    const [desempC,setDesempC]=useState('')
+    const [desempeños,setDesempeños]=useState([])
+    const [id,setId]=useState('')
+
     const getEstudiantes = () => {
 
         const cookie = Cookie.get("token");
@@ -31,12 +39,26 @@ const EstudiantesTable = () => {
             });
     };
 
-    const handleClick = (matricula) => {
-
+    const handleClick = () => {
+        const tiempoTranscurrido = Date.now();
+        const hoy = new Date(tiempoTranscurrido);
+        for (let i = 0; i <studentsReins.length; i++) {
+            const data={
+                "folio":"'"+Math.random()+"'",
+                "calificacion":calificaciones[i],
+                "fecha":hoy,
+                "claveMateria":materia,
+                "matriculaAlumno":studentsReins[i].matricula,
+                "idPeriodo":id
+            }
+           const rta=axios.post('http://localhost:3000/api/v1/acta-calif',data)
+        }
+        navigate('/home')
 
     };
 
     useEffect(() => {
+        setId(periodo[0].id)
         getEstudiantes()
     }, []);
 
@@ -70,19 +92,65 @@ const EstudiantesTable = () => {
                     <tbody>
 
                     {
-                        studentsReins.map((estudiante) => (
-                                <tr key={estudiante.matricula}>
-                                    <td>{estudiante.matricula}</td>
-                                    <td>{estudiante.nombre}</td>
-                                    <td><input type="text" className="textTR" style={{color: "white"}} /></td>
-                                    <td></td>
+                        studentsReins.map((estudiante) => {
+                             return(
+                                 <tr key={estudiante.matricula}>
+                                     <td>{estudiante.matricula}</td>
+                                     <td>{estudiante.nombre}</td>
+                                     <td><input type="text" className="textTR" style={{color: "white", width: "100%"}}
+                                                onChange={(e) => {
+                                                    if (e.currentTarget.value >= 2) {
+                                                        let calif = calificaciones
+                                                        calificacion = e.currentTarget.value
+                                                        calif.push(calificacion)
+                                                        setCalificaciones(calif)
+                                                        setCalifC(calificacion)
 
-                                </tr>
-                            )
+                                                        if (calificacion < 70) {
+                                                            desempeño = 'NA'
+                                                        } else if (calificacion >= 70 && calificacion < 80) {
+                                                            desempeño = 'SUFICIENTE'
+                                                        } else if (calificacion >= 80 && calificacion < 90) {
+                                                            desempeño = 'NOTABLE'
+                                                        } else if (calificacion >= 90) {
+                                                            desempeño = 'EXCELENTE'
+                                                        }
+
+                                                        let desemp = desempeños
+                                                        desemp.push(desempeño)
+                                                        setDesempeños(desemp)
+                                                    }
+                                                }}/>
+                                     </td>
+
+                                     {
+                                         ()=>{
+                                             if (califC<70){
+                                                 return(
+                                                     <td>NA</td>
+                                                 )
+                                                 setCalifC('')
+                                             }else if (califC>=70 && califC<80){
+                                                 return (
+                                                     <td>SUFICIENTE</td>
+                                                 )
+                                                 setCalifC('')
+                                             }
+                                         }
+                                     }
+                                 </tr>
+                             )
+                            }
                         )}
                     </tbody>
-                </table>
 
+                </table>
+                <div className="button row justify-content-center pt-3" >
+                    <div className="text-center">
+                        <button type="button" className="btn btn-outline-primary" onClick={handleClick} style={{color:"white", width: "250px"}}>Guardar</button>
+                    </div>
+
+                </div>
             </section>
         );
 

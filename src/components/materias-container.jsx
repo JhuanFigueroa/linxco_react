@@ -14,6 +14,13 @@ const Materias = () => {
 	const navigate=useNavigate()
 	const [semestre,setSemestre]=useState([]);
 	const [materias,setMaterias]=useState([])
+	const [selectedFile, setSelectedFile] = useState(null);
+
+	const handleFileChange = (e) => {
+		if (e.target.files) {
+			setSelectedFile(e.target.files[0]);
+		}
+	};
 
 	const getSemestre=async ()=>{
         const cookie= Cookie.get('token')
@@ -39,9 +46,16 @@ const Materias = () => {
 		navigate(`/control/actas/calif/${materia}/${grupo}`)
 	}
 
-     const handleClick=(e)=>{
-         e.preventDefault();
-         navigate('/home')
+     const handleClick=(materia)=>{
+		 const formData= new FormData()
+
+		 formData.append('ubicacion',selectedFile,selectedFile.name)
+		 formData.append('claveMateria',materia)
+		 formData.append('idGrupo',grupo)
+
+		 const rta=axios.post('http://localhost:3000/api/v1/acta-control',formData)
+
+		 navigate('/home')
      }
 
 
@@ -73,8 +87,10 @@ const Materias = () => {
 						{materias.map(materia=>(
 							<tr key={materia.clave}>
 								<td>{materia.nombre}</td>
-								<td className="docs row"><input type="file" className="btn btn-outline-success" title="Cargar"/><span className="material-symbols-outlined" >
-								</span><button className="btnSend btn-light" type="button" onClick={handleClick}/></td>
+								<td className="docs row">
+									<input type="file" className="btn btn-outline-success" title="Cargar" onChange={handleFileChange}/>
+									<span className="material-symbols-outlined" >
+								</span><button className="btnSend btn-light" type="button" onClick={()=>{handleClick(materia.clave)}}/></td>
 								<td><a href={Documento} download> <button className="btn btn-outline-success"  title="Descargar" download><span className="material-symbols-outlined">
 									DESCARGAR</span></button></a></td>
 								{(user.rol==2 || user.rol==5) &&(
@@ -88,12 +104,6 @@ const Materias = () => {
 					</table>
 					
 				</div>
-				<div className="button row justify-content-center pt-3" >
-						<div className="text-center">
-							<button type="button" className="btn btn-outline-primary" onClick={handleClick} style={{color:"white", width: "250px"}}>Guardar</button>
-						</div>
-					
-					</div>
 			</section>
 			</div>
 	);
