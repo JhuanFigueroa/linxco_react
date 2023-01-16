@@ -50,6 +50,7 @@ import FormActas from "@components/FormActas";
 import VistaGruposForm from "@components/tablaGruposForm";
 import VistaMateriasForm from "@components/tablaMateriasForm";
 
+
 const App=()=>{
     const operacion=useOperacion()
     return (
