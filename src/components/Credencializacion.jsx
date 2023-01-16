@@ -94,7 +94,7 @@ const Credencializacion = () =>{
             <div className="form-group row">
                 <h5  className="textNC">Matricula :</h5>
                 <div className="col-sm-6">
-                    <input type="text" className="format-control" id="inputNoControl" style={{width: "500px", height: "30px"}}
+                    <input type="text" className="format-control" id="inputNoControl" style={{width: "500px", height: "30px", color:"white"}}
                         value={matriculaAlumno}
                            onChange={(e)=>{setMatricula(e.target.value)}}/>
 
@@ -104,7 +104,7 @@ const Credencializacion = () =>{
             <div className="form-group row">
                 <h5 className="textNC">No. de Comprobante :</h5>
                 <div className="col-sm-6">
-                    <input type="text" className="format-control" id="inputNoControl" style={{width: "500px", height: "30px"}}
+                    <input type="text" className="format-control" id="inputNoControl" style={{width: "500px", height: "30px", color:"white"}}
                     value={numero}
                     onChange={(e)=>{setNumero(e.target.value)}}/>
                 </div>
@@ -130,8 +130,8 @@ const Credencializacion = () =>{
                     </tr>
                 </tbody>
             </table>
-            <label htmlFor="inputText" className="textNC" style={{marginLeft: "600px"}}>Total :50</label>
-            <input type="text" className="format-control" id="inputNoControl" style={{width: "143px", height: "30px", marginTop: "3px"}} value={50}/><br></br>
+            <label htmlFor="inputText" className="textNC" style={{marginLeft: "600px"}}>Total: </label>
+            <input type="text" className="format-control" id="inputNoControl" style={{width: "143px", height: "30px", marginTop: "3px",color:"white"}} value={50}/><br></br>
                 <section className="botonesFR row" style={{marginTop: "10px"}}>
                     <button className="btnFactsA btn-outline-primary"
                     onClick={handleClick}>Guardar</button>

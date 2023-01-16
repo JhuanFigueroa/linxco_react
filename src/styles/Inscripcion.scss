@@ -12,7 +12,7 @@
   margin-left: 50px;
 }
 .contTablaDatosInscripcion{
-  height: 370px;
+  height: auto;
   width: 900px;
   background: rgba(255, 255, 255, 0.1);
   margin-top: 120px;
@@ -21,6 +21,10 @@
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(3px);
+}
+.h1{
+  color: white;
+  
 }
 .form-inline{
   margin-left: 140px;

@@ -20,7 +20,7 @@ const RenunciasSeg=()=>{
         <section className="contenedor-bajas-form">
             <div className="form-group">
                 <h5 style={{color:"white"}}>No. Matricula</h5>
-                <input type="number" className="form-control" style={{width:"300px",height:"30px"}}
+                <input type="number" className="form-control" style={{width:"300px",height:"30px", color:"white"}}
                        onChange={(e)=>{setMatricula(e.target.value)}}
                 />
             </div>

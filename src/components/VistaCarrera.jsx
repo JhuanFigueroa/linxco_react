@@ -46,6 +46,11 @@ const VistaCarrera = () =>{
     return(
         <><div className="capa"></div>
         <section className="formularioC row">
+            <div className="consulM">
+                <h1>Consultas de Maestros</h1>
+            </div>
+            <button className="btaFi btn-outline-primary" onClick={()=>navigate('/home')} >Finalizar</button>
+            <button className="btnaEd btn-outline-primary" onClick={()=>cambioVistaOperacionAgregart()} >Agregar</button>
             <table className="tableC table-bordered">
                 <thead>
                     <tr>
@@ -83,11 +88,10 @@ const VistaCarrera = () =>{
                 </tbody>
             </table>
             <section className="botonesFR row" style={{marginTop: "10px"}}>
-                <button className="btn-carrera btn-outline-primary" onClick={()=>cambioVistaOperacionAgregart()} >Agregar</button>
-                <button className="btn-carrera btn-outline-primary" onClick={()=>navigate('/home')} >Finalizar</button>
+                
             </section>
         </section></>
     )
 }
 
-export default VistaCarrera
+export default VistaCarrera;

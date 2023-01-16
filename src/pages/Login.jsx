@@ -43,12 +43,12 @@ const Login = () => {
                                 </div>
                                 <div className="form-group1">
                                     <input type="text" className="form-control" name="username"
-                                           style={{width:"300px"}}
+                                           style={{width:"300px", color:"white"}}
                                            placeholder="Ingrese su Usuario"/>
                                 </div>
                                 <div className="form-group1">
                                     <input type="password" className="form-control" name="password"
-                                           style={{width:"300px"}}
+                                           style={{width:"300px", color:"white"}}
                                            placeholder="Contraseña"/>
                                 </div>
                                 <div className="btnIngresarLogin">
@@ -59,11 +59,8 @@ const Login = () => {
                                     <span className=""> <a href="#" className="olvide" style={{color:"cyan"}}>Olvide mi contraseña</a></span>
                                 </div>
                                 <div className="buttonsRegAs pb-4">
-                                    <div className="text-center  ">
-                                        <span><a href="" className="registrarse" style={{color:"cyan"}}>REGISTRARSE</a></span>
-                                    </div>
                                     <div className=" text-center pt-4">
-                                        <span><Link to={'/aspirante/form'} className="aspirante">ASPIRANTES</Link></span>
+                                        <span><Link to={'/aspirante/form'} className="aspirante" style={{color:"white"}}>ASPIRANTES</Link></span>
                                     </div>
                                 </div>
                             </form>

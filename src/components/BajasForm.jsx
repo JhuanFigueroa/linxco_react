@@ -56,10 +56,11 @@ const BajasForm = () => {
     },[])
     return (
 
-                <section className="contenedor-bajas-form">
+                <section className="contenedorss-bajas-forms">
+                    <h1>Formulario de Bajas</h1>
                     <div className="form-group">
                         <h5 style={{color:"white"}}>No. Matricula</h5>
-                        <input type="number" className="form-control" style={{width:"300px",height:"30px"}}
+                        <input type="number" className="form-control" style={{width:"300px",height:"30px",color:"white"}}
                         onChange={(e)=>{setMatricula(e.target.value)}}
                         />
                     </div>
