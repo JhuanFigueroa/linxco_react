@@ -59,6 +59,9 @@ const periodo = () =>{
     return(
         <><div className="capa"></div>
         <section className="forPeriodo row">
+            <div className='forPerO'>
+                <h1>Registro de Periodos</h1>
+            </div>
             <div className="form-group">
                 <h5>N. Periodo</h5>
                 <input type="text" className="form-control" value={numeroPeriodo} onChange={(e)=>{setnumeroPeriodo(e.target.value)}}/>

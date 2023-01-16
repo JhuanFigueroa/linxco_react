@@ -98,6 +98,9 @@ const MaestroForm = ()=> {
     return(
         <><div className="capa"></div>
         <section className="docenttes row">
+            <section className="docentes-titulo">
+                <h1>Docentes</h1>
+            </section>
             <div className="form-docen">
                 <h5>Clave de Docente</h5>
                     <input type="text" value={claveMtro} className="form-docentes" onChange={(e)=>{setclaveMtro(e.target.value)}}/>

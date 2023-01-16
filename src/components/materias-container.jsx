@@ -104,6 +104,12 @@ const Materias = () => {
 					</table>
 					
 				</div>
+				<div className="button row justify-content-center pt-3" >
+						<div className="text-center">
+							<button type="button" className="btn btn-outline-primary" onClick={handleClick} style={{color:"white", width: "200px"}}>Guardar</button>
+						</div>
+					
+					</div>
 			</section>
 			</div>
 	);

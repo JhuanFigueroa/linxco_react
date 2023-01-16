@@ -61,11 +61,11 @@ const Factura = () =>{
 
             <div className="row justify-content-center ">
                         <div className="form-group-FAl">
-                            <h5 style={{marginTop: "10px", color: "white"}}>Numero de Comprobante:</h5>
+                            <h5 style={{marginTop: "10px", color: "white"}}>Numero De Comprobante:</h5>
                             <input type="text" className="form-control"
                                    value={numero}
+                                   style={{color:"white"}}
                                    onChange={(e)=>{setNumero(e.target.value)}}/>
-                            />
                         </div>
                 <table className="tableFacAl table-bordered">
                     <thead>

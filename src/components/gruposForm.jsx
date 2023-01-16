@@ -66,6 +66,33 @@ const gruposForm = () => {
             </section>
         </div>
     );
+return(
+    <div>
+        
+	<div className="capa"></div>
+<section className="factura row">
+    <div className="regGrup">
+        <h1>Registro de Grupos</h1>
+    </div>
+    <div className="form-group">
+        <h5>Id del grupo</h5>	
+        <input type="text"  className="form-control"/>
+    </div>	
+    <div className="form-group">
+        <h5>Numero del grupo</h5>	
+        <input type="text"  className="form-control"/>
+    </div>
+    <div className="form-group">
+        <h5>Status</h5>	
+        <input type="text"  className="form-control"/>
+    </div>
+    <section className="botonesFR row" style={{marginTop: "10px"}}>
+		<button className="btnFactsA btn-outline-primary">Agregar</button>
+		<button className="btnFactsAB btn-outline-primary" onClick={()=>navigate('/gruposForm/Ver')} >VER</button>
+	</section>
+</section>
+    </div>
+);
 }
 
 export default gruposForm;

@@ -43,9 +43,12 @@ const VistaEmpleado = () =>{
 
     return(
         <><div className="capa"></div>
-       
+        
         <section className="formE row">
-         <button className="btnVistaEA btn-outline-primary" onClick={()=>cambioVistaOperacionAgregarEmpleado()}>Agregar</button>
+        <div className='consulEmpler'>
+            <h1>Consultas de empleados</h1>
+        </div>
+        <button className="btnVistaEA btn-outline-primary" onClick={()=>cambioVistaOperacionAgregarEmpleado()}>Agregar</button>
         <button className="btnVistaEB btn-outline-primary" onClick={()=>navigate('/home')}>Finalizar</button><br />
 
             <table className="tableE table-bordered">

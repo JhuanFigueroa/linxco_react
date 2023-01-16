@@ -26,10 +26,7 @@ const ConstanciaControl2 = () =>{
         <div className="capa">
             <section className="contentConstanciaT">
                 <h2 className="titleConst">DATOS</h2><br></br>
-                <form className="form-inline">
-                    <input className="form-control mr-sm-2 col-7" type="search" size={40} style={{width:"700px"}} placeholder="buscar" aria-label="Search" />
-                    <button className="btnBuscarConCon btn-outline-primary" type="submit">Buscar</button>
-                </form>
+                
                 <table className="tableConstT table-bordered">
                     <thead>
                         <tr>

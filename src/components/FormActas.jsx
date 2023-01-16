@@ -7,7 +7,7 @@ import {useAuth} from "../hooks/useAuth";
 import Cookie from "js-cookie";
 
 let alumnos = [];
-const EstudiantesTable = () => {
+const FormActas = () => {
     let desempeño=''
     let calificacion=''
     const auth=useAuth()
@@ -44,7 +44,7 @@ const EstudiantesTable = () => {
         const hoy = new Date(tiempoTranscurrido);
         for (let i = 0; i <studentsReins.length; i++) {
             const data={
-                "folio":"'"+Math.random()+"'",
+                "folio":`${Math.random()}`,
                 "calificacion":calificaciones[i],
                 "fecha":hoy,
                 "claveMateria":materia,
@@ -54,7 +54,6 @@ const EstudiantesTable = () => {
            const rta=axios.post('http://localhost:3000/api/v1/acta-calif',data)
         }
         navigate('/home')
-
     };
 
     useEffect(() => {
@@ -99,7 +98,7 @@ const EstudiantesTable = () => {
                                      <td>{estudiante.nombre}</td>
                                      <td><input type="text" className="textTR" style={{color: "white", width: "100%"}}
                                                 onChange={(e) => {
-                                                    if (e.currentTarget.value >= 2) {
+                                                    if (e.currentTarget.value >= 70) {
                                                         let calif = calificaciones
                                                         calificacion = e.currentTarget.value
                                                         calif.push(calificacion)
@@ -156,4 +155,4 @@ const EstudiantesTable = () => {
 
 };
 
-export default EstudiantesTable;
+export default FormActas;

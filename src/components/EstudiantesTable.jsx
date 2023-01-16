@@ -73,22 +73,9 @@ const EstudiantesTable = () => {
    if (operacion==='reinscripcion'){
        return (
            <section className="contenedor-estudiantes">
-               <nav className="buscador d-flex align-items-center">
-                   <form className="form-inline">
-                       <input
-                           className="form-control mr-sm-2 col-7"
-                           type="search"
-                           style={{width: "700px"}}
-                           placeholder="Search"
-                           aria-label="Search"
-                       />
-                       <button className="btn btn-outline-primaryy mt-7" type="submit">
-                           Buscar
-                       </button>
-                   </form>
-               </nav>
+            <h1>Reinscripciones</h1>
                <br></br>
-               <table className="table table-bordered">
+               <table className="tableEstudiantes table-bordered">
                    <thead>
                    <tr>
                        <th scope="col">MATRICULA</th>
@@ -128,28 +115,14 @@ const EstudiantesTable = () => {
 
        return (
            <section className="contenedor-estudiantes">
-               <nav className="buscador d-flex align-items-center">
-                   <form className="form-inline">
-                       <input
-                           className="form-control mr-sm-2 col-7"
-                           type="search"
-                           style={{width: "700px"}}
-                           placeholder="Search"
-                           aria-label="Search"
-                       />
-                       <button className="btn btn-outline-primaryy mt-7" >
-                           Buscar
-                       </button>
-                   </form>
-               </nav>
-               <br></br>
+            <h1>Bajas</h1>
 
                    <button className="btn-outline-primary btn-nuevo" type="button"
                            onClick={handleClick}>
                        AGREGAR
                    </button>
 
-               <table className="table table-bordered">
+               <table className="tableEstudiantes table-bordered">
                    <thead>
                    <tr>
                        <th scope="col">MATRICULA</th>

@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import '../styles/renunciasSeg.scss'
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
@@ -17,10 +18,10 @@ const RenunciasSeg=()=>{
         navigate('/home')
     }
     return(
-        <section className="contenedor-bajas-form">
-            <div className="form-group">
-                <h5 style={{color:"white"}}>No. Matricula</h5>
-                <input type="number" className="form-control" style={{width:"300px",height:"30px"}}
+        <section className="contenedor-bajas-formNN">
+            <div className="form-group-Renuncia">
+                <h5 style={{color:"white", textAlign:"center"}}>No. Matricula</h5>
+                <input type="number" className="form-control" style={{width:"300px",height:"30px", color:"white", alignItems:"center", marginTop:"30px", marginLeft:"80px"}}
                        onChange={(e)=>{setMatricula(e.target.value)}}
                 />
             </div>

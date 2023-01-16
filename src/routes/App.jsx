@@ -47,6 +47,8 @@ import VistaPeriodo from "@components/VistaPeriodo";
 import GruposForm from "@components/gruposForm";
 import MateriasForm from "@components/materiasForm";
 import FormActas from "@components/FormActas";
+import Periodos from "@containers/Periodos";
+import Boleta from "@components/Boleta";
 import VistaGruposForm from "@components/tablaGruposForm";
 import VistaMateriasForm from "@components/tablaMateriasForm";
 
@@ -151,9 +153,12 @@ const App=()=>{
                         {/*Grupos form*/}
                         <Route exact path="/grupoF" element={<AuthRoute><GruposForm/></AuthRoute>}/>
                         <Route exact path="/gruposForm/Ver" element={<AuthRoute><VistaGruposForm/></AuthRoute>}/>
-                       
+
                         {/*Materias form*/}
                        <Route exact path="/materiasF" element={<AuthRoute><MateriasForm/></AuthRoute>}/>
+                        {/*Boletas*/}
+                        <Route exact path="/boletas/periodos" element={<AuthRoute><Periodos/></AuthRoute>}/>
+                        <Route exact path="/boleta/:idPeriodo" element={<AuthRoute><Boleta/></AuthRoute>}/>
                        <Route exact path="/materiasForm/Ver" element={<AuthRoute><VistaMateriasForm/></AuthRoute>}/>
 
                     </Routes>

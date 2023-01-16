@@ -43,6 +43,9 @@ const MaestroConsultas = ()=> {
     return(
         <><div className="capa"></div>
         <section className="tabDoc row">
+            <div className='maes'>
+                <h1>Lista de Docentes</h1>
+            </div>
         <button className="btnAgg btn-outline-primary"  onClick={()=>cambioVistaOperacionAgregarMtro()}>Agregar</button>
         <button className="btnDoc btn-outline-primary" onClick={()=>navigate('/home')}>Finalizar</button>
             <table className="tableDoc table-bordered" style={{width: "1000px", height: "auto", marginTop: "50px" }}>
