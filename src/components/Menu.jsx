@@ -78,6 +78,9 @@ const Menu = () => {
         if (operacion==='insertarMaterias'){
             navigate('/materiasF')
         }
+        if (operacion==='boleta'){
+            navigate('/boletas/periodos')
+        }
         
     }
 
@@ -126,6 +129,14 @@ const Menu = () => {
                            </section>
                        )
                        }
+
+                       {user.rol==4 &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
+                                       onClick={()=>handleClickInsvripcion('boleta')}>Boletas
+                               </button>
+                           </section>
+                       )}
 
                        {(user.rol==2 || user.rol==5) && (
                            <section className="btnMenu">
