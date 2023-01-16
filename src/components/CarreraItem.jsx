@@ -39,7 +39,7 @@ const CarreraItem = ({carrera}) => {
     return (
         <figure>
             <img src={carrera.imagen} alt=""/>
-                <h2>materia</h2>
+                <h2>Materia</h2>
                 <div className="btnca">
                     <button type="button" className="btn btn-outline-success"
                             onClick={()=>{handleSubmit(carrera.clave)}}

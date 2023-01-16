@@ -16,6 +16,9 @@ return(
 	<div className="capa"></div>
 
 <section className="factura row">
+    <div className="regGrup">
+        <h1>Registro de Grupos</h1>
+    </div>
     <div className="form-group">
         <h5>Clave de Materia</h5>	
         <input type="text"  className="form-control"/>

@@ -169,7 +169,7 @@ const FacturaReinscripcion = () => {
                         onChange={(e) => {
                             setNumComprobante(e.target.value);
                         }}
-                        style={{width: "500px", height: "30px"}}
+                        style={{width: "500px", height: "30px",color:"white"}}
                     />
                 </div>
             </div>
@@ -249,7 +249,7 @@ const FacturaReinscripcion = () => {
                 className="format-control"
                 id="inputNoControl"
                 value={totalFactura()}
-                style={{width: "143px", height: "30px", marginTop: "3px"}}
+                style={{width: "143px", height: "30px", marginTop: "3px", color:"white"}}
             />
             {(user.rol == 3 || user.rol==5)? (
                 <section className="botonesFR row" style={{marginTop: "10px"}}>

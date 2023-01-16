@@ -77,6 +77,9 @@ const Carrerasform=()=>{
     return(
         <><div className="capa"></div>
         <section className="carreraV row">
+            <div className="carreTi">
+                <h1>Registro de Carrera</h1>
+            </div>
             <div className="form-group">
                 <h5>Clave de la Carrera</h5>
                 {operacion==='cambioOperacion'?(<input type="text" readOnly className="form-carrera" value={claveCarrera} onChange={(e)=>{setclaveCarrera(e.target.value)}}></input>):(<input type="text" className="form-carrera" value={claveCarrera} onChange={(e)=>{setclaveCarrera(e.target.value)}}></input>)}

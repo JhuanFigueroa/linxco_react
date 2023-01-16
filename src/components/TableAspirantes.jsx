@@ -10,6 +10,7 @@ const TableAspirantes=()=>{
     return(
         <div className="capa">
         <section className="contTablaDatosInscripcion">
+            <h1>Inscripciones</h1>
             <nav className="menuTableAspirantes d-flex align-items-center">
                 <form className="form-inline">
                     <input className="form-control row" type="search"  style={{width:"400px"}}

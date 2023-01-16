@@ -35,8 +35,10 @@ const Grupos = () => {
     return (
         <div>
 			<div className="capa"></div>
+            <div className="justify-content-center row">
+                    <h3>SELECCIONE SU GRUPO</h3>
             <div className="materias pt-1">
-                <h3 className="titleGrupo">seleccione su grupo</h3>
+                
                 <div className="mate justify-content-center row">
                         {grupo.map((grupos)=>(
                             <div className="botones mr-3">
@@ -44,7 +46,7 @@ const Grupos = () => {
                             style={{color:"cyan"}}>{grupos.grupo}</button>
                             </div>
                         ))}
-                    
+                    </div>
                 </div>
             </div>
         </div>

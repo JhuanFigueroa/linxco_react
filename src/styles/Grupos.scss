@@ -9,7 +9,7 @@
 }
 .materias{
   margin: 250px;
-  height: auto;
+  height: auto !important;
   width: 750px;
   background: rgba(255, 255, 255, 0.1);
   margin-top: 10px;
@@ -20,9 +20,10 @@
 }
 
 .mate{
-  margin-top: 5px;
+  margin-top: 10px;
   display: grid;
   grid-template-columns: 33% 33% 33%;
+  margin-left: 10px;
 }
 .btngru{
   color: white;
@@ -44,6 +45,9 @@
   text-decoration-style: none;
   text-decoration-line: none;
   cursor: pointer;
+}
+h3{
+	color: white;
 }
 @media only screen and (max-width: 1718px) {
 	
@@ -82,7 +86,7 @@
 	
 	.materias{
 		margin: 250px;
-		height: 650px;
+		height: auto;
 		width: 750px;
 		background: rgba(255, 255, 255, 0.1);
 		margin-top: 70px;
@@ -98,7 +102,7 @@
 	
 	.materias{
 		margin: 250px;
-		height: 650px;
+		height: auto;
 		width: 750px;
 		background: rgba(255, 255, 255, 0.1);
 		margin-top: 70px;

@@ -25,13 +25,16 @@ body {
 .factura{
     // margin-top: 60px;
 	// margin-left: 300px;
-	height: 300px;
+	height: auto;
 	width: 800px;
 	background: rgba(255, 255, 255, 0.1);
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(3px);
+}
+.regGrup{
+	width: 800px;
 }
 .form-control{
 	width: 300px; 
@@ -64,13 +67,16 @@ h5{
 	.factura{
 		margin-top: 30px;
 		margin-left: 30px;
-		height: 270px;
+		height: auto;
 		width: 700px;
 		background: rgba(255, 255, 255, 0.1);
 		padding: 20px;
 		border-radius: 10px;
 		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 		backdrop-filter: blur(3px);
+	}
+	.regGrup{
+		width: 700px;
 	}
 	.form-control{
 		width: 300px; 
@@ -111,7 +117,7 @@ h5{
 	.factura{
 		margin-top: 30px;
 		margin-left: 50px;
-		height: 420px;
+		height: auto;
 		width: 350px;
 		background: rgba(255, 255, 255, 0.1);
 		padding: 20px;
@@ -119,8 +125,11 @@ h5{
 		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 		backdrop-filter: blur(3px);
 	}
+	.regGrup{
+		width: 350px;
+	}
 	.form-control{
-		width: 200px; 
+		width: 200px;
 		background: rgba(0, 0, 0, 0.3);
 		color:white;
 		margin-left: 60px;

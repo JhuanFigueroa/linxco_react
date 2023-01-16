@@ -50,17 +50,17 @@ const Materias = () => {
 
 							<tr>
 								<td>PROGRAMACION WEB</td>
-								<td className="docs row"><input type="file" className="btn btn-outline-success" title="Cargar"/><span className="material-symbols-outlined" >
+								<td className="docs row"><input type="file" className="btnCargarar btn-outline-success" title="Cargar"/><span className="material-symbols-outlined" >
 								</span><button className="btnSend btn-light" type="button" onClick={handleClick}/></td>
-								<td><a href={Documento} download> <button className="btn btn-outline-success"  title="Descargar" download><span className="material-symbols-outlined">
+								<td><a href={Documento} download> <button className="btnDescargar btn-outline-success"  title="Descargar" download><span className="material-symbols-outlined">
 									DESCARGAR</span></button></a></td>
 
 							</tr>
 							<tr>
 							<td>CALCULO VECTORIAL</td>
-								<td className="docs row"><input type="file" className="btn btn-outline-success" title="Cargar"/><span className="material-symbols-outlined" >
+								<td className="docs row"><input type="file" className="btnCargarar btn-outline-success" title="Cargar"/><span className="material-symbols-outlined" >
 								</span><button className="btnSend btn-light" type="button" onClick={handleClick}/></td>
-								<td><a href={Documento} download> <button className="btn btn-outline-success"  title="Descargar" download><span className="material-symbols-outlined">
+								<td><a href={Documento} download> <button className="btnDescargar btn-outline-success"  title="Descargar" download><span className="material-symbols-outlined">
 									DESCARGAR</span></button></a></td>
 
 							</tr>
@@ -70,7 +70,7 @@ const Materias = () => {
 				</div>
 				<div className="button row justify-content-center pt-3" >
 						<div className="text-center">
-							<button type="button" className="btn btn-outline-primary" onClick={handleClick} style={{color:"white", width: "250px"}}>Guardar</button>
+							<button type="button" className="btn btn-outline-primary" onClick={handleClick} style={{color:"white", width: "200px"}}>Guardar</button>
 						</div>
 					
 					</div>

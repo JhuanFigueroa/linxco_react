@@ -79,7 +79,7 @@ const ConstanciaDatos =()=>{
             <div className="form-group row">
                 <h5  className="textNC" style={{color: "white", marginLeft: "20px"}}>No.Comprobante :</h5>
                 <div className="">
-                    <input type="text" className="format-control" id="inputNoControl" value={numero} style={{width: "400px", height: "30px"}}/>
+                    <input type="text" className="format-control" id="inputNoControl" value={numero} style={{width: "400px", height: "30px", color:"white"}}/>
                 </div>
             </div>
             <table className="tableFac table-bordered">
@@ -132,7 +132,7 @@ const ConstanciaDatos =()=>{
                     <div className="col-sm-6">
                         <input type="text" onChange={(e)=>{
                             setClaveConstancia(e.target.value)
-                        }} className="format-control" id="inputNoControl" style={{width: "400px", height: "30px"}}/>
+                        }} className="format-control" id="inputNoControl" style={{width: "400px", height: "30px", color:"white"}}/>
                     </div>
                 </div>
                 <div className="form-fech row">
@@ -141,7 +141,7 @@ const ConstanciaDatos =()=>{
                            onChange={(e) => {
                                setFecha(e.target.value);
                            }}
-                           style={{width: "160px", height: "20px", marginLeft: "10px", marginTop: "5px"}}/>
+                           style={{width: "160px", height: "20px", marginLeft: "10px", marginTop: "5px", color:"white"}}/>
                 </div>
 
                 <button className="btnContReins2 btn-outline-primary" onClick={handleClick}>GUARDAR</button>

@@ -73,12 +73,13 @@ const EstudiantesTable = () => {
    if (operacion==='reinscripcion'){
        return (
            <section className="contenedor-estudiantes">
+            <h1>Reinscripciones</h1>
                <nav className="buscador d-flex align-items-center">
                    <form className="form-inline">
                        <input
                            className="form-control mr-sm-2 col-7"
                            type="search"
-                           style={{width: "700px"}}
+                           style={{width: "700px",color:"white"}}
                            placeholder="Search"
                            aria-label="Search"
                        />
@@ -88,7 +89,7 @@ const EstudiantesTable = () => {
                    </form>
                </nav>
                <br></br>
-               <table className="table table-bordered">
+               <table className="tableEstudiantes table-bordered">
                    <thead>
                    <tr>
                        <th scope="col">MATRICULA</th>
@@ -128,12 +129,13 @@ const EstudiantesTable = () => {
 
        return (
            <section className="contenedor-estudiantes">
+            <h1>Bajas</h1>
                <nav className="buscador d-flex align-items-center">
                    <form className="form-inline">
                        <input
                            className="form-control mr-sm-2 col-7"
                            type="search"
-                           style={{width: "700px"}}
+                           style={{width: "700px",color:"white"}}
                            placeholder="Search"
                            aria-label="Search"
                        />
@@ -149,7 +151,7 @@ const EstudiantesTable = () => {
                        AGREGAR
                    </button>
 
-               <table className="table table-bordered">
+               <table className="tableEstudiantes table-bordered">
                    <thead>
                    <tr>
                        <th scope="col">MATRICULA</th>

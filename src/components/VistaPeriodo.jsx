@@ -46,7 +46,10 @@ const VistaPeriodo = () =>{
     return(
         <><div className="capa"></div>
         <section className="facturaPe row">
-        <button className="btnPerA btn-outline-primary" onClick={()=>cambioVistaOperacionAgregart()}>Agregar</button>
+            <div className="conPeR">
+                <h1>Consulta de Periodo</h1>
+            </div>
+            <button className="btnPerA btn-outline-primary" onClick={()=>cambioVistaOperacionAgregart()}>Agregar</button>
             <button className="btnPeB btn-outline-primary" onClick={()=>navigate('/home')}>Finalizar</button>
             <table className="tablePeri table-bordered">
                 <thead>
