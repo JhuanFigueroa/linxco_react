@@ -1,14 +1,30 @@
 
 import React from "react";
+import { useEffect, useState } from "react";
 import '../styles/tablaMateriasForm.scss'
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
+const API ='http://localhost:3000/api/v1/materias'
+
 const tablaMateriasForm = () => {
     const navigate = useNavigate();
+    const [materias, setMaterias] = useState([])
     // const navigate = useNavigate({ nombre });
     const handleClick = (e) => {
         e.preventDefault();
         navigate('/')
     }
+    const retornar = ()=>{
+        navigate('/')
+    }
+    const obtenerMaterias =()=>{
+        const rta = axios.get(API).then(res=>{setMaterias(res.data)});
+    }
+    useEffect(() => {
+        // .then(rest => {setGrupos(rest.data.verGrupos) })
+        obtenerMaterias()
+    }, [])
     return (
         <div>
             <div className="capa"></div>
@@ -25,33 +41,23 @@ const tablaMateriasForm = () => {
                         </tr>
                     </thead>
                     <tbody>
+                    {materias.map((materia)=>(
                         <tr>
-                            <td>0032</td>
-                            <td>Simulacion</td>
-                            <td>5</td>
-                            <td>Activo</td>
-                            <td>
-                                <button className="btnEdit btn-outline-success" type="button" onclick="location.href='materia.html'" />
-                            </td>
-                            <td>
-                                <button className="btnDelete btn-outline-danger" type="button" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>0056</td>
-                            <td>Calculo</td>
-                            <td>4</td>
-                            <td>Activo</td>
-                            <td>
-                                <button className="btnEdit btn-outline-success" type="button" onclick="location.href='materia.html'" />
-                            </td>
-                            <td>
-                                <button className="btnDelete btn-outline-danger" type="button" />
-                            </td>
-                        </tr>
+                        <td>{materia.clave}</td>
+                        <td>{materia.nombre}</td>
+                        <td>{materia.creditos}</td>
+                        <td>{materia.status}</td>
+                        <td>
+                            <button className="btnEdit btn-outline-success" type="button" onclick="location.href='materia.html'" />
+                        </td>
+                        <td>
+                            <button className="btnDelete btn-outline-danger" type="button" />
+                        </td>
+                    </tr>
+                    ))}
                     </tbody>
                 </table>
-                <button className="btn btn-outline-primary" onClick={()=>navigate('/')}>Finalizar</button>
+                <button className="btn btn-outline-primary" onClick={retornar}>Finalizar</button>
 
             </section>
         </div>

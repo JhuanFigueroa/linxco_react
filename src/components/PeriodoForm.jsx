@@ -68,7 +68,8 @@ const periodo = () =>{
                 <input type="text" className="form-control" value={descripcionPeriodo} onChange={(e)=>{setdescripcionPeriodo(e.target.value)}}/>
             </div>        
             <section className="botonesPeri row" style={{marginTop: "10px"}}>
-                {operacion==='cambioOperacion1'?(<button className="btnFactsA btn-outline-primary" onClick={updateClik}>Editar</button>):(<button className="btnPA btn-outline-primary" onClick={handleClick}>Agregar</button>)}
+                {operacion==='cambioOperacion1'?(
+                <button className="btnFactsA btn-outline-primary" onClick={updateClik}>Editar</button>):(<button className="btnPA btn-outline-primary" onClick={handleClick}>Agregar</button>)}
                 <button className="btnPB btn-outline-primary" onClick={()=>navigate('/periodo/Ver')}>VER</button>
             </section>
         </section></>
