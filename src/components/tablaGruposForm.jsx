@@ -1,14 +1,30 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import '../styles/tablaGruposForm.scss'
 import { useNavigate } from "react-router-dom";
-const TipoConstancia = () => {
-    const navigate = useNavigate({ nombre });
+import axios from "axios";
+
+const API ='http://localhost:3000/api/v1/grupos'
+
+const tablaGruposForm = () => {
+    const navigate = useNavigate();
+    // const navigate = useNavigate({ nombre });
+    const [grupos, setGrupos] = useState([])
     const handleClick = (e) => {
         e.preventDefault();
-        navigate('/factura')
+        navigate('/')
     }
+
+    
+    
+
+    useEffect(async() => {
+        // .then(rest => {setGrupos(rest.data.verGrupos) })
+        const rta = await axios.get(API);
+        setGrupos(rta.data)
+    }, [])
     return (
-        <div >
+        <div>
             <div className="capa"></div>
             <section className="factura row">
                 <table className="table table-bordered">
@@ -22,35 +38,29 @@ const TipoConstancia = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>0032</td>
-                            <td>5</td>
-                            <td>Activo</td>
+                        {grupos.map((grupo)=>(
+                            <tr>
+                            <td>{grupo.id}</td>
+                            <td>{grupo.numero}</td>
+                            <td>{grupo.status}</td>
                             <td>
                                 <button className="btnEdit btn-outline-success" type="button" onclick="location.href='materia.html'" />
                             </td>
                             <td>
                                 <button className="btnDelete btn-outline-danger" type="button" />
                             </td>
-                        </tr>
-                        <tr>
-                            <td>0056</td>
-                            <td>4</td>
-                            <td>Activo</td>
-                            <td>
-                                <button className="btnEdit btn-outline-success" type="button" onclick="location.href='materia.html'" />
-                            </td>
-                            <td>
-                                <button className="btnDelete btn-outline-danger" type="button" />
-                            </td>
-                        </tr>
-                        </tbody>
+                        </tr>    
+                        
+                        ))}
+                        
+                                            
+                    </tbody>
                 </table>
-                <button className="btn btn-outline-primary">Finalizar</button>
+                <button className="btn btn-outline-primary" onClick={() => navigate('/')}>Finalizar</button>
 
             </section>
         </div>
     );
 }
 
-export default TipoConstancia;
+export default tablaGruposForm;

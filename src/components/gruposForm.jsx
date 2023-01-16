@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import '../styles/gruposForm.scss'
-import {useNavigate} from "react-router-dom";
+import React, { useState, useContext } from "react";
+import '../styles/carrerasIn.scss'
+import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import Cookie from "js-cookie";
 import { useEffect } from "react";
-const aspirantes=()=>{
+import AppContext from "../context/AppContext";
+
+const gruposForm=()=>{
 const navigate=useNavigate();
     const hadleClick=(e)=>{
         e.preventDefault();
@@ -29,11 +31,11 @@ return(
     </div>
     <section className="botonesFR row" style={{marginTop: "10px"}}>
 		<button className="btnFactsA btn-outline-primary">Agregar</button>
-		<button className="btnFactsAB btn-outline-primary" onclick="location.href='tablaGrupo.html'">VER</button>
+		<button className="btnFactsAB btn-outline-primary" onClick={()=>navigate('/gruposForm/Ver')} >VER</button>
 	</section>
 </section>
     </div>
 );
 }
 
-export default aspirantes;
+export default gruposForm;

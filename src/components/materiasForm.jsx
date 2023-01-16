@@ -33,7 +33,7 @@ return(
     </div>
     <section className="botonesFR row" style={{marginTop: "10px"}}>
 		<button className="btnFactsA btn-outline-primary">Agregar</button>
-		<button className="btnFactsAB btn-outline-primary" onclick="location.href='tablaMateria.html'">VER</button>
+		<button className="btnFactsAB btn-outline-primary" onClick={()=>navigate('/materiasForm/Ver')}>VER</button>
 	</section>
 </section>
     </div>
