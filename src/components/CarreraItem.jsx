@@ -29,7 +29,7 @@ const CarreraItem = ({carrera}) => {
             if (user.rol==1){
                 navigate(`/actas/grupos/${clave}`)
             }else{
-                navigate('/control/actas/materias')
+                navigate(`/control/actas/grupos/${clave}`)
             }
         }
         if (operacion==='horario'){
@@ -39,7 +39,7 @@ const CarreraItem = ({carrera}) => {
     return (
         <figure>
             <img src={carrera.imagen} alt=""/>
-                <h2>materia</h2>
+                <h2>Materia</h2>
                 <div className="btnca">
                     <button type="button" className="btn btn-outline-success"
                             onClick={()=>{handleSubmit(carrera.clave)}}

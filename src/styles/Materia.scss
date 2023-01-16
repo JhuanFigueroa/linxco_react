@@ -121,18 +121,18 @@
   margin: auto;
 }
 .contMaterias{
-  height: auto;
-  width: 740px;
+  height: auto !important;
+  width: 900px !important;
   background: rgba(255, 255, 255, 0.1);
-  margin-top: 120px;
-  margin-left: 280px;
+  margin-top: 120px !important;
+  margin-left: 230px !important;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(3px);
 }
 .tableCal{
-  width: 100%;
+  width: 100% !important;
   height: auto;
   text-align: center;
   color: white;
@@ -140,7 +140,9 @@
 .tableCal .btn{
   color: white;
   width: 50%;
-  margin-right: 150px;
+  margin-right: 50px;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 .btncal{
   width: 200px;
@@ -156,14 +158,26 @@
   border-radius: 0.4rem;
   border: 1px solid rgb(119, 0, 255);
   width: 45px;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   height: 45px;
+  margin-left: 50px;
   background-image: url( '../assets/imgs/send.png');
   background-repeat: no-repeat;
+}
+.btnDescargar{
+  background-color: transparent;
+  color: white;
 }
 .docs{
   width: 100%;
   margin-left: 1px;
+  margin-right: 100px;
+}
+.btnCargarar{
+  margin-left: 10px;
+  margin-top: 20px;
+
 }
 @media only screen and (max-width: 1450px) {
 	.contMaterias{
@@ -211,7 +225,6 @@
 	
 }
 @media only screen and (max-width: 1160px) {
-	
 	.contMaterias{
 		margin-left: 100px;
 		height: 500px;
@@ -223,5 +236,5 @@
 		box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
 		backdrop-filter: blur(3px);
 	}
-	
+
 }

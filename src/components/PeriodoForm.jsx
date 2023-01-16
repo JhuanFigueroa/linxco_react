@@ -59,6 +59,9 @@ const periodo = () =>{
     return(
         <><div className="capa"></div>
         <section className="forPeriodo row">
+            <div className='forPerO'>
+                <h1>Registro de Periodos</h1>
+            </div>
             <div className="form-group">
                 <h5>N. Periodo</h5>
                 <input type="text" className="form-control" value={numeroPeriodo} onChange={(e)=>{setnumeroPeriodo(e.target.value)}}/>
@@ -68,7 +71,8 @@ const periodo = () =>{
                 <input type="text" className="form-control" value={descripcionPeriodo} onChange={(e)=>{setdescripcionPeriodo(e.target.value)}}/>
             </div>        
             <section className="botonesPeri row" style={{marginTop: "10px"}}>
-                {operacion==='cambioOperacion1'?(<button className="btnFactsA btn-outline-primary" onClick={updateClik}>Editar</button>):(<button className="btnPA btn-outline-primary" onClick={handleClick}>Agregar</button>)}
+                {operacion==='cambioOperacion1'?(
+                <button className="btnFactsA btn-outline-primary" onClick={updateClik}>Editar</button>):(<button className="btnPA btn-outline-primary" onClick={handleClick}>Agregar</button>)}
                 <button className="btnPB btn-outline-primary" onClick={()=>navigate('/periodo/Ver')}>VER</button>
             </section>
         </section></>

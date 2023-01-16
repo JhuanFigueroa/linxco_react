@@ -3,40 +3,40 @@ import TipoConstancia from "@components/TipoConstancia";
 import '../styles/TipoConstancia.scss'
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
-const Constancias=()=>{
+const Periodos=()=>{
     const navigate=useNavigate();
-    const [tiposConstancia,setTiposConstancia]=useState([])
-    const getTipoConstancia= async ()=>{
-        const rta=axios.get('http://localhost:3000/api/v1/constancias/tipos')
+    const [periodos,setPeriodos]=useState([])
+    const getPeriodos= async ()=>{
+        const rta=axios.get('http://localhost:3000/api/v1/periodo/all')
             .then(res=>{
-               setTiposConstancia(res.data)
-                console.log(res.data)
+                setPeriodos(res.data)
             })
+
 
     }
 
-    const handleClick=(desripcion)=>{
-        navigate(`/factura/${desripcion}`)
+    const handleClick=(idPeriodo)=>{
+        navigate(`/boleta/${idPeriodo}`)
     }
 
     useEffect(()=>{
-        getTipoConstancia()
+        getPeriodos()
     },[])
     return(
         <div>
             <section className="contTramites">
                 <div className="mensajeIConst text-center" style={{color: "white"}}>
-                    <h1>Instrucciones</h1>
+                    <h1>ELGIGE EL PERIODO</h1>
                 </div>
                 <div className="button row">
 
-                    {tiposConstancia.map(tipo=>(
-                        <div className="conssemestre mr-3" key={tipo.id} >
+                    {periodos.map(periodo=>(
+                        <div className="conssemestre mr-3" key={periodo.id} >
                             <button
                                 type="button"
-                                onClick={()=>{handleClick(tipo.descripcion)}}
+                                onClick={()=>{handleClick(periodo.id)}}
                                 className="constancia btn-outline-primary">
-                                {tipo.descripcion}
+                                {periodo.numero}
                             </button>
                         </div>
                     ))}
@@ -47,4 +47,4 @@ const Constancias=()=>{
     );
 }
 
-export default Constancias
+export default Periodos

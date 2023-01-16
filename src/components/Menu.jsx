@@ -46,7 +46,7 @@ const Menu = () => {
         }
 
         if (operacion==='acta'){
-            if (user.rol==2 || user.rol==3){
+            if (user.rol==2 || user.rol==5){
                 navigate('/control/actas')
             }else{
                 
@@ -72,7 +72,16 @@ const Menu = () => {
         if (operacion==='insertarPeriodo'){
             navigate('/periodo/Insertar')
         }
-
+        if (operacion==='insertarGrupo'){
+            navigate('/grupoF')
+        }
+        if (operacion==='insertarMaterias'){
+            navigate('/materiasF')
+        }
+        if (operacion==='boleta'){
+            navigate('/boletas/periodos')
+        }
+        
     }
 
     return (
@@ -121,6 +130,14 @@ const Menu = () => {
                        )
                        }
 
+                       {user.rol==4 &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
+                                       onClick={()=>handleClickInsvripcion('boleta')}>Boletas
+                               </button>
+                           </section>
+                       )}
+
                        {(user.rol==2 || user.rol==5) && (
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
@@ -151,7 +168,7 @@ const Menu = () => {
                        {user.rol ==5 &&(
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial", marginLeft:0}}
-                                       onClick={()=>handleClickInsvripcion('maestroForm')}>Maestos Insertar
+                                       onClick={()=>handleClickInsvripcion('maestroForm')}>Insertar Maestros
                                </button>
                            </section>
                        )}
@@ -169,24 +186,38 @@ const Menu = () => {
                        {user.rol ==5 &&(
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
-                                       onClick={()=>handleClickInsvripcion('insertarCarrera')}>Carrera Insertar
+                                       onClick={()=>handleClickInsvripcion('insertarCarrera')}>Insertar Carrera
                                </button>
                            </section>
                        )}
                        {user.rol ==5 &&(
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
-                                       onClick={()=>handleClickInsvripcion('insertarEmpleado')}>Empleado Insertar
+                                       onClick={()=>handleClickInsvripcion('insertarEmpleado')}>Insertar Empleado
                                </button>
                            </section>
                        )}
                        {user.rol ==5 &&(
                            <section className="btnMenu">
                                <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
-                                       onClick={()=>handleClickInsvripcion('insertarPeriodo')}>Periodo Insertar
+                                       onClick={()=>handleClickInsvripcion('insertarPeriodo')}>Insertar Periodo
                                </button>
                            </section>
                        )}
+                       {user.rol ==5 &&(
+                           <section className="btnMenu">
+                               <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
+                                       onClick={()=>handleClickInsvripcion('insertarGrupo')}>Insertar Grupo
+                               </button>
+                           </section>
+                       )}
+                       {user.rol ==5 &&(
+                        <section className="btnMenu">
+                            <button className="btnM btn btn-dark" style={{textAlign: "initial",  marginLeft:0}}
+                                    onClick={()=>handleClickInsvripcion('insertarMaterias')}>Insertar Materias
+                            </button>
+                        </section>
+                    )}
                        
                    </nav>
 

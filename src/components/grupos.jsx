@@ -19,32 +19,47 @@ const Grupos = () => {
         const rta= axios.get('https://linxco-backend.herokuapp.com/api/v1/grupos/maestro/'+user.clave+'/'+clave+'').then(rest => {
             setGrupo(rest.data)
         });
-        
-        
+    }
 
+    const getGrrupoByCarrera= async ()=>{
+        const rta=await axios.get('http://localhost:3000/api/v1/grupos/carrera/'+clave)
+            .then(res=>{
+                console.log(res.data)
+                setGrupo(res.data)
+            })
     }
     useEffect(() => {
-        getGrupo(user,clave)
+        if (user.rol==2 || user.rol==5){
+            getGrrupoByCarrera()
+        }else {
+            getGrupo(user,clave)
+        }
        
     },[]);
     const navigate=useNavigate()
-    const handeleClick=(e)=>{
-        e.preventDefault()
-        navigate('/actas/materias')
+    const handeleClick=(grupo)=>{
+
+        if (user.rol ==2 || user.rol==5){
+        navigate(`/control/actas/materias/${grupo}`)
+        }else{
+            navigate('/actas/materias')
+        }
     }
     return (
         <div>
 			<div className="capa"></div>
+            <div className="justify-content-center row">
+                    <h3>SELECCIONE SU GRUPO</h3>
             <div className="materias pt-1">
-                <h3 className="titleGrupo">seleccione su grupo</h3>
+                
                 <div className="mate justify-content-center row">
                         {grupo.map((grupos)=>(
                             <div className="botones mr-3">
-                            <button type="button " className="btngru btn-outline-primary" onClick={handeleClick}
+                            <button type="button " className="btngru btn-outline-primary" onClick={()=>{handeleClick(grupos.id)}}
                             style={{color:"cyan"}}>{grupos.grupo}</button>
                             </div>
                         ))}
-                    
+                    </div>
                 </div>
             </div>
         </div>

@@ -44,6 +44,14 @@ import EmpleadoForm from "@components/EmpleadoForm";
 import VistaEmpleado from '../components/vistaEmpleado';
 import PeriodoForm from '../components/PeriodoForm';
 import VistaPeriodo from "@components/VistaPeriodo";
+import GruposForm from "@components/gruposForm";
+import MateriasForm from "@components/materiasForm";
+import FormActas from "@components/FormActas";
+import Periodos from "@containers/Periodos";
+import Boleta from "@components/Boleta";
+import VistaGruposForm from "@components/tablaGruposForm";
+import VistaMateriasForm from "@components/tablaMateriasForm";
+
 
 const App=()=>{
     const operacion=useOperacion()
@@ -97,19 +105,24 @@ const App=()=>{
 
                         <Route exact path="/factura/:descripcion" element={<AuthRoute><Factura/></AuthRoute>}/>
 
+                        {/*Credencializacion*/}
                         <Route exact path="/control/credencializacion" element={<AuthRoute><EstudiantesTable/></AuthRoute>}/>
                         <Route exact path="/control/credencializacion/form" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
                         <Route exact path="/control/credencializacion/edit/:matriculaAlumno" element={<AuthRoute><Credencializacion/></AuthRoute>}/>
 
+                        {/*Horarios*/}
                         <Route exact path="/horarios" element={<AuthRoute><Horario/></AuthRoute>}/>
                         <Route exact path="/horarios/:carrera" element={<AuthRoute><DownloadHorario/></AuthRoute>}/>
                         <Route exact path="/control/horarios" element={<AuthRoute><Carreras/></AuthRoute>}/>
 
                         {/*Actas*/}
                         <Route exact path="/control/actas" element={<AuthRoute><Carreras/></AuthRoute>}/>
-                        <Route exact path="/control/actas/materias" element={<AuthRoute><Materias/></AuthRoute>}/>
+                        <Route exact path="/control/actas/grupos/:clave" element={<AuthRoute><Grupos/></AuthRoute>}/>
+                        <Route exact path="/control/actas/materias/:grupo" element={<AuthRoute><Materias/></AuthRoute>}/>
+                        <Route exact path="/control/actas/calif/:materia/:grupo" element={<AuthRoute><FormActas/></AuthRoute>}/>
                         <Route exact path="/actas" element={<AuthRoute><Carreras/></AuthRoute>}/>
 
+                        {/*ACTAS*/}
                         <Route exact path="/actas/grupos" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/grupos/:clave" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/materias" element={<AuthRoute><MateriasContainer/></AuthRoute>}/>
@@ -136,6 +149,17 @@ const App=()=>{
                         <Route exact path="/periodo/Insertar" element={<AuthRoute><PeriodoForm/></AuthRoute>}/>
                         <Route exact path="/periodo/Ver" element={<AuthRoute><VistaPeriodo/></AuthRoute>}/>
                         <Route exact path="/periodo/Insertar/:id2" element={<AuthRoute><PeriodoForm/></AuthRoute>}/>
+
+                        {/*Grupos form*/}
+                        <Route exact path="/grupoF" element={<AuthRoute><GruposForm/></AuthRoute>}/>
+                        <Route exact path="/gruposForm/Ver" element={<AuthRoute><VistaGruposForm/></AuthRoute>}/>
+
+                        {/*Materias form*/}
+                       <Route exact path="/materiasF" element={<AuthRoute><MateriasForm/></AuthRoute>}/>
+                        {/*Boletas*/}
+                        <Route exact path="/boletas/periodos" element={<AuthRoute><Periodos/></AuthRoute>}/>
+                        <Route exact path="/boleta/:idPeriodo" element={<AuthRoute><Boleta/></AuthRoute>}/>
+                       <Route exact path="/materiasForm/Ver" element={<AuthRoute><VistaMateriasForm/></AuthRoute>}/>
 
                     </Routes>
 
