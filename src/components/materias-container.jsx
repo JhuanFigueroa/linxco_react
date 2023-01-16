@@ -5,7 +5,7 @@ import axios from "axios";
 import Cookie from "js-cookie";
 import { useEffect } from "react";
 const Documento  ='http://localhost:3000/descargar/1671390264365-577364018-sistemas-transformed.png';
-const api = 'http://localhost:3000/api/v1/semestre'
+const api = 'https://linxco-backend.herokuapp.com/api/v1/semestre'
 const Materias = () => {
 	const [semestre,setSemestre]=useState([]);
 
