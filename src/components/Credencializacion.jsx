@@ -94,7 +94,7 @@ const Credencializacion = () =>{
             <div className="form-group row">
                 <h5  className="textNC">Matricula :</h5>
                 <div className="col-sm-6">
-                    <input type="text" className="format-control" id="inputNoControl" style={{width: "500px", height: "30px", color:"white"}}
+                    <input type="text" className="format-control" id="inputNoControl" style={{width: "450px", height: "30px", color:"white"}}
                         value={matriculaAlumno}
                            onChange={(e)=>{setMatricula(e.target.value)}}/>
 

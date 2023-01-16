@@ -74,7 +74,7 @@ const ConstanciaDatos =()=>{
     },[])
     return(
 
-        <section className="contentReins-ConstanciaDatos">
+        <section className="contentReins-ConstanciaDatosC">
             <h2 className="titleCarga" style={{color: "white", marginLeft: "20px"}}>DATOS FACTURA</h2>
             <div className="form-group row">
                 <h5  className="textNC" style={{color: "white", marginLeft: "20px"}}>No.Comprobante :</h5>

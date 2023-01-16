@@ -158,7 +158,7 @@ const FacturaReinscripcion = () => {
     }, []);
     return (
         <section
-            className="contentFactReins"
+            className="contentFactReinsAl"
             style={{height: "550px", marginRight: "200px"}}
         >
             <h2 className="titleCarga" style={{color: "white", marginLeft: "30px"}}>

@@ -74,20 +74,6 @@ const EstudiantesTable = () => {
        return (
            <section className="contenedor-estudiantes">
             <h1>Reinscripciones</h1>
-               <nav className="buscador d-flex align-items-center">
-                   <form className="form-inline">
-                       <input
-                           className="form-control mr-sm-2 col-7"
-                           type="search"
-                           style={{width: "700px",color:"white"}}
-                           placeholder="Search"
-                           aria-label="Search"
-                       />
-                       <button className="btn btn-outline-primaryy mt-7" type="submit">
-                           Buscar
-                       </button>
-                   </form>
-               </nav>
                <br></br>
                <table className="tableEstudiantes table-bordered">
                    <thead>
@@ -130,21 +116,6 @@ const EstudiantesTable = () => {
        return (
            <section className="contenedor-estudiantes">
             <h1>Bajas</h1>
-               <nav className="buscador d-flex align-items-center">
-                   <form className="form-inline">
-                       <input
-                           className="form-control mr-sm-2 col-7"
-                           type="search"
-                           style={{width: "700px",color:"white"}}
-                           placeholder="Search"
-                           aria-label="Search"
-                       />
-                       <button className="btn btn-outline-primaryy mt-7" >
-                           Buscar
-                       </button>
-                   </form>
-               </nav>
-               <br></br>
 
                    <button className="btn-outline-primary btn-nuevo" type="button"
                            onClick={handleClick}>
