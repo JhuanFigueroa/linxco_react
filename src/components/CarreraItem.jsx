@@ -29,7 +29,7 @@ const CarreraItem = ({carrera}) => {
             if (user.rol==1){
                 navigate(`/actas/grupos/${clave}`)
             }else{
-                navigate('/control/actas/materias')
+                navigate(`/control/actas/grupos/${clave}`)
             }
         }
         if (operacion==='horario'){

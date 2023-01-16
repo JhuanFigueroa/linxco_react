@@ -94,4 +94,4 @@ const VistaCarrera = () =>{
     )
 }
 
-export default VistaCarrera
+export default VistaCarrera;

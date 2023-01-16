@@ -1,12 +1,10 @@
-import React, { useState, useContext } from "react";
-import '../styles/carrerasIn.scss'
-import {useNavigate, useParams} from "react-router-dom";
+import React, { useState } from "react";
+import '../styles/materiasForm.scss'
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import Cookie from "js-cookie";
 import { useEffect } from "react";
-import AppContext from "../context/AppContext";
-
-const gruposForm=()=>{
+const aspirantes=()=>{
 const navigate=useNavigate();
     const hadleClick=(e)=>{
         e.preventDefault();
@@ -14,31 +12,32 @@ const navigate=useNavigate();
     }
 return(
     <div>
-        
-	<div className="capa"></div>
+         <div className="capa"></div>
+
 <section className="factura row">
-    <div className="regGrup">
-        <h1>Registro de Grupos</h1>
-    </div>
     <div className="form-group">
-        <h5>Id del grupo</h5>	
+        <h5>Clave de Materia</h5>	
         <input type="text"  className="form-control"/>
     </div>	
     <div className="form-group">
-        <h5>Numero del grupo</h5>	
+        <h5>Nombre de la materia</h5>	
         <input type="text"  className="form-control"/>
-    </div>
+    </div>	
+    <div className="form-group">
+        <h5>Creditos</h5>	
+        <input type="number"  className="form-control"/>
+    </div>	
     <div className="form-group">
         <h5>Status</h5>	
         <input type="text"  className="form-control"/>
     </div>
     <section className="botonesFR row" style={{marginTop: "10px"}}>
 		<button className="btnFactsA btn-outline-primary">Agregar</button>
-		<button className="btnFactsAB btn-outline-primary" onClick={()=>navigate('/gruposForm/Ver')} >VER</button>
+		<button className="btnFactsAB btn-outline-primary" onClick={()=>navigate('/materiasForm/Ver')}>VER</button>
 	</section>
 </section>
     </div>
 );
 }
 
-export default gruposForm;
+export default aspirantes;
