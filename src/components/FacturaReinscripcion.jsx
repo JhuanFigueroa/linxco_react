@@ -147,6 +147,15 @@ const FacturaReinscripcion = () => {
         navigate('/home')
     }
 
+    useEffect(() => {
+        if (user.rol != 4) {
+            matriculaAlumno = matricula;
+        } else {
+            matriculaAlumno = user.clave;
+        }
+        getTipoFactura();
+        getFacturaAlumno();
+    }, []);
     return (
         <section
             className="contentFactReins"

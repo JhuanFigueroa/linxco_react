@@ -23,30 +23,27 @@ const Constancias=()=>{
         getTipoConstancia()
     },[])
     return(
-       <div>
-           <section className="contTramites">
-               <div className="mensaje text-center" style={{color: "white"}}>
-                   <h1>Instrucciones</h1>
-               </div>
-               <div className="button row">
+        <div>
+            <section className="contTramites">
+                <div className="mensajeIConst text-center" style={{color: "white"}}>
+                    <h1>Instrucciones</h1>
+                </div>
+                <div className="button row">
 
-                       <div className="conssemestre mr-3" style={{marginTop:"40px",marginLeft:"40px"}} >
-                           {tiposConstancia.map(tipo=>(
-                           <button
-                               type="button"
-                               onClick={()=>{handleClick(tipo.descripcion)}}
-                               className="constancia btn-outline-primary"
-                               style={{color: "cyan", width: "200px", height: "200px"}}
-                           >
-                               {tipo.descripcion}
-                           </button>
-                           ))}
-                       </div>
+                    {tiposConstancia.map(tipo=>(
+                        <div className="conssemestre mr-3" key={tipo.id} >
+                            <button
+                                type="button"
+                                onClick={()=>{handleClick(tipo.descripcion)}}
+                                className="constancia btn-outline-primary">
+                                {tipo.descripcion}
+                            </button>
+                        </div>
+                    ))}
 
-
-               </div>
-           </section>
-       </div>
+                </div>
+            </section>
+        </div>
     );
 }
 

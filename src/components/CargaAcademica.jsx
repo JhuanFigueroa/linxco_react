@@ -98,11 +98,11 @@ const CargaAcademica = () => {
 
             navigate("/reinscripcion/factura");
 
-
-            console.log(gruposCarga)
+        }else{
+            navigate(`/reinscripcion/control/factura/${matricula}`);
         }
 
-        navigate(`/reinscripcion/control/factura/${matricula}`);
+
     };
 
     const getCargaAlumno = () => {
