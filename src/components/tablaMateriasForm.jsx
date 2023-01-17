@@ -25,6 +25,7 @@ const tablaMateriasForm = () => {
         axios.defaults.headers.Authorization='Bearer '+cookie;
         axios.delete('http://localhost:3000/api/v1/materias/'+id+'')
         navigate('/materiasF')
+        //
     }
     useEffect(() => {
         // .then(rest => {setGrupos(rest.data.verGrupos) })
