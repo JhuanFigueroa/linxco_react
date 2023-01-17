@@ -39,7 +39,10 @@ const gruposForm = () => {
         <div>
 
             <div className="capa"></div>
-            <section className="factura row">
+            <section className="carreraV row">
+                <div className="regGrup">
+                    <h1>Registro de Grupos</h1>
+                </div>
                 <div className="form-group">
                     <h5>Numero del grupo</h5>
                     <input type="text" className="form-control" value={numeroGrupo} onChange={(e)=>{setnumeroGrupo(e.target.value)}} />
