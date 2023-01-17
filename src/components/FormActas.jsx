@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import "../styles/EstudiantesTable.scss";
+
 import AppContext from "../context/AppContext";
 import axios from "axios";
 import {useAuth} from "../hooks/useAuth";
@@ -85,7 +85,6 @@ const FormActas = () => {
                         <th scope="col">MATRICULA</th>
                         <th scope="col">NOMBRE COMPLETO</th>
                         <th scope="col">CALIFICACION</th>
-                        <th scope="col">DESEMPEÑO</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -122,21 +121,6 @@ const FormActas = () => {
                                                 }}/>
                                      </td>
 
-                                     {
-                                         ()=>{
-                                             if (califC<70){
-                                                 return(
-                                                     <td>NA</td>
-                                                 )
-                                                 setCalifC('')
-                                             }else if (califC>=70 && califC<80){
-                                                 return (
-                                                     <td>SUFICIENTE</td>
-                                                 )
-                                                 setCalifC('')
-                                             }
-                                         }
-                                     }
                                  </tr>
                              )
                             }

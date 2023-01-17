@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import '../styles/tablaMateriasForm.scss'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+//https://linxco-backend.herokuapp.com/
 const API ='http://localhost:3000/api/v1/materias'
 
 const tablaMateriasForm = () => {
@@ -15,9 +15,7 @@ const tablaMateriasForm = () => {
         e.preventDefault();
         navigate('/')
     }
-    const retornar = ()=>{
-        navigate('/')
-    }
+
     const obtenerMaterias =()=>{
         const rta = axios.get(API).then(res=>{setMaterias(res.data)});
     }
@@ -31,7 +29,7 @@ const tablaMateriasForm = () => {
             <section className="consuMate row">
                 <div className="TituloMate">
                     <h1>Consulta de Materias</h1>
-                    <button className="btnMatC btn-outline-primary" onClick={()=>navigate(retornar)}>Finalizar</button>
+                    <button className="btnMatC btn-outline-primary" onClick={() => navigate('/home')}>Finalizar</button>
                 </div>
                 <table className="tableMatC table-bordered">
                     <thead>
@@ -47,10 +45,10 @@ const tablaMateriasForm = () => {
                     <tbody>
                     {materias.map((materia)=>(
                         <tr>
-                        <td>{materia.clave}</td>
-                        <td>{materia.nombre}</td>
-                        <td>{materia.creditos}</td>
-                        <td>{materia.status}</td>
+                        <td>{materia.clave_materia}</td>
+                        <td>{materia.nombre_materia}</td>
+                        <td>{materia.creditos_materia}</td>
+                        <td>{materia.status_materia}</td>
                         <td>
                             <button className="btnEdit btn-outline-success" type="button" onclick="location.href='materia.html'" />
                         </td>
