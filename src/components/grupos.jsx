@@ -16,7 +16,7 @@ const Grupos = () => {
     const getGrupo=async (user, clave)=>{
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        const rta= axios.get('http://localhost:3000/api/v1/grupos/maestro/'+user.clave+'/'+clave+'').then(rest => {
+        const rta= axios.get('https://linxco-backend.herokuapp.com/api/v1/grupos/maestro/'+user.clave+'/'+clave+'').then(rest => {
             setGrupo(rest.data)
         });
     }

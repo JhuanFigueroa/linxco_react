@@ -6,7 +6,7 @@ import Cookie from "js-cookie";
 import { useEffect } from "react";
 import {useAuth} from "../hooks/useAuth";
 const Documento  ='http://localhost:3000/descargar/1671390264365-577364018-sistemas-transformed.png';
-const api = 'http://localhost:3000/api/v1/semestre'
+const api = 'https://linxco-backend.herokuapp.com/api/v1/semestre'
 const Materias = () => {
 	const auth=useAuth()
 	const user=auth.user

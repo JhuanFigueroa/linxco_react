@@ -14,14 +14,11 @@ const tablaGruposForm = () => {
         e.preventDefault();
         navigate('/')
     }
-
-    
-    
-
-    useEffect(async() => {
-        // .then(rest => {setGrupos(rest.data.verGrupos) })
-        const rta = await axios.get(API);
-        setGrupos(rta.data)
+    const obtenerGrupos =()=>{
+        const rta = axios.get(API).then(res=>{setGrupos(res.data)});
+    }
+    useEffect(() => {
+        obtenerGrupos()
     }, [])
     return (
         <div>
@@ -29,7 +26,7 @@ const tablaGruposForm = () => {
             <section className="vistaCarreFo row">
                 <div className="vistaFGr">
                     <h1>Consulta de Grupos</h1>
-                    <button className="btnMa btn-outline-primary" onClick={() => navigate('/')}>Finalizar</button>
+                    <button className="btnMa btn-outline-primary" onClick={() => navigate('/home')}>Finalizar</button>
                 </div>
                 <table className="tableMa table-bordered">
                     <thead>
@@ -37,6 +34,7 @@ const tablaGruposForm = () => {
                             <th scope="col" >id Grupo</th>
                             <th scope="col">Numero</th>
                             <th scope="col">Status</th>
+                            <th scope="col">Clave Carrera</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Eliminar</th>
                         </tr>
@@ -47,6 +45,7 @@ const tablaGruposForm = () => {
                             <td>{grupo.id}</td>
                             <td>{grupo.numero}</td>
                             <td>{grupo.status}</td>
+                            <td>{grupo.claveCarrera}</td>
                             <td>
                                 <button className="btnEditMa btn-outline-success" type="button" onclick="location.href='materia.html'" />
                             </td>
