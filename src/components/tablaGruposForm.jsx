@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import '../styles/tablaGruposForm.scss'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookie from "js-cookie";
 
 const API ='http://localhost:3000/api/v1/grupos'
 
@@ -20,6 +21,12 @@ const tablaGruposForm = () => {
     useEffect(() => {
         obtenerGrupos()
     }, [])
+    const eliminarCampo=(id)=>{
+        const cookie= Cookie.get('token')
+        axios.defaults.headers.Authorization='Bearer '+cookie;
+        axios.delete('http://localhost:3000/api/v1/grupos/'+id+'')
+        navigate('/grupoF')
+    }
     return (
         <div>
             <div className="capa"></div>
@@ -50,7 +57,7 @@ const tablaGruposForm = () => {
                                 <button className="btnEditMa btn-outline-success" type="button" onclick="location.href='materia.html'" />
                             </td>
                             <td>
-                                <button className="btnDeleteMa btn-outline-danger" type="button" />
+                                <button className="btnDeleteMa btn-outline-danger" type="button" onClick={()=>eliminarCampo(grupo.id)} />
                             </td>
                         </tr>    
                         

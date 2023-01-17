@@ -1,9 +1,10 @@
-
 import React from "react";
 import { useEffect, useState } from "react";
 import '../styles/tablaMateriasForm.scss'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookie from "js-cookie";
+
 //https://linxco-backend.herokuapp.com/
 const API ='http://localhost:3000/api/v1/materias'
 
@@ -18,6 +19,12 @@ const tablaMateriasForm = () => {
 
     const obtenerMaterias =()=>{
         const rta = axios.get(API).then(res=>{setMaterias(res.data)});
+    }
+    const eliminarCampo=(id)=>{
+        const cookie= Cookie.get('token')
+        axios.defaults.headers.Authorization='Bearer '+cookie;
+        axios.delete('http://localhost:3000/api/v1/materias/'+id+'')
+        navigate('/materiasF')
     }
     useEffect(() => {
         // .then(rest => {setGrupos(rest.data.verGrupos) })
@@ -53,7 +60,7 @@ const tablaMateriasForm = () => {
                             <button className="btnEdit btn-outline-success" type="button" onclick="location.href='materia.html'" />
                         </td>
                         <td>
-                            <button className="btnDelete btn-outline-danger" type="button" />
+                            <button className="btnDelete btn-outline-danger" type="button" onClick={()=>eliminarCampo(materia.clave_materia)}/>
                         </td>
                     </tr>
                     ))}
