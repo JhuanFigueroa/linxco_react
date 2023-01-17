@@ -38,7 +38,7 @@ const DownloadHorario = () => {
         <section className="ContentHorariosD">
             <div className="horariosD">
                 <h2 className="textHD">Descargar Archivo</h2><br/>
-                <a href={documento}  download={"horario.pdf"}>
+                <a href={documento} target={"_blank"} download={"horario.pdf"}>
                 <button className="descargaHD btn-outline-primary"><img src={gif} width="100%"
                                                                                     height="100%"/></button></a>
             </div>
