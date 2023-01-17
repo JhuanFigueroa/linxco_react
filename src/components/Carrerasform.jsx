@@ -11,6 +11,11 @@ const Carrerasform=()=>{
     const operacion=state.operacion
     const {clave}=useParams()
     const navigate = useNavigate()
+    const handleFileChange = (e) =>{
+        if (e.target.files){
+            setimgCarrear(e.target.files[0]);
+        }
+    };
     const handleClick=(e)=>{
         e.preventDefault();
         console.log(clave)
@@ -19,12 +24,14 @@ const Carrerasform=()=>{
             'nombre':nombreCarrera,
             'especialidad':especialidadCarrera,
             'plan_estudios':planEsCarrera
+            //'imagen':imgCarrear.imgCarrear
         }
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-		axios.post('http://localhost:3000/api/v1/carrera',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
+		axios.post('https://linxco-backend.herokuapp.com/api/v1/carrera',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
         actualizarInputs()
     }
+    
     const updateClik=(e)=>{
         e.preventDefault()
         const data={
@@ -35,7 +42,7 @@ const Carrerasform=()=>{
         }
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        axios.patch('http://localhost:3000/api/v1/carrera/'+clave+'',data)
+        axios.patch('https://linxco-backend.herokuapp.com/api/v1/carrera/'+clave+'',data)
         navigate('/carrera/Ver')
     }
 
@@ -50,7 +57,7 @@ const Carrerasform=()=>{
     const [nombreCarrera,setnombreCarrera]=useState('')
     const [especialidadCarrera,setespecialidadCarrera]=useState('')
     const [planEsCarrera,setplanEsCarrera]=useState('')
-    const [imgCarrear,setimgCarrear]=useState('')
+    const [imgCarrear,setimgCarrear]=useState(null)
     const [statusCarrea,setstatusCarrea]=useState('')
 
     useEffect(()=>{
@@ -60,7 +67,7 @@ const Carrerasform=()=>{
     },[])
     function llenarCampos(clave){
         console.log(clave)
-		const rta = axios.get('http://localhost:3000/api/v1/carrera/'+clave+'').then(rest=>{
+		const rta = axios.get('https://linxco-backend.herokuapp.com/api/v1/carrera/'+clave+'').then(rest=>{
             
         setclaveCarrera(rest.data.clave)
         setnombreCarrera(rest.data.nombre)
@@ -101,7 +108,7 @@ const Carrerasform=()=>{
                 <input type="file" lassName="btn btn-block subir"  style={{width: "600px", height: "50px", color:"white", marginLeft: "20px"}} onChange={(e)=>{setimgCarrear(e.target.value)}}/>
             </div>
             <section className="botonesFR row" style={{marginTop: "10px"}}>
-                <button className="btnFactsA btn-outline-primary" onClick={handleClick}>Agregar</button>
+                {operacion==='cambioOperacion'?(<button className="btnFactsA btn-outline-primary" onClick={updateClik}>Editar</button>):(<button className="btnFactsA btn-outline-primary" onClick={handleClick}>Agregar</button>)}
                 <button className="btnFactsAB btn-outline-primary" onClick={()=>navigate('/carrera/Ver')} >VER</button>
             </section>
         </section></>

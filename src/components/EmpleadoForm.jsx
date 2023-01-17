@@ -27,7 +27,7 @@ const EmpleadoForm=()=>{
         }
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-		axios.post('http://localhost:3000/api/v1/empleados',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
+		axios.post('https://linxco-backend.herokuapp.com/api/v1/empleados',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
 		actualizarInputs()
     }
     function updateClik(){
@@ -40,8 +40,9 @@ const EmpleadoForm=()=>{
         }
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-		axios.patch('http://localhost:3000/api/v1/empleados/'+id1+'',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
+		axios.patch('https://linxco-backend.herokuapp.com/api/v1/empleados/'+id1+'',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
 		navigate('/empleado/Ver')
+        
     }
     function actualizarInputs(){
         setnombreEmp('')
@@ -71,14 +72,14 @@ const EmpleadoForm=()=>{
         }
  	},[]);
  	function getRol(){
-		const roles = axios.get('http://localhost:3000/api/v1/empleados')
+		const roles = axios.get('https://linxco-backend.herokuapp.com/api/v1/empleados')
 		.then((res) => {
 			//console.log(res.data);
 			settipoRol(res.data.empleados)
 		});
 	}
     function llenarCamposEmple(id1){
-        const rta = axios.get('http://localhost:3000/api/v1/empleados/'+id1+'').then(rest=>{
+        const rta = axios.get('https://linxco-backend.herokuapp.com/api/v1/empleados/'+id1+'').then(rest=>{
             setnombreEmp(rest.data.nombre)
             setapellido_paternoEmpl(rest.data.apellido_paterno)
             setapellido_maternoEmpl(rest.data.apellido_materno)
@@ -99,32 +100,32 @@ const EmpleadoForm=()=>{
             </div>
             <div className="form-group">
                 <h5>Nombre del Empleado</h5>
-                <input type="text" value={nombreEmp} className="form-control"onChange={(e)=>{setnombreEmp(e.target.value)}}/>
+                <input type="text" value={nombreEmp} style={{color:"white"}} className="form-control"onChange={(e)=>{setnombreEmp(e.target.value)}}/>
             </div>
             <div className="form-group">
                 <h5>Apellido paterno</h5>
-                <input type="text" value={apellido_paternoEmpl} className="form-control" onChange={(e)=>{setapellido_paternoEmpl(e.target.value)}}/>
+                <input type="text" value={apellido_paternoEmpl} style={{color:"white"}} className="form-control" onChange={(e)=>{setapellido_paternoEmpl(e.target.value)}}/>
             </div>
             <div className="form-group">
                 <h5>Apellido materno</h5>
-                <input type="text" value={apellido_maternoEmpl} className="form-control" onChange={(e)=>{setapellido_maternoEmpl(e.target.value)}}/>
+                <input type="text" value={apellido_maternoEmpl} style={{color:"white"}} className="form-control" onChange={(e)=>{setapellido_maternoEmpl(e.target.value)}}/>
             </div>
             <div className="form-group">
                 <h5>Telefono</h5>
-                <input type="text" value={telefonoEmpl} className="form-control" onChange={(e)=>{settelefonoEmpl(e.target.value)}}/>
+                <input type="text" value={telefonoEmpl} style={{color:"white"}} className="form-control" onChange={(e)=>{settelefonoEmpl(e.target.value)}}/>
             </div>
             <div className="form-group">
                 <h5>Correo Electronico</h5>
-                <input type="text" value={correoEmpl} className="form-control" onChange={(e)=>{setcorreoEmpl(e.target.value)}}/>
+                <input type="text" value={correoEmpl} style={{color:"white"}} className="form-control" onChange={(e)=>{setcorreoEmpl(e.target.value)}}/>
             </div>
             <div className="form-group">
                 <h5>Nombre de usuario</h5>
-                {operacion==='cambioOperacion1'?(<input type="text" readOnly value={usernameEmpl} className="form-control" onChange={(e)=>{setusernameEmpl(e.target.value)}}/>):(<input type="text" value={usernameEmpl} className="form-control" onChange={(e)=>{setusernameEmpl(e.target.value)}}/>)}
+                {operacion==='cambioOperacion1'?(<input type="text" style={{color:"white"}} readOnly value={usernameEmpl} className="form-control" onChange={(e)=>{setusernameEmpl(e.target.value)}}/>):(<input type="text" value={usernameEmpl} style={{color:"white"}} className="form-control" onChange={(e)=>{setusernameEmpl(e.target.value)}}/>)}
                 
             </div>
             <div className="form-group">
                 <h5>Contraseña</h5>
-                {operacion==='cambioOperacion1'?(<input type="text" readOnly value={passwordEmpl} className="form-control" onChange={(e)=>{setpasswordEmpl(e.target.value)}}/>):(<input type="text" value={passwordEmpl} className="form-control" onChange={(e)=>{setpasswordEmpl(e.target.value)}}/>)}
+                {operacion==='cambioOperacion1'?(<input type="text" style={{color:"white"}} readOnly value={passwordEmpl} className="form-control" onChange={(e)=>{setpasswordEmpl(e.target.value)}}/>):(<input type="text" style={{color:"white"}} value={passwordEmpl} className="form-control" onChange={(e)=>{setpasswordEmpl(e.target.value)}}/>)}
             </div>
             <div className="form-group ">
                 <h5>Rol</h5>

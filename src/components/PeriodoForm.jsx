@@ -20,7 +20,7 @@ const periodo = () =>{
         }
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-		axios.post('http://localhost:3000/api/v1/periodo',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
+		axios.post('https://linxco-backend.herokuapp.com/api/v1/periodo',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
         actualizarInputs()
     }
     const updateClik=(e)=>{
@@ -31,7 +31,7 @@ const periodo = () =>{
         }
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        axios.patch('http://localhost:3000/api/v1/periodo/'+id2+'',data)
+        axios.patch('https://linxco-backend.herokuapp.com/api/v1/periodo/'+id2+'',data)
         navigate('/periodo/Ver')
     }
     const [numeroPeriodo,setnumeroPeriodo]=useState('')
@@ -45,7 +45,7 @@ const periodo = () =>{
     },[])
     function llenarCamposPeri(id2){
         console.log(id2)
-		const rta = axios.get('http://localhost:3000/api/v1/periodo/'+id2+'').then(rest=>{
+		const rta = axios.get('https://linxco-backend.herokuapp.com/api/v1/periodo/'+id2+'').then(rest=>{
             
         setnumeroPeriodo(rest.data.numero)
         setdescripcionPeriodo(rest.data.descripcion)
@@ -64,11 +64,11 @@ const periodo = () =>{
             </div>
             <div className="form-group">
                 <h5>N. Periodo</h5>
-                <input type="text" className="form-control" value={numeroPeriodo} onChange={(e)=>{setnumeroPeriodo(e.target.value)}}/>
+                <input type="text" style={{color:"white"}} className="form-control" value={numeroPeriodo} onChange={(e)=>{setnumeroPeriodo(e.target.value)}}/>
             </div>
             <div className="form-group">
                 <h5>Descripcion</h5>
-                <input type="text" className="form-control" value={descripcionPeriodo} onChange={(e)=>{setdescripcionPeriodo(e.target.value)}}/>
+                <input type="text" style={{color:"white"}} className="form-control" value={descripcionPeriodo} onChange={(e)=>{setdescripcionPeriodo(e.target.value)}}/>
             </div>        
             <section className="botonesPeri row" style={{marginTop: "10px"}}>
                 {operacion==='cambioOperacion1'?(<button className="btnFactsA btn-outline-primary" onClick={updateClik}>Editar</button>):(<button className="btnPA btn-outline-primary" onClick={handleClick}>Agregar</button>)}

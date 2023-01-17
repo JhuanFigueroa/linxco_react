@@ -14,7 +14,10 @@ return(
     <div>
          <div className="capa"></div>
 
-<section className="factura row">
+<section className="facturaMate row">
+    <div className="mateTi">
+        <h1>Registro Materias</h1>
+    </div>
     <div className="form-group">
         <h5>Clave de Materia</h5>	
         <input type="text"  className="form-control"/>

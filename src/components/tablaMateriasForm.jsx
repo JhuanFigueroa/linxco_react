@@ -12,8 +12,12 @@ const tablaMateriasForm = () => {
     return (
         <div>
             <div className="capa"></div>
-            <section className="factura row">
-                <table className="table table-bordered">
+            <section className="consuMate row">
+                <div className="TituloMate">
+                    <h1>Consulta de Materias</h1>
+                    <button className="btnMatC btn-outline-primary" onClick={()=>navigate('/')}>Finalizar</button>
+                </div>
+                <table className="tableMatC table-bordered">
                     <thead>
                         <tr>
                             <th scope="col" >Clave</th>
@@ -43,15 +47,15 @@ const tablaMateriasForm = () => {
                             <td>4</td>
                             <td>Activo</td>
                             <td>
-                                <button className="btnEdit btn-outline-success" type="button" onclick="location.href='materia.html'" />
+                                <button className="btnEditMaC btn-outline-success" type="button" onclick="location.href='materia.html'" />
                             </td>
                             <td>
-                                <button className="btnDelete btn-outline-danger" type="button" />
+                                <button className="btnDeleteMaC btn-outline-danger" type="button" />
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <button className="btn btn-outline-primary" onClick={()=>navigate('/')}>Finalizar</button>
+                
 
             </section>
         </div>

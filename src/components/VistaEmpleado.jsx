@@ -15,7 +15,7 @@ const VistaEmpleado = () =>{
     const [datosEmpleados, setdatosEmpleados]=useState([])
     const idr=null
     function llenarTablaEmp(){
-        const rta = axios.get('http://localhost:3000/api/v1/empleados').then(rest=>{setdatosEmpleados(rest.data.empleados1)})
+        const rta = axios.get('https://linxco-backend.herokuapp.com/api/v1/empleados').then(rest=>{setdatosEmpleados(rest.data.empleados1)})
     }
     useEffect(() => {
         llenarTablaEmp()
@@ -36,7 +36,7 @@ const VistaEmpleado = () =>{
     function eliminarCampo(id1){
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        axios.delete('http://localhost:3000/api/v1/empleados/'+id1+'')
+        axios.delete('https://linxco-backend.herokuapp.com/api/v1/empleados/'+id1+'')
         llenarTablaEmp()
     }
 

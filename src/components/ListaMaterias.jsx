@@ -57,7 +57,7 @@ const ListaMaterias=(props)=>{
         <div>
             {materias.map((materia)=>(
               <li key={materia.clave}>
-                  <input type="checkbox"  name="materias[]" id="materia" value={materia.clave} onChange={(e)=>{
+                  <input type="checkbox" name="materias[]" id="materia" value={materia.clave} onChange={(e)=>{
                       if (e.target.checked){
                           let newList=materiasSelected
                           newList.push(materia)
@@ -67,10 +67,10 @@ const ListaMaterias=(props)=>{
                   }}
                          aria-label="Checkbox for following text input"/>
 
-                  <label style={{marginTop: "10px"}}>{materia.nombre}</label>
+                  <label style={{marginTop: "10px", color:"white", marginLeft:"50px"}}>{materia.nombre}</label>
               </li>
             ))}
-            <button onClick={addMaterias}>Continuar</button>
+            <button style={{marginLeft:"50px"}}onClick={addMaterias}>Continuar</button>
         </div>
     )
 }
