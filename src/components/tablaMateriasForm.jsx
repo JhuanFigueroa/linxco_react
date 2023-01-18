@@ -1,14 +1,21 @@
 import React from "react";
+import { useContext } from "react"
 import { useEffect, useState } from "react";
 import '../styles/tablaMateriasForm.scss'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookie from "js-cookie";
+import AppContext from "../context/AppContext";
+
 
 //https://linxco-backend.herokuapp.com/
 const API ='http://localhost:3000/api/v1/materias'
 
 const tablaMateriasForm = () => {
+    const {state}=useContext(AppContext)
+    const operacion=state.operacion
+    const{addOperacion}=React.useContext(AppContext);
+
     const navigate = useNavigate();
     const [materias, setMaterias] = useState([])
     // const navigate = useNavigate({ nombre });
@@ -27,6 +34,12 @@ const tablaMateriasForm = () => {
         navigate('/materiasF')
        
     }
+    const cambioVistaOperacionEditat=(id2)=>{
+        addOperacion('cambioOperacion1')
+        navigate(`/materiasF/${id2}`)
+
+    }
+
     useEffect(() => {
         // .then(rest => {setGrupos(rest.data.verGrupos) })
         obtenerMaterias()
@@ -58,7 +71,7 @@ const tablaMateriasForm = () => {
                         <td>{materia.creditos_materia}</td>
                         <td>{materia.status_materia}</td>
                         <td>
-                            <button className="btnEdit btn-outline-success" type="button" onclick="location.href='materia.html'" />
+                            <button className="btnEdit btn-outline-success" type="button" onClick={()=>cambioVistaOperacionEditat(materia.clave_materia)} />
                         </td>
                         <td>
                             <button className="btnDelete btn-outline-danger" type="button" onClick={()=>eliminarCampo(materia.clave_materia)}/>

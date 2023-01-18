@@ -160,7 +160,7 @@ const App=()=>{
                         <Route exact path="/boletas/periodos" element={<AuthRoute><Periodos/></AuthRoute>}/>
                         <Route exact path="/boleta/:idPeriodo" element={<AuthRoute><Boleta/></AuthRoute>}/>
                        <Route exact path="/materiasForm/Ver" element={<AuthRoute><VistaMateriasForm/></AuthRoute>}/>
-
+                       <Route exact path="/materiasF/:id2" element={<AuthRoute><MateriasForm/></AuthRoute>}/>
                     </Routes>
 
                 </Layout>

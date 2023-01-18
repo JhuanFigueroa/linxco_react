@@ -1,10 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import '../styles/materiasForm.scss'
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import axios from "axios";
 import Cookie from "js-cookie";
 import { useEffect } from "react";
+import AppContext from "../context/AppContext";
+
 const aspirantes=()=>{
+
+const {state}=useContext(AppContext)
+const operacion=state.operacion
+const {id2}=useParams()
 
 const [clave_materia,setclaveMateria]=useState('')
 const [nombre_materia,setNombreMateria]=useState('')
@@ -25,6 +31,34 @@ const handleClick = (e) => {
     axios.post('http://localhost:3000/api/v1/materias',data)
     navigate('/materiasForm/Ver')
 }
+const updateClik=(e)=>{
+    e.preventDefault()
+    const dataA={
+        'clave_materia':clave_materia,
+        'nombre_materia':nombre_materia,
+        'creditos_materia':creditos_materia,
+        'status_materia':status_materia
+    }
+    const cookie= Cookie.get('token')
+    axios.defaults.headers.Authorization='Bearer '+cookie;
+    axios.patch('http://localhost:3000/api/v1/materias/'+id2+'',dataA)
+    navigate('/materiasForm/Ver')
+}
+useEffect(()=>{
+    if(id2!=null){
+        llenarCamposMaterias(id2)
+    }
+},[])
+function llenarCamposMaterias(id2){
+    console.log(id2)
+    const rta = axios.get('http://localhost:3000/api/v1/materias/'+id2+'').then(rest=>{
+        
+    setclaveMateria(rest.data.clave_materia)
+    setNombreMateria(rest.data.nombre_materia)
+    setCreditosMateria(rest.data.creditos_materia)
+    setStatus_materia(rest.data.status_materia)
+})}
+
 return(
     <div>
          <div className="capa"></div>
@@ -50,7 +84,8 @@ return(
         <input type="text"  className="form-control" value={status_materia} onChange={(e)=>{setStatus_materia(e.target.value)}}/>
     </div>
     <section className="botonesFR row" style={{marginTop: "10px"}}>
-		<button className="btnFactsA btn-outline-primary" onClick={handleClick}>Agregar</button>
+        {operacion==='cambioOperacion1'?(
+        <button className="btnFactsA btn-outline-primary" onClick={updateClik}>Actualizar</button>):(<button className="btnFactsA btn-outline-primary" onClick={handleClick}>Agregar</button>)}
 		<button className="btnFactsAB btn-outline-primary" onClick={()=>navigate('/materiasForm/Ver')}>VER</button>
 	</section>
 </section>
