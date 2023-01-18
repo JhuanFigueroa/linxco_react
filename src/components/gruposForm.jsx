@@ -1,15 +1,21 @@
+import { useContext } from "react";
 import React from "react";
 import '../styles/carrerasIn.scss'
-import { useNavigate} from "react-router-dom";
+import { useNavigate, useParams} from "react-router-dom";
+import Cookie from "js-cookie";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-import Cookie from "js-cookie";
 import AppContext from "../context/AppContext";
+
 
 const API ='http://localhost:3000/api/v1/admision'
 
 const gruposForm = () => {
+
+    const {state}=useContext(AppContext)
+    const operacion=state.operacion
+    const {id2}=useParams()
+
     const [numeroGrupo,setnumeroGrupo]=useState('')
     const [carrera,setClaveCarrera]=useState('')
     const [statusGrupo,setStatusGrupo]=useState(1)
@@ -29,12 +35,37 @@ const gruposForm = () => {
         axios.post('http://localhost:3000/api/v1/grupos/',data)
         navigate('/gruposForm/Ver')
     }
+    const updateClik=(e)=>{
+        e.preventDefault()
+        const dataA={
+            'numero':numeroGrupo,
+            'claveCarrera':carrera,
+            'status':statusGrupo
+        }
+        const cookie= Cookie.get('token')
+        axios.defaults.headers.Authorization='Bearer '+cookie;
+        axios.patch('http://localhost:3000/api/v1/grupos/'+id2+'',dataA)
+        navigate('/gruposForm/Ver')
+    }
+    useEffect(()=>{
+        if(id2!=null){
+            llenarCamposGrupos(id2)
+        }
+    },[])
     const obtenerCarreras =()=>{
         const rta = axios.get(API).then(res=>{setCarreras(res.data)});
     }
     useEffect(() => {
         obtenerCarreras()
     }, [])
+    function llenarCamposGrupos(id2){
+        console.log(id2)
+        const rta = axios.get('http://localhost:3000/api/v1/grupos/'+id2+'').then(rest=>{
+            
+        setnumeroGrupo(rest.data.numero)
+        setClaveCarrera(rest.data.claveCarrera)
+        setStatusGrupo(rest.data.status)
+    })}
     return (
         <div>
 
@@ -63,7 +94,8 @@ const gruposForm = () => {
                     <input type="text" className="form-control" value={statusGrupo} onChange={(e)=>{setStatusGrupo(e.target.value)}}/>
                 </div>
                 <section className="botonesFR row" style={{ marginTop: "10px" }}>
-                    <button className="btnFactsA btn-outline-primary" onClick={handleClick}>Agregar</button>
+                    {operacion==='cambioOperacion1'?(
+                    <button className="btnFactsA btn-outline-primary" onClick={updateClik}>Actualizar</button>):(<button className="btnFactsA btn-outline-primary" onClick={handleClick}>Agregar</button>)}
                     <button className="btnFactsAB btn-outline-primary" onClick={() => navigate('/gruposForm/Ver')} >VER</button>
                 </section>
             </section>

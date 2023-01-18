@@ -153,7 +153,7 @@ const App=()=>{
                         {/*Grupos form*/}
                         <Route exact path="/grupoF" element={<AuthRoute><GruposForm/></AuthRoute>}/>
                         <Route exact path="/gruposForm/Ver" element={<AuthRoute><VistaGruposForm/></AuthRoute>}/>
-
+                        <Route exact path="/gruposF/:id2" element={<AuthRoute><GruposForm/></AuthRoute>}/>
                         {/*Materias form*/}
                        <Route exact path="/materiasF" element={<AuthRoute><MateriasForm/></AuthRoute>}/>
                         {/*Boletas*/}

@@ -6,7 +6,7 @@ import Cookie from "js-cookie";
 import { useEffect } from "react";
 import AppContext from "../context/AppContext";
 
-const aspirantes=()=>{
+const materiasForm=()=>{
 
 const {state}=useContext(AppContext)
 const operacion=state.operacion
@@ -93,4 +93,4 @@ return(
 );
 }
 
-export default aspirantes;
+export default materiasForm;

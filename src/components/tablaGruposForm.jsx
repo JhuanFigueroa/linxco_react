@@ -1,13 +1,20 @@
 import React from "react";
+import { useContext } from "react"
 import { useEffect, useState } from "react";
 import '../styles/tablaGruposForm.scss'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookie from "js-cookie";
+import AppContext from "../context/AppContext";
 
 const API ='http://localhost:3000/api/v1/grupos'
 
 const tablaGruposForm = () => {
+
+    const {state}=useContext(AppContext)
+    const operacion=state.operacion
+    const{addOperacion}=React.useContext(AppContext);
+
     const navigate = useNavigate();
     // const navigate = useNavigate({ nombre });
     const [grupos, setGrupos] = useState([])
@@ -17,6 +24,10 @@ const tablaGruposForm = () => {
     }
     const obtenerGrupos =()=>{
         const rta = axios.get(API).then(res=>{setGrupos(res.data)});
+    }
+    const cambioVistaOperacionEditat=(id2)=>{
+        addOperacion('cambioOperacion1')
+        navigate(`/gruposF/${id2}`)
     }
     useEffect(() => {
         obtenerGrupos()
@@ -54,7 +65,7 @@ const tablaGruposForm = () => {
                             <td>{grupo.status}</td>
                             <td>{grupo.claveCarrera}</td>
                             <td>
-                                <button className="btnEditMa btn-outline-success" type="button" onclick="location.href='materia.html'" />
+                                <button className="btnEditMa btn-outline-success" type="button" onClick={()=>cambioVistaOperacionEditat(grupo.id)} />
                             </td>
                             <td>
                                 <button className="btnDeleteMa btn-outline-danger" type="button" onClick={()=>eliminarCampo(grupo.id)} />
