@@ -44,7 +44,7 @@ const CargaAcademica = () => {
 
     const getCargaData = async () => {
         const res = await axios.get(url + matriculaAlumno);
-        const datos = res.data[0];
+        const datos = res.data;
         setNombre(datos.nombre);
         setCelular(datos.telefono);
         setCorreo(datos.correo);
