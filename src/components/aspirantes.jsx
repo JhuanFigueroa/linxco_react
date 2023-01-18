@@ -33,7 +33,7 @@ const aspirantes=()=>{
 		}
 		 const cookie= Cookie.get('token')
          axios.defaults.headers.Authorization='Bearer '+cookie;
-		 axios.post('http://localhost:3000/api/v1/admision',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
+		 axios.post('https://linxco-backend.herokuapp.com/api/v1/admision',data) //llegan lixnco, despues dependiendo se va a la funcipon y se ejecuta el query 
 		 navigate('/home')
      }
 	 //creear constantes de cada input
@@ -66,7 +66,7 @@ const aspirantes=()=>{
         getTipoCarrera()
  	},[]);
  	function getTipoCarrera(){
-		const carreras = axios.get('http://localhost:3000/api/v1/admision')
+		const carreras = axios.get('https://linxco-backend.herokuapp.com/api/v1/admision')
 		.then((res) => {
 			//console.log(res.data);
 			setTipoCarrera(res.data)
@@ -153,43 +153,6 @@ const aspirantes=()=>{
                                     </option>
 								))}
 						</select>
-					</div>
-					<div className="documentos">
-						<div className="container-main" style={{color: "white"}}>
-							<h5>Certificado</h5>
-						</div>
-						
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }} onChange={(e)=>{setcertificadAsp(e.target.value)}}/>
-						</div>
-						<div className="container-main" style={{color: "white"}}>
-							<h5>Acta de Nacimineto</h5>
-						</div>
-						
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)"}}   onChange={(e)=>{setactaAsp(e.target.value)}}/>
-						</div>
-						<div className="container-main" style={{color: "white"}}>
-							<h5>Identificacion con Fotografia</h5>
-						</div>
-						
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }}   onChange={(e)=>{setidenAsp(e.target.value)}}/>
-						</div>
-						<div className="container-main" style={{color: "white"}}>
-							<h5>Fotografia Tamaño Infantil</h5>
-						</div>
-						
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }}  onChange={(e)=>{setfotoAsp(e.target.value)}}/>
-						</div>
-						<div className="container-main" style={{color: "white"}}>
-							<h5>CURP</h5>
-						</div>
-						
-						<div className="examinar ">
-							<input type="file" className="btn btn-block ingresar" style={{width: "300px", marginLeft:"20px", color:"white", border: "1px solid rgb(37, 148, 182)" }}  onChange={(e)=>{setcurpfiAsp(e.target.value)}}/>
-						</div>
 					</div>
 					<div className="button row justify-content-center pt-3" >
 						<div className="text-center">
