@@ -11,6 +11,14 @@ const url = "http://localhost:3000/api/v1/alumnos/datosCarga/";
 let idC = 0;
 let matriculaAlumno = "";
 const CargaAcademica = () => {
+    const {id2}=useParams()
+
+    useEffect(()=>{
+        if(id2!=null){
+            llenarCamposAlumno(id2)
+        }
+    },[])
+
     const {state} = useContext(AppContext);
     const operacion = state.operacion;
     const auth = useAuth();
@@ -132,7 +140,18 @@ const CargaAcademica = () => {
         getTiposCarga();
         getTipoCurso()
     }, []);
-
+    function llenarCamposAlumno(id2){
+        console.log(id2)
+        const rta = axios.get('http://localhost:3000/api/v1/admision/'+id2+'').then(rest=>{
+  
+        
+        // setnumero_ficha_admision(rest.data.numero)
+        matriculaAlumno=id2
+        setNombre(rest.data.nombre+" "+rest.data.apellido_paterno+" "+rest.data.apellido_materno)
+        setCelular(rest.data.telefono)
+        setCorreo(rest.data.correo)
+        setCarrera(rest.data.claveCarrera)
+    })}
     return (
         <section className="contentReins-carga">
             <h2 className="titleCarga">Carga Academica</h2>

@@ -11,9 +11,9 @@ const CarreraItem = ({carrera}) => {
     const user=auth.user
         const navigate=useNavigate()
     const handleSubmit=(clave)=>{
-
+        
         if (operacion==='inscripcion'){
-            navigate('/inscripcion/carreras');
+            navigate(`/inscripcion/carreras/${clave}`);
         }
         if (operacion==='reinscripcion'){
             navigate(`/reinscripcion/control/estudiantes/${clave}`);

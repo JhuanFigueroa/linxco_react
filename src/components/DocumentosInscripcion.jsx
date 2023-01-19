@@ -1,12 +1,20 @@
 import React from "react";
 import '../styles/DocumentosInscripcion.scss'
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
+import { useEffect, useState } from "react";
+
 const DocumentosInscripcion=()=>{
 
     const navigate=useNavigate()
+    const {id2}=useParams()
+    // useEffect(()=>{
+        
+    // },[]) 
     const handleClick=(e)=>{
         e.preventDefault()
-        navigate("/inscripcion/carga")
+        if(id2!=null){
+            navigate(`/inscripcion/carga/${id2}`)
+        }
     }
     return(
         <div className="capa">

@@ -78,11 +78,12 @@ const App=()=>{
                             </AuthRoute>
                             }/>
                         <Route exact path="/inscripcion" element={<AuthRoute><Carreras/></AuthRoute>}/>
-                        <Route exact path="/inscripcion/carreras" element={<AuthRoute><TableAspirantes/></AuthRoute>}/>
+                        <Route exact path="/inscripcion/carreras/:clave" element={<AuthRoute><TableAspirantes/></AuthRoute>}/>
                         <Route exact path="/inscripcion/estudiante" element={<AuthRoute><InscripcionForm/></AuthRoute>}/>
-                        <Route exact path="/inscripcion/documentos" element={<AuthRoute><DocumentosInscripcion/></AuthRoute>}/>
+                        <Route exact path="/inscripcion/documentos/:id2" element={<AuthRoute><DocumentosInscripcion/></AuthRoute>}/>
+                        <Route exact path="/inscripcion/estudiante/:id2" element={<AuthRoute><InscripcionForm/></AuthRoute>}/>
 
-                        <Route exact path="/inscripcion/carga" element={<AuthRoute><CargaAcademica/></AuthRoute>}/>
+                        <Route exact path="/inscripcion/carga/:id2" element={<AuthRoute><CargaAcademica/></AuthRoute>}/>
 
 
                         <Route exact path="/reinscripcion/carga" element={<AuthRoute><CargaAcademica/></AuthRoute>}/>
