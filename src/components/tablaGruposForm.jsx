@@ -4,7 +4,7 @@ import '../styles/tablaGruposForm.scss'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API ='http://localhost:3000/api/v1/grupos'
+const API ='https://linxco-backend.herokuapp.com/api/v1/grupos'
 
 const tablaGruposForm = () => {
     const navigate = useNavigate();

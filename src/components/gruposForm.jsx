@@ -7,7 +7,7 @@ import axios from "axios";
 import Cookie from "js-cookie";
 import AppContext from "../context/AppContext";
 
-const API ='http://localhost:3000/api/v1/admision'
+const API ='https://linxco-backend.herokuapp.com/api/v1/admision'
 
 const gruposForm = () => {
     const [numeroGrupo,setnumeroGrupo]=useState('')
@@ -26,7 +26,7 @@ const gruposForm = () => {
         }
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        axios.post('http://https://linxco-backend.herokuapp.com/api/v1/grupos/',data)
+        axios.post('https://linxco-backend.herokuapp.com/api/v1/grupos/',data)
         navigate('/gruposForm/Ver')
     }
     const obtenerCarreras =()=>{

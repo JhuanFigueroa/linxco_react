@@ -5,7 +5,7 @@ import '../styles/tablaMateriasForm.scss'
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 //https://linxco-backend.herokuapp.com/
-const API ='http://localhost:3000/api/v1/materias'
+const API ='https://linxco-backend.herokuapp.com/api/v1/materias'
 
 const tablaMateriasForm = () => {
     const navigate = useNavigate();

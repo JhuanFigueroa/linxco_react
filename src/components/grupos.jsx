@@ -22,7 +22,7 @@ const Grupos = () => {
     }
 
     const getGrrupoByCarrera= async ()=>{
-        const rta=await axios.get('http://https://linxco-backend.herokuapp.com/api/v1/grupos/carrera/'+clave)
+        const rta=await axios.get('https://linxco-backend.herokuapp.com/api/v1/grupos/carrera/'+clave)
             .then(res=>{
                 console.log(res.data)
                 setGrupo(res.data)

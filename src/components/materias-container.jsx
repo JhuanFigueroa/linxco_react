@@ -5,7 +5,7 @@ import axios from "axios";
 import Cookie from "js-cookie";
 import { useEffect } from "react";
 import {useAuth} from "../hooks/useAuth";
-const Documento  ='http://localhost:3000/descargar/1671390264365-577364018-sistemas-transformed.png';
+const Documento  ='https://linxco-backend.herokuapp.com/descargar/1671390264365-577364018-sistemas-transformed.png';
 const api = 'https://linxco-backend.herokuapp.com/api/v1/semestre'
 const Materias = () => {
 	const auth=useAuth()
@@ -30,7 +30,7 @@ const Materias = () => {
     }
 
 	const getMaterias=()=>{
-		const rta=axios.get('http://https://linxco-backend.herokuapp.com/api/v1/materias/grupo/'+grupo)
+		const rta=axios.get('https://linxco-backend.herokuapp.com/api/v1/materias/grupo/'+grupo)
 			.then(res=>{
 				setMaterias(res.data)
 			})
@@ -53,7 +53,7 @@ const Materias = () => {
 		 formData.append('claveMateria',materia)
 		 formData.append('idGrupo',grupo)
 
-		 const rta=axios.post('http://https://linxco-backend.herokuapp.com/api/v1/acta-control',formData)
+		 const rta=axios.post('https://linxco-backend.herokuapp.com/api/v1/acta-control',formData)
 
 		 navigate('/home')
      }
