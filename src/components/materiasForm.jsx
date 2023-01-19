@@ -41,7 +41,7 @@ const updateClik=(e)=>{
     }
     const cookie= Cookie.get('token')
     axios.defaults.headers.Authorization='Bearer '+cookie;
-    axios.patch('http://localhost:3000/api/v1/materias/'+id2+'',dataA)
+    axios.patch('https://linxco-backend.herokuapp.com/api/v1/materias/'+id2+'',dataA)
     navigate('/materiasForm/Ver')
 }
 useEffect(()=>{
@@ -51,7 +51,7 @@ useEffect(()=>{
 },[])
 function llenarCamposMaterias(id2){
     console.log(id2)
-    const rta = axios.get('http://localhost:3000/api/v1/materias/'+id2+'').then(rest=>{
+    const rta = axios.get('https://linxco-backend.herokuapp.com/api/v1/materias/'+id2+'').then(rest=>{
         
     setclaveMateria(rest.data.clave_materia)
     setNombreMateria(rest.data.nombre_materia)

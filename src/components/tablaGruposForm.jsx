@@ -35,7 +35,7 @@ const tablaGruposForm = () => {
     const eliminarCampo=(id)=>{
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        axios.delete('http://localhost:3000/api/v1/grupos/'+id+'')
+        axios.delete('https://linxco-backend.herokuapp.com0/api/v1/grupos/'+id+'')
         navigate('/grupoF')
     }
     return (

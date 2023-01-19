@@ -43,7 +43,7 @@ const gruposForm = () => {
         }
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        axios.patch('http://localhost:3000/api/v1/grupos/'+id2+'',dataA)
+        axios.patch('https://linxco-backend.herokuapp.com/api/v1/grupos/'+id2+'',dataA)
         navigate('/gruposForm/Ver')
     }
     useEffect(()=>{
@@ -59,7 +59,7 @@ const gruposForm = () => {
     }, [])
     function llenarCamposGrupos(id2){
         console.log(id2)
-        const rta = axios.get('http://localhost:3000/api/v1/grupos/'+id2+'').then(rest=>{
+        const rta = axios.get('https://linxco-backend.herokuapp.com/api/v1/grupos/'+id2+'').then(rest=>{
 
         setnumeroGrupo(rest.data.numero)
         setClaveCarrera(rest.data.claveCarrera)

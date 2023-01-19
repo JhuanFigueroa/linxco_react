@@ -142,7 +142,7 @@ const CargaAcademica = () => {
     }, []);
     function llenarCamposAlumno(id2){
         console.log(id2)
-        const rta = axios.get('http://localhost:3000/api/v1/admision/'+id2+'').then(rest=>{
+        const rta = axios.get('https://linxco-backend.herokuapp.com/api/v1/admision/'+id2+'').then(rest=>{
   
         
         // setnumero_ficha_admision(rest.data.numero)

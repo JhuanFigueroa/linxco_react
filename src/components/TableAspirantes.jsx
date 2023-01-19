@@ -24,7 +24,7 @@ const TableAspirantes=()=>{
     const [aspirantes, setAspirantes] = useState([])
 
     const obtenerAspirantes =(clave)=>{
-        const API ='http://localhost:3000/api/v1/admision/aspiranteB/'+clave+''
+        const API ='https://linxco-backend.herokuapp.com/api/v1/admision/aspiranteB/'+clave+''
         const rta = axios.get(API).then(res=>{setAspirantes(res.data)});
     }
     // useEffect(() => {
