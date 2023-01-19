@@ -3,7 +3,7 @@ import {useAuth} from "../hooks/useAuth";
 import axios from "axios";
 import jefeDivision from "../pages/JefeDivision";
 
-const api="http://localhost:3000/api/v1/tramites/boleta";
+const api="https://linxco-backend.herokuapp.com/api/v1/tramites/boleta";
 const Tramites=()=>{
     const auth=useAuth();
     const user=auth.user;

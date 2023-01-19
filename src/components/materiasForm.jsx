@@ -28,7 +28,7 @@ const handleClick = (e) => {
     }
     const cookie= Cookie.get('token')
     axios.defaults.headers.Authorization='Bearer '+cookie;
-    axios.post('http://https://linxco-backend.herokuapp.com/api/v1/materias',data)
+    axios.post('https://linxco-backend.herokuapp.com/api/v1/materias',data)
     navigate('/materiasForm/Ver')
 }
 const updateClik=(e)=>{

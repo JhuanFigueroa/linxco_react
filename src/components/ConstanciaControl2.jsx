@@ -8,7 +8,7 @@ const ConstanciaControl2 = () =>{
     const navigate=useNavigate()
     const [peticiones,setPeticiones]=useState([])
     const getPeticiones=()=>{
-        const rta=axios.get('http://https://linxco-backend.herokuapp.com/api/v1/peticiones/carrera/'+clave)
+        const rta=axios.get('https://linxco-backend.herokuapp.com/api/v1/peticiones/carrera/'+clave)
             .then(res=>{
                 setPeticiones(res.data)
             })

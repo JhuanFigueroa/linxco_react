@@ -22,7 +22,7 @@ const ListaMaterias=(props)=>{
         let materiasC=[]
      //   const populateData = (data) => {materiasC.push(data)}
         function axiosTest (clave) {
-            axios.get("http://https://linxco-backend.herokuapp.com/api/v1/materias/"+clave)
+            axios.get("https://linxco-backend.herokuapp.com/api/v1/materias/"+clave)
                 .then(function(response){
                      materiasC=materiasFinal
                     materiasC.push(response.data);

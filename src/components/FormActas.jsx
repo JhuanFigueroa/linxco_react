@@ -32,7 +32,7 @@ const FormActas = () => {
         const cookie = Cookie.get("token");
         axios.defaults.headers.Authorization = "Bearer " + cookie;
         const rta = axios
-            .get("http://https://linxco-backend.herokuapp.com/api/v1/acta-calif/alumnos/" + materia+"/"+grupo)
+            .get("https://linxco-backend.herokuapp.com/api/v1/acta-calif/alumnos/" + materia+"/"+grupo)
             .then((res) => {
                 console.log(res.data)
                 setStudentsReins(res.data);
@@ -51,7 +51,7 @@ const FormActas = () => {
                 "matriculaAlumno":studentsReins[i].matricula,
                 "idPeriodo":id
             }
-           const rta=axios.post('http://https://linxco-backend.herokuapp.com/api/v1/acta-calif',data)
+           const rta=axios.post('https://linxco-backend.herokuapp.com/api/v1/acta-calif',data)
         }
         navigate('/home')
     };

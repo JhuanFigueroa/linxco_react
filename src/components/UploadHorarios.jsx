@@ -21,13 +21,13 @@ const UploadHorarios=()=>{
         const formData= new FormData()
 
 
-        const res=axios.get('http://https://linxco-backend.herokuapp.com/api/v1/jefes/'+user.clave).then(resp=>{
+        const res=axios.get('https://linxco-backend.herokuapp.com/api/v1/jefes/'+user.clave).then(resp=>{
 
             formData.append('ubicacion',selectedFile,selectedFile.name)
             formData.append('claveCarrera',resp.data.claveCarrera)
             formData.append('idPeriodo',id)
 
-            const rta=axios.post('http://https://linxco-backend.herokuapp.com/api/v1/jefes/horarios',formData)
+            const rta=axios.post('https://linxco-backend.herokuapp.com/api/v1/jefes/horarios',formData)
         })
 
         navigate('/home')
