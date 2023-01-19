@@ -26,7 +26,7 @@ const api="http://localhost:3000/api/v1/carreras"
     const getCarrerasMaestro = async ()=> {
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        const rta= await axios.get('http://localhost:3000/api/v1/semestre/maestro/'+user.clave)
+        const rta= await axios.get('http://https://linxco-backend.herokuapp.com/api/v1/semestre/maestro/'+user.clave)
         setCarreras(rta.data)
         
     }

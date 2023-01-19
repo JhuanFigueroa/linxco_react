@@ -34,7 +34,7 @@ function AuthProvider({ children }) {
             axios.defaults.headers.Authorization='Bearer '+cookie;
             const {data:user}= await axios.get(api+'profile');
             auth.setUser(user)
-            const {data:periodo}=await axios.get("http://localhost:3000/api/v1/tramites/periodo")
+            const {data:periodo}=await axios.get("http://https://linxco-backend.herokuapp.com/api/v1/tramites/periodo")
             setPeriodo(periodo)
         }else {
             return <Navigate to="/" />;

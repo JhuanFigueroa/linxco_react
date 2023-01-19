@@ -54,14 +54,14 @@ const CargaAcademica = () => {
     const getTiposCarga = async () => {
         const cookie = Cookie.get("token");
         axios.defaults.headers.Authorization = "Bearer " + cookie;
-        const res = await axios.get("http://localhost:3000/api/v1/tipoCarga");
+        const res = await axios.get("http://https://linxco-backend.herokuapp.com/api/v1/tipoCarga");
         setTiposCarga(res.data);
     };
 
     const getTipoCurso = async () => {
         const cookie = Cookie.get("token");
         axios.defaults.headers.Authorization = "Bearer " + cookie;
-        const res = await axios.get("http://localhost:3000/api/v1/cursos");
+        const res = await axios.get("http://https://linxco-backend.herokuapp.com/api/v1/cursos");
         setCursos(res.data);
     }
 
@@ -78,7 +78,7 @@ const CargaAcademica = () => {
             const cookie = Cookie.get("token");
             axios.defaults.headers.Authorization = "Bearer " + cookie;
             const rta = axios
-                .post("http://localhost:3000/api/v1/carga-academica", data)
+                .post("http://https://linxco-backend.herokuapp.com/api/v1/carga-academica", data)
                 .then(function (response) {
                     idC = response.data;
                     for (let i = 0; i < materiasCarga.length; i++) {
@@ -89,7 +89,7 @@ const CargaAcademica = () => {
                             grupo: gruposCarga[i]
                         };
                         axios.post(
-                            "http://localhost:3000/api/v1/materia-carga",
+                            "http://https://linxco-backend.herokuapp.com/api/v1/materia-carga",
                             dtaMateriaCarga
                         );
                     }
@@ -109,7 +109,7 @@ const CargaAcademica = () => {
         let materias = [];
         const rta = axios
             .get(
-                "http://localhost:3000/api/v1/tramites/reinscribir/carga/" +
+                "http://https://linxco-backend.herokuapp.com/api/v1/tramites/reinscribir/carga/" +
                 matriculaAlumno + "/" + periodo[0].id
             )
             .then((res) => {

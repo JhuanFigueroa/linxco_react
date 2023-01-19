@@ -21,7 +21,7 @@ const Boleta = () => {
         const cookie = Cookie.get("token");
         axios.defaults.headers.Authorization = "Bearer " + cookie;
         const rta = axios
-            .get("http://localhost:3000/api/v1/tramites/boleta/" + user.clave+"/"+idPeriodo)
+            .get("http://https://linxco-backend.herokuapp.com/api/v1/tramites/boleta/" + user.clave+"/"+idPeriodo)
             .then((res) => {
                 console.log(res.data)
                 setCalificaciones(res.data);
