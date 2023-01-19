@@ -32,7 +32,7 @@ const gruposForm = () => {
         }
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        axios.post('http://localhost:3000/api/v1/grupos/',data)
+        axios.post('http://https://linxco-backend.herokuapp.com/api/v1/grupos/',data)
         navigate('/gruposForm/Ver')
     }
     const updateClik=(e)=>{

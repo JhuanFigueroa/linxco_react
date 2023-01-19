@@ -30,7 +30,7 @@ const Materias = () => {
     }
 
 	const getMaterias=()=>{
-		const rta=axios.get('http://localhost:3000/api/v1/materias/grupo/'+grupo)
+		const rta=axios.get('http://https://linxco-backend.herokuapp.com/api/v1/materias/grupo/'+grupo)
 			.then(res=>{
 				setMaterias(res.data)
 			})
@@ -53,7 +53,7 @@ const Materias = () => {
 		 formData.append('claveMateria',materia)
 		 formData.append('idGrupo',grupo)
 
-		 const rta=axios.post('http://localhost:3000/api/v1/acta-control',formData)
+		 const rta=axios.post('http://https://linxco-backend.herokuapp.com/api/v1/acta-control',formData)
 
 		 navigate('/home')
      }
