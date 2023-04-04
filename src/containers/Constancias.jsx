@@ -7,7 +7,7 @@ const Constancias=()=>{
     const navigate=useNavigate();
     const [tiposConstancia,setTiposConstancia]=useState([])
     const getTipoConstancia= async ()=>{
-        const rta=axios.get('https://linxco-backend.herokuapp.com/api/v1/constancias/tipos')
+        const rta=axios.get('https://linxcoexpress-production.up.railway.app/api/v1/constancias/tipos')
             .then(res=>{
                setTiposConstancia(res.data)
                 console.log(res.data)

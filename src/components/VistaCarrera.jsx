@@ -15,7 +15,7 @@ const VistaCarrera = () =>{
     const [datosCarrera, setdatosCarrera]=useState([])
 
     function llenarTabla(){
-        const rta = axios.get('https://linxco-backend.herokuapp.com/api/v1/carrera').then(rest=>{setdatosCarrera(rest.data.vercarreras)})
+        const rta = axios.get('https://linxcoexpress-production.up.railway.app/api/v1/carrera').then(rest=>{setdatosCarrera(rest.data.vercarreras)})
     }
     useEffect(() => {
         llenarTabla()
@@ -38,7 +38,7 @@ const VistaCarrera = () =>{
     function eliminarCampo(clave1){
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        axios.delete('https://linxco-backend.herokuapp.com/api/v1/carrera/'+clave1+'')
+        axios.delete('https://linxcoexpress-production.up.railway.app/api/v1/carrera/'+clave1+'')
         llenarTabla()
     }
 

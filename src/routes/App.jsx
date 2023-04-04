@@ -126,7 +126,7 @@ const App=()=>{
                         {/*ACTAS*/}
                         <Route exact path="/actas/grupos" element={<AuthRoute><Grupos/></AuthRoute>}/>
                         <Route exact path="/actas/grupos/:clave" element={<AuthRoute><Grupos/></AuthRoute>}/>
-                        <Route exact path="/actas/materias" element={<AuthRoute><MateriasContainer/></AuthRoute>}/>
+                        <Route exact path="/actas/materias/:grupo" element={<AuthRoute><Materias/></AuthRoute>}/>
 
                         {/*Carreras*/}
                         <Route exact path="/carrera/Insertar" element={<AuthRoute><Carrerasform/></AuthRoute>}/>

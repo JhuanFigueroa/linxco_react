@@ -9,7 +9,7 @@ const ListaMaterias=(props)=>{
     const [materiasFinal,setMateriasFinal]=useState([]);
     const getMaterias= async () =>{
 
-        const rta=await axios.get('https://linxco-backend.herokuapp.com/api/v1/materias')
+        const rta=await axios.get('https://linxcoexpress-production.up.railway.app/api/v1/materias')
         setMaterias(rta.data)
     }
 
@@ -22,7 +22,7 @@ const ListaMaterias=(props)=>{
         let materiasC=[]
      //   const populateData = (data) => {materiasC.push(data)}
         function axiosTest (clave) {
-            axios.get("https://linxco-backend.herokuapp.com/api/v1/materias/"+clave)
+            axios.get("https://linxcoexpress-production.up.railway.app/api/v1/materias/"+clave)
                 .then(function(response){
                      materiasC=materiasFinal
                     materiasC.push(response.data);

@@ -8,8 +8,8 @@ import Cookie from "js-cookie";
 import AppContext from "../context/AppContext";
 
 
-//https://linxco-backend.herokuapp.com/
-const API ='https://linxco-backend.herokuapp.com/api/v1/materias'
+//https://linxcoexpress-production.up.railway.app/
+const API ='https://linxcoexpress-production.up.railway.app/api/v1/materias'
 
 const tablaMateriasForm = () => {
     const {state}=useContext(AppContext)
@@ -30,7 +30,7 @@ const tablaMateriasForm = () => {
     const eliminarCampo=(id)=>{
         const cookie= Cookie.get('token')
         axios.defaults.headers.Authorization='Bearer '+cookie;
-        axios.delete('https://linxco-backend.herokuapp.com/api/v1/materias/'+id+'')
+        axios.delete('https://linxcoexpress-production.up.railway.app/api/v1/materias/'+id+'')
         navigate('/materiasF')
        
     }
